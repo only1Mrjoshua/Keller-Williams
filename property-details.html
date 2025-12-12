@@ -15,9 +15,6 @@
     <nav class="navbar">
       <div class="container">
         <a href="#"><img src="/images/logo.png" alt="" /></a>
-        <!-- <a href="index.html" class="logo"
-          >Keller<span style="color: var(--black)">Williams</span></a
-        > -->
         <button class="hamburger">
           <i class="fas fa-bars"></i>
         </button>
@@ -44,6 +41,11 @@
           </div>
         </div>
 
+        <!-- Main Property Image -->
+        <div class="property-main-image">
+          <img id="mainPropertyImage" src="" alt="Main property image">
+        </div>
+
         <!-- Property Gallery -->
         <div class="property-gallery">
           <!-- Gallery will be loaded by JavaScript -->
@@ -55,6 +57,38 @@
         </div>
       </div>
     </section>
+
+    <!-- Image Preview Modal -->
+    <div class="modal-overlay" id="imageModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <img class="modal-image" id="modalImage" src="" alt="Property image">
+        <div class="modal-counter" id="imageCounter"></div>
+        
+        <!-- Navigation buttons -->
+        <button class="modal-nav modal-prev" id="prevBtn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="modal-nav modal-next" id="nextBtn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Zoom controls -->
+        <div class="modal-zoom-controls">
+          <button class="zoom-btn" id="zoomIn">
+            <i class="fas fa-search-plus"></i>
+          </button>
+          <button class="zoom-btn" id="zoomOut">
+            <i class="fas fa-search-minus"></i>
+          </button>
+          <button class="zoom-btn" id="zoomReset">
+            <i class="fas fa-undo"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" id="contact">

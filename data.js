@@ -257,3 +257,458 @@ const properties = [
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { properties };
 }
+
+// Gallery Modal Functionality
+class GalleryModal {
+    constructor() {
+        this.currentGallery = [];
+        this.currentIndex = 0;
+        this.currentScale = 1;
+        this.scaleStep = 0.25;
+        this.maxScale = 4;
+        this.minScale = 0.5;
+        this.isDragging = false;
+        this.startX = 0;
+        this.startY = 0;
+        this.translateX = 0;
+        this.translateY = 0;
+        
+        this.initElements();
+        this.bindEvents();
+    }
+    
+    initElements() {
+        this.modal = document.getElementById('imageModal');
+        this.modalImage = document.getElementById('modalImage');
+        this.modalClose = document.getElementById('modalClose');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.imageCounter = document.getElementById('imageCounter');
+        this.zoomInBtn = document.getElementById('zoomIn');
+        this.zoomOutBtn = document.getElementById('zoomOut');
+        this.zoomResetBtn = document.getElementById('zoomReset');
+    }
+    
+    bindEvents() {
+        // Modal controls
+        this.modalClose.addEventListener('click', () => this.close());
+        this.prevBtn.addEventListener('click', () => this.prevImage());
+        this.nextBtn.addEventListener('click', () => this.nextImage());
+        this.zoomInBtn.addEventListener('click', () => this.zoomIn());
+        this.zoomOutBtn.addEventListener('click', () => this.zoomOut());
+        this.zoomResetBtn.addEventListener('click', () => this.resetZoom());
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => this.handleKeydown(e));
+        
+        // Mouse wheel zoom
+        this.modalImage.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+        
+        // Drag functionality
+        this.modalImage.addEventListener('mousedown', (e) => this.startDrag(e));
+        document.addEventListener('mousemove', (e) => this.drag(e));
+        document.addEventListener('mouseup', () => this.endDrag());
+        
+        // Touch events for mobile
+        this.modalImage.addEventListener('touchstart', (e) => this.startTouch(e));
+        document.addEventListener('touchmove', (e) => this.touchMove(e));
+        document.addEventListener('touchend', () => this.endTouch());
+        
+        // Close modal when clicking outside the image
+        this.modal.addEventListener('click', (e) => {
+            if (e.target === this.modal) {
+                this.close();
+            }
+        });
+    }
+    
+    open(gallery, startIndex = 0) {
+        this.currentGallery = gallery;
+        this.currentIndex = startIndex;
+        this.currentScale = 1;
+        this.translateX = 0;
+        this.translateY = 0;
+        
+        this.updateImage();
+        this.modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${this.getScrollbarWidth()}px`;
+    }
+    
+    close() {
+        this.modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        this.currentScale = 1;
+        this.translateX = 0;
+        this.translateY = 0;
+    }
+    
+    updateImage() {
+        if (this.currentGallery.length === 0) return;
+        
+        // Preload image for smoother transition
+        const img = new Image();
+        img.onload = () => {
+            this.modalImage.src = this.currentGallery[this.currentIndex];
+            this.modalImage.alt = `Property image ${this.currentIndex + 1}`;
+            this.updateCounter();
+            this.updateNavigation();
+            this.applyTransform();
+        };
+        img.src = this.currentGallery[this.currentIndex];
+    }
+    
+    updateCounter() {
+        this.imageCounter.textContent = `${this.currentIndex + 1} / ${this.currentGallery.length}`;
+    }
+    
+    updateNavigation() {
+        // Update navigation button states
+        this.prevBtn.style.opacity = this.currentIndex > 0 ? '1' : '0.5';
+        this.prevBtn.style.pointerEvents = this.currentIndex > 0 ? 'all' : 'none';
+        this.nextBtn.style.opacity = this.currentIndex < this.currentGallery.length - 1 ? '1' : '0.5';
+        this.nextBtn.style.pointerEvents = this.currentIndex < this.currentGallery.length - 1 ? 'all' : 'none';
+    }
+    
+    nextImage() {
+        if (this.currentIndex < this.currentGallery.length - 1) {
+            this.currentIndex++;
+            this.resetZoomAndPosition();
+            this.updateImage();
+        }
+    }
+    
+    prevImage() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.resetZoomAndPosition();
+            this.updateImage();
+        }
+    }
+    
+    zoomIn() {
+        if (this.currentScale < this.maxScale) {
+            this.currentScale += this.scaleStep;
+            this.applyTransform();
+        }
+    }
+    
+    zoomOut() {
+        if (this.currentScale > this.minScale) {
+            this.currentScale -= this.scaleStep;
+            this.applyTransform();
+        }
+    }
+    
+    resetZoom() {
+        this.currentScale = 1;
+        this.translateX = 0;
+        this.translateY = 0;
+        this.applyTransform();
+        this.modalImage.style.cursor = 'grab';
+    }
+    
+    resetZoomAndPosition() {
+        this.currentScale = 1;
+        this.translateX = 0;
+        this.translateY = 0;
+        this.modalImage.style.cursor = 'grab';
+    }
+    
+    applyTransform() {
+        this.modalImage.style.transform = `
+            scale(${this.currentScale})
+            translate(${this.translateX}px, ${this.translateY}px)
+        `;
+        
+        // Update cursor based on zoom level
+        this.modalImage.style.cursor = this.currentScale > 1 ? 'grab' : 'default';
+    }
+    
+    handleKeydown(e) {
+        if (!this.modal.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                this.close();
+                break;
+            case 'ArrowLeft':
+                this.prevImage();
+                break;
+            case 'ArrowRight':
+                this.nextImage();
+                break;
+            case '+':
+            case '=':
+                if (!e.shiftKey) this.zoomIn();
+                break;
+            case '-':
+                this.zoomOut();
+                break;
+            case '0':
+                this.resetZoom();
+                break;
+        }
+    }
+    
+    handleWheel(e) {
+        if (!this.modal.classList.contains('active')) return;
+        
+        if (e.ctrlKey) {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+                this.zoomIn();
+            } else {
+                this.zoomOut();
+            }
+        }
+    }
+    
+    startDrag(e) {
+        if (this.currentScale <= 1) return;
+        
+        this.isDragging = true;
+        this.startX = e.clientX - this.translateX;
+        this.startY = e.clientY - this.translateY;
+        this.modalImage.style.cursor = 'grabbing';
+    }
+    
+    drag(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        const x = e.clientX - this.startX;
+        const y = e.clientY - this.startY;
+        
+        // Limit dragging based on zoom level
+        const maxTranslate = (this.currentScale - 1) * 100;
+        this.translateX = Math.max(Math.min(x, maxTranslate), -maxTranslate);
+        this.translateY = Math.max(Math.min(y, maxTranslate), -maxTranslate);
+        
+        this.applyTransform();
+    }
+    
+    endDrag() {
+        this.isDragging = false;
+        if (this.currentScale > 1) {
+            this.modalImage.style.cursor = 'grab';
+        }
+    }
+    
+    startTouch(e) {
+        if (this.currentScale <= 1) return;
+        
+        this.isDragging = true;
+        const touch = e.touches[0];
+        this.startX = touch.clientX - this.translateX;
+        this.startY = touch.clientY - this.translateY;
+    }
+    
+    touchMove(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        const touch = e.touches[0];
+        const x = touch.clientX - this.startX;
+        const y = touch.clientY - this.startY;
+        
+        // Limit dragging based on zoom level
+        const maxTranslate = (this.currentScale - 1) * 100;
+        this.translateX = Math.max(Math.min(x, maxTranslate), -maxTranslate);
+        this.translateY = Math.max(Math.min(y, maxTranslate), -maxTranslate);
+        
+        this.applyTransform();
+    }
+    
+    endTouch() {
+        this.isDragging = false;
+    }
+    
+    getScrollbarWidth() {
+        // Create temporary div to measure scrollbar width
+        const div = document.createElement('div');
+        div.style.overflow = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.visibility = 'hidden';
+        div.style.position = 'absolute';
+        div.style.top = '-9999px';
+        document.body.appendChild(div);
+        
+        const scrollbarWidth = div.offsetWidth - div.clientWidth;
+        document.body.removeChild(div);
+        
+        return scrollbarWidth;
+    }
+}
+
+// Initialize gallery modal
+const galleryModal = new GalleryModal();
+
+// Function to render property details
+function renderPropertyDetails(propertyId) {
+    const property = properties.find(p => p.id === propertyId);
+    
+    if (!property) {
+        window.location.href = 'listings.html';
+        return;
+    }
+    
+    // Update page title
+    document.title = `${property.title} - Keller Williams`;
+    
+    // Update property header
+    document.getElementById('propertyTitle').textContent = property.title;
+    document.getElementById('propertyPrice').textContent = property.price;
+    document.getElementById('propertyLocation').innerHTML = 
+        `<span>📍</span> ${property.location}`;
+    
+    // Render gallery
+    const galleryContainer = document.querySelector('.property-gallery');
+    if (galleryContainer) {
+        const mainImage = property.gallery[0];
+        const otherImages = property.gallery.slice(1);
+        
+        galleryContainer.innerHTML = `
+            <div class="gallery-main" data-index="0">
+                <img src="${mainImage}" alt="${property.title} - Main image">
+            </div>
+            ${otherImages.map((img, index) => `
+                <div class="gallery-item" data-index="${index + 1}">
+                    <img src="${img}" alt="${property.title} - Image ${index + 2}">
+                </div>
+            `).join('')}
+        `;
+        
+        // Add click events to gallery items
+        setTimeout(() => {
+            const galleryItems = document.querySelectorAll('.gallery-main, .gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const index = parseInt(item.dataset.index);
+                    galleryModal.open(property.gallery, index);
+                });
+            });
+        }, 100);
+    }
+    
+    // Render property content
+    const propertyContent = document.querySelector('.property-content');
+    if (propertyContent) {
+        propertyContent.innerHTML = `
+            <div class="property-description">
+                <h2>Property Description</h2>
+                <p><strong>${property.shortDescription}</strong></p>
+                <p>${property.fullDescription.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p>
+            </div>
+            
+            <div class="property-features">
+                <div class="feature-item">
+                    <i class="fas fa-bed feature-icon"></i>
+                    <span>${property.bedrooms} Bedrooms</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bath feature-icon"></i>
+                    <span>${property.bathrooms} Bathrooms</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-ruler-combined feature-icon"></i>
+                    <span>${property.sqft.toLocaleString()} Sq Ft</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar-alt feature-icon"></i>
+                    <span>Built in ${property.yearBuilt}</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-home feature-icon"></i>
+                    <span>${property.propertyType}</span>
+                </div>
+                ${property.features.map(feature => `
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <span>${feature}</span>
+                    </div>
+                `).join('')}
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-info">
+                    <div class="agent-avatar">
+                        ${property.agent.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div class="agent-details">
+                        <h3>${property.agent.name}</h3>
+                        <div class="agent-contact">
+                            <div class="agent-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>${property.agent.phone}</span>
+                            </div>
+                            <div class="agent-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:${property.agent.email}">${property.agent.email}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <h3>Contact Agent</h3>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone Number">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        `;
+        
+        // Add form submission handler
+        const contactForm = propertyContent.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! The agent will contact you soon.');
+                this.reset();
+            });
+        }
+    }
+}
+
+// Get property ID from URL
+function getPropertyIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    return id ? parseInt(id) : 1;
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+    const propertyId = getPropertyIdFromUrl();
+    renderPropertyDetails(propertyId);
+    
+    // Add navigation for mobile hamburger menu if needed
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+});
+
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { properties, renderPropertyDetails, getPropertyIdFromUrl };
+}

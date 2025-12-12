@@ -20,9 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== MAIN APPLICATION =====
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mobile navigation
     initMobileNavigation();
+    
+    // Initialize search functionality
     initSearch();
     
+    // Initialize property functionality based on page
     if (window.location.pathname.includes('property-details.html')) {
         loadPropertyDetails();
     }
@@ -35,21 +39,27 @@ document.addEventListener('DOMContentLoaded', function() {
         loadAllListings();
     }
     
+    // Initialize contact forms
     initContactForms();
+    
+    // Close mobile menu when clicking outside
     initOutsideClickHandler();
 });
 
+// ===== MOBILE NAVIGATION =====
 function initMobileNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
     if (!hamburger || !navLinks) return;
     
+    // Toggle mobile menu
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
         
+        // Prevent body scroll when menu is open
         if (navLinks.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -57,6 +67,7 @@ function initMobileNavigation() {
         }
     });
     
+    // Close menu when clicking links
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(link => {
         link.addEventListener('click', function() {
@@ -67,6 +78,7 @@ function initMobileNavigation() {
     });
 }
 
+// ===== CLOSE MENU WHEN CLICKING OUTSIDE =====
 function initOutsideClickHandler() {
     document.addEventListener('click', function(e) {
         const hamburger = document.querySelector('.hamburger');
@@ -84,7 +96,9 @@ function initOutsideClickHandler() {
     });
 }
 
+// ===== SEARCH FUNCTIONALITY =====
 function initSearch() {
+    // Homepage search form
     const homeSearchForm = document.getElementById('searchForm');
     if (homeSearchForm) {
         homeSearchForm.addEventListener('submit', function(e) {
@@ -93,6 +107,7 @@ function initSearch() {
         });
     }
     
+    // Listings page search
     const listingsSearch = document.getElementById('listingsSearch');
     if (listingsSearch) {
         listingsSearch.addEventListener('input', debounce(performListingsSearch, 300));
@@ -104,6 +119,7 @@ function initSearch() {
         });
     }
     
+    // Filter change listeners
     ['priceFilter', 'propertyTypeFilter', 'bedroomsFilter'].forEach(filterId => {
         const filter = document.getElementById(filterId);
         if (filter) {
@@ -111,12 +127,14 @@ function initSearch() {
         }
     });
     
+    // Clear all filters
     const clearAllBtn = document.getElementById('clearAllFilters');
     if (clearAllBtn) {
         clearAllBtn.addEventListener('click', clearAllFilters);
     }
 }
 
+// ===== HOME PAGE SEARCH =====
 function handleHomeSearch() {
     const location = document.getElementById('location')?.value || '';
     const price = document.getElementById('price')?.value || '';
@@ -131,6 +149,7 @@ function handleHomeSearch() {
     window.location.href = `listings.html${queryString ? '?' + queryString : ''}`;
 }
 
+// ===== LISTINGS SEARCH =====
 function performListingsSearch() {
     const searchTerm = document.getElementById('listingsSearch')?.value.trim().toLowerCase() || '';
     const priceFilter = document.getElementById('priceFilter')?.value || '';
@@ -147,10 +166,12 @@ function performListingsSearch() {
         const propertyType = card.getAttribute('data-type') || '';
         const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
         
+        // Text search
         const textMatch = !searchTerm || 
                          title.includes(searchTerm) || 
                          location.includes(searchTerm);
         
+        // Price filter
         let priceMatch = true;
         if (priceFilter) {
             switch (priceFilter) {
@@ -161,10 +182,13 @@ function performListingsSearch() {
             }
         }
         
+        // Type filter
         const typeMatch = !typeFilter || propertyType === typeFilter.toLowerCase();
         
+        // Bedrooms filter
         const bedroomsMatch = !bedroomsFilter || bedrooms >= parseInt(bedroomsFilter);
         
+        // Show/hide based on all filters
         if (textMatch && priceMatch && typeMatch && bedroomsMatch) {
             card.style.display = 'block';
             card.style.animation = 'fadeIn 0.3s ease';
@@ -177,12 +201,14 @@ function performListingsSearch() {
     updateSearchResults(visibleCount);
 }
 
+// ===== UPDATE SEARCH RESULTS =====
 function updateSearchResults(count) {
     const listingCountElement = document.getElementById('listingCount');
     if (listingCountElement) {
         listingCountElement.textContent = count;
     }
     
+    // Show/hide no results message
     const noResultsMessage = document.getElementById('noResultsMessage');
     if (noResultsMessage) {
         const hasActiveFilters = document.querySelector('#listingsSearch:not([value=""])') ||
@@ -198,6 +224,7 @@ function updateSearchResults(count) {
     }
 }
 
+// ===== CLEAR ALL FILTERS =====
 function clearAllFilters() {
     document.getElementById('listingsSearch').value = '';
     document.getElementById('priceFilter').value = '';
@@ -207,6 +234,7 @@ function clearAllFilters() {
     document.getElementById('listingsSearch').focus();
 }
 
+// ===== FEATURED PROPERTIES =====
 function loadFeaturedProperties() {
     const featuredContainer = document.getElementById('featuredProperties');
     if (!featuredContainer) return;
@@ -235,6 +263,7 @@ function loadFeaturedProperties() {
     attachPropertyCardListeners();
 }
 
+// ===== ALL LISTINGS =====
 function loadAllListings() {
     const listingsContainer = document.getElementById('listingsContainer');
     if (!listingsContainer) return;
@@ -267,6 +296,7 @@ function loadAllListings() {
     
     listingsContainer.innerHTML = html;
     
+    // Update listing count
     const listingCount = document.getElementById('listingCount');
     if (listingCount) {
         listingCount.textContent = properties.length;
@@ -275,10 +305,12 @@ function loadAllListings() {
     attachPropertyCardListeners();
     applyURLFilters();
     createNoResultsMessage();
-    performListingsSearch();
+    performListingsSearch(); // Initial search to apply URL filters
 }
 
+// ===== ATTACH PROPERTY CARD LISTENERS =====
 function attachPropertyCardListeners() {
+    // View details buttons
     document.querySelectorAll('.view-details').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -287,6 +319,7 @@ function attachPropertyCardListeners() {
         });
     });
     
+    // Property card clicks
     document.querySelectorAll('.property-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (!e.target.classList.contains('btn') && !e.target.closest('.btn')) {
@@ -297,6 +330,7 @@ function attachPropertyCardListeners() {
     });
 }
 
+// ===== CREATE NO RESULTS MESSAGE =====
 function createNoResultsMessage() {
     const listingsGrid = document.querySelector('.listings-grid');
     if (!listingsGrid || document.getElementById('noResultsMessage')) return;
@@ -316,6 +350,7 @@ function createNoResultsMessage() {
     document.getElementById('clearSearchBtn').addEventListener('click', clearAllFilters);
 }
 
+// ===== APPLY URL FILTERS =====
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
     
@@ -330,6 +365,7 @@ function applyURLFilters() {
     });
 }
 
+// ===== PROPERTY DETAILS =====
 function loadPropertyDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const propertyId = parseInt(urlParams.get('id'));
@@ -349,6 +385,7 @@ function loadPropertyDetails() {
     updatePropertyPage(property);
 }
 
+// ===== SHOW PROPERTY NOT FOUND =====
 function showPropertyNotFound() {
     const propertyDetails = document.querySelector('.property-details');
     if (propertyDetails) {
@@ -362,9 +399,11 @@ function showPropertyNotFound() {
     }
 }
 
+// ===== UPDATE PROPERTY PAGE =====
 function updatePropertyPage(property) {
     document.title = `${property.title} - Real Estate`;
     
+    // Update gallery
     const gallery = document.querySelector('.property-gallery');
     if (gallery) {
         let galleryHtml = '';
@@ -375,6 +414,7 @@ function updatePropertyPage(property) {
         gallery.innerHTML = galleryHtml;
     }
     
+    // Update property header
     const propertyTitle = document.querySelector('.property-title');
     if (propertyTitle) {
         propertyTitle.innerHTML = `
@@ -383,11 +423,13 @@ function updatePropertyPage(property) {
         `;
     }
     
+    // Update property location
     const propertyLocation = document.querySelector('.property-location');
     if (propertyLocation) {
         propertyLocation.innerHTML = `<span>📍</span> ${property.location}`;
     }
     
+    // Update features
     const featuresContainer = document.querySelector('.property-features');
     if (featuresContainer) {
         let featuresHtml = '';
@@ -402,6 +444,7 @@ function updatePropertyPage(property) {
         featuresContainer.innerHTML = featuresHtml;
     }
     
+    // Update property content
     const propertyContent = document.querySelector('.property-content');
     if (propertyContent) {
         propertyContent.innerHTML = `
@@ -451,6 +494,7 @@ function updatePropertyPage(property) {
             </div>
         `;
         
+        // Re-initialize features and contact form
         const newFeaturesContainer = propertyContent.querySelector('.property-features');
         if (newFeaturesContainer) {
             let featuresHtml = '';
@@ -469,31 +513,37 @@ function updatePropertyPage(property) {
     initPropertyContactForm();
 }
 
+// ===== INITIALIZE CONTACT FORMS =====
 function initContactForms() {
+    // General contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm && !contactForm.hasAttribute('data-initialized')) {
         contactForm.setAttribute('data-initialized', 'true');
-        contactForm.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            await handleContactFormSubmission(this);
+            handleFormSubmission(this);
         });
     }
     
+    // Property contact form
     initPropertyContactForm();
 }
 
+// ===== INITIALIZE PROPERTY CONTACT FORM =====
 function initPropertyContactForm() {
     const propertyContactForm = document.getElementById('propertyContactForm');
     if (propertyContactForm && !propertyContactForm.hasAttribute('data-initialized')) {
         propertyContactForm.setAttribute('data-initialized', 'true');
-        propertyContactForm.addEventListener('submit', async function(e) {
+        propertyContactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            await handleContactFormSubmission(this);
+            handleFormSubmission(this);
         });
     }
 }
 
-async function handleContactFormSubmission(form) {
+// ===== HANDLE FORM SUBMISSION =====
+function handleFormSubmission(form) {
+    // Simple validation
     let isValid = true;
     const requiredFields = form.querySelectorAll('[required]');
     
@@ -511,52 +561,12 @@ async function handleContactFormSubmission(form) {
         return;
     }
     
-    const formData = {
-        name: form.querySelector('[placeholder="Your Name"]')?.value || form.querySelector('#fullName')?.value || '',
-        email: form.querySelector('[placeholder="Your Email"]')?.value || form.querySelector('#email')?.value || '',
-        phone: form.querySelector('[placeholder="Your Phone"]')?.value || form.querySelector('#phone')?.value || '',
-        subject: form.querySelector('#subject')?.value || 'General Inquiry',
-        message: form.querySelector('textarea')?.value || ''
-    };
-    
-    if (!formData.name || !formData.email || !formData.message) {
-        alert('Please fill in all required fields: name, email, and message.');
-        return;
-    }
-    
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-    
-    try {
-        const baseUrl = window.location.origin;
-        const apiUrl = `${baseUrl}/contact/`;
-        
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        if (response.ok) {
-            alert('Thank you for your message! An agent will contact you shortly.');
-            form.reset();
-        } else {
-            const errorData = await response.json();
-            throw new Error(errorData.detail || 'Failed to send message.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Sorry, there was an error sending your message. Please try again later.');
-    } finally {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    }
+    // Show success message
+    alert('Thank you for your message! An agent will contact you shortly.');
+    form.reset();
 }
 
+// ===== HELPER FUNCTIONS =====
 function extractPriceNumber(priceString) {
     const cleaned = priceString.replace(/[$,]/g, '');
     const matches = cleaned.match(/(\d+(?:\.\d+)?)/);
@@ -574,222 +584,3 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// script.js - Updated to use backendConnect.js
-// Make sure to add type="module" to your script tag in HTML
-
-import backendConnector from './backendConnect.js';
-
-// DOM Elements
-const contactForm = document.getElementById('contactForm');
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const formGroups = document.querySelectorAll('.form-group');
-
-// Navigation toggle
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-    }
-});
-
-// Real-time form validation
-if (contactForm) {
-    // Add input event listeners for real-time validation
-    const inputs = contactForm.querySelectorAll('input, textarea, select');
-    inputs.forEach(input => {
-        input.addEventListener('blur', () => {
-            validateField(input);
-        });
-        
-        input.addEventListener('input', () => {
-            clearError(input);
-        });
-    });
-
-    // Form submission handler
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Validate all fields
-        const isValid = validateForm();
-        
-        if (isValid) {
-            // Get form data
-            const formData = new FormData(contactForm);
-            const formattedData = backendConnector.formatFormData(formData);
-            
-            // Show loading state
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            try {
-                // Send to backend
-                const result = await backendConnector.submitContactForm(formattedData);
-                
-                if (result.success) {
-                    // Show success message
-                    showMessage('Message sent successfully! We will get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    // Show error message
-                    showMessage(result.error || 'Failed to send message. Please try again.', 'error');
-                    
-                    // If there are validation errors from backend, display them
-                    if (result.validationErrors) {
-                        displayBackendErrors(result.validationErrors);
-                    }
-                }
-            } catch (error) {
-                showMessage('An unexpected error occurred. Please try again.', 'error');
-                console.error('Form submission error:', error);
-            } finally {
-                // Reset button state
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }
-        }
-    });
-}
-
-// Field validation function
-function validateField(field) {
-    const value = field.value.trim();
-    const fieldName = field.name || field.id;
-    const errorElement = field.parentElement.querySelector('.error-message');
-    
-    // Clear previous error
-    clearError(field);
-    
-    // Validation rules
-    if (field.required && !value) {
-        showError(field, `${field.getAttribute('data-label') || fieldName} is required`);
-        return false;
-    }
-    
-    if (field.type === 'email' && value) {
-        if (!backendConnector.isValidEmail(value)) {
-            showError(field, 'Please enter a valid email address');
-            return false;
-        }
-    }
-    
-    if (field.name === 'phone' && value) {
-        if (!backendConnector.isValidPhone(value)) {
-            showError(field, 'Please enter a valid phone number');
-            return false;
-        }
-    }
-    
-    return true;
-}
-
-// Form validation function
-function validateForm() {
-    let isValid = true;
-    
-    // Validate each required field
-    const requiredFields = contactForm.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        if (!validateField(field)) {
-            isValid = false;
-        }
-    });
-    
-    return isValid;
-}
-
-// Error display functions
-function showError(field, message) {
-    const errorElement = field.parentElement.querySelector('.error-message');
-    field.classList.add('error');
-    errorElement.textContent = message;
-    errorElement.style.display = 'block';
-}
-
-function clearError(field) {
-    const errorElement = field.parentElement.querySelector('.error-message');
-    field.classList.remove('error');
-    errorElement.textContent = '';
-    errorElement.style.display = 'none';
-}
-
-function displayBackendErrors(errors) {
-    // Clear all errors first
-    document.querySelectorAll('.error-message').forEach(el => {
-        el.textContent = '';
-        el.style.display = 'none';
-    });
-    
-    document.querySelectorAll('input, textarea, select').forEach(field => {
-        field.classList.remove('error');
-    });
-    
-    // Display backend errors
-    if (Array.isArray(errors)) {
-        errors.forEach(error => {
-            const field = error.loc && error.loc[1];
-            if (field) {
-                const inputElement = document.querySelector(`[name="${field}"]`);
-                if (inputElement) {
-                    showError(inputElement, error.msg);
-                }
-            }
-        });
-    }
-}
-
-// Message display function
-function showMessage(message, type) {
-    // Remove any existing messages
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    // Create message element
-    const messageElement = document.createElement('div');
-    messageElement.className = `form-message ${type}`;
-    messageElement.textContent = message;
-    messageElement.style.cssText = `
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 5px;
-        text-align: center;
-        font-weight: bold;
-        background-color: ${type === 'success' ? '#d4edda' : '#f8d7da'};
-        color: ${type === 'success' ? '#155724' : '#721c24'};
-        border: 1px solid ${type === 'success' ? '#c3e6cb' : '#f5c6cb'};
-    `;
-    
-    // Insert message
-    contactForm.parentNode.insertBefore(messageElement, contactForm);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (messageElement.parentNode) {
-            messageElement.remove();
-        }
-    }, 5000);
-}
-
-// Check backend connection on page load (optional)
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log('Checking backend connection...');
-    
-    const healthCheck = await backendConnector.checkHealth();
-    if (healthCheck.success) {
-        console.log('✅ Backend connection successful:', healthCheck.data);
-    } else {
-        console.warn('⚠️ Backend connection issue:', healthCheck.error);
-    }
-});

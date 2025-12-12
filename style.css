@@ -236,12 +236,12 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: clamp(15px, 3vw, 20px);
+    align-items: end;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-
 }
 
 .form-group label {
@@ -258,14 +258,48 @@ a:hover {
     border-radius: 4px;
     font-size: clamp(0.9rem, 2vw, 1rem);
     color: var(--dark-grey);
-    min-height: 44px; /* Better touch target */
+    min-height: 44px;
 }
 
+/* Make the button container span all columns and center content */
 .search-btn {
-    align-self: flex-end;
-    width: 100%;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--light-grey);
 }
 
+/* Style the button itself */
+.search-btn .btn {
+    width: auto;
+    min-width: 200px;
+    padding: 12px 40px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* Alternative without the border top line */
+.search-btn.no-border {
+    border-top: none;
+    margin-top: 5px;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-btn {
+        grid-column: 1;
+    }
+    
+    .search-btn .btn {
+        width: 100%;
+        min-width: unset;
+    }
+}
 /* ===== FEATURED PROPERTIES ===== */
 .featured-properties {
     padding: clamp(40px, 8vw, 80px) 0;

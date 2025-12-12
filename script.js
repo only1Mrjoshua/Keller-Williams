@@ -1,3 +1,23 @@
+// Add this script to your page
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all read more buttons
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const description = this.closest('.property-description');
+            const isExpanded = description.classList.contains('expanded');
+            
+            if (isExpanded) {
+                description.classList.remove('expanded');
+                this.textContent = 'Read More';
+            } else {
+                description.classList.add('expanded');
+                this.textContent = 'Read Less';
+            }
+        });
+    });
+});
+
+
 // ===== MAIN APPLICATION =====
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile navigation

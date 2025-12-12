@@ -331,31 +331,19 @@ a:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-    animation: fadeIn 0.5s ease;
-}
-
-.property-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
 }
 
 .property-img {
     width: 100%;
-    height: clamp(180px, 30vw, 250px);
+    height: 180px;
     background-color: var(--light-grey);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     flex-shrink: 0;
 }
 
 .property-info {
-    padding: clamp(15px, 3vw, 20px);
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -363,31 +351,33 @@ a:hover {
 
 .property-price {
     color: var(--primary-red);
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .property-location {
     color: var(--medium-grey);
-    margin-bottom: clamp(10px, 2vw, 15px);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
 }
 
+/* This makes all paragraphs exactly 3 lines */
 .property-info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Show only 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    margin-bottom: 15px;
     flex-grow: 1;
-    margin-bottom: 20px;
-    min-height: 60px;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    min-height: 66px; /* 3 lines × 1.4 line-height × 1rem font */
 }
 
+/* Button stays at bottom */
 .property-info .btn.view-details {
     margin-top: auto;
-    align-self: stretch;
-    margin-top: 15px;
     width: 100%;
 }
 

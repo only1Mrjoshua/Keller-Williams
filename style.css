@@ -241,6 +241,7 @@ a:hover {
 .form-group {
     display: flex;
     flex-direction: column;
+
 }
 
 .form-group label {

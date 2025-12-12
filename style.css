@@ -230,6 +230,9 @@ a:hover {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%
 }
 
 .property-card:hover {
@@ -251,6 +254,7 @@ a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .property-img span {
@@ -259,6 +263,9 @@ a:hover {
 
 .property-info {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .property-price {
@@ -274,6 +281,19 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.property-info p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    min-height: 60px; 
+}
+
+.property-info .btn.view-details {
+    margin-top: auto; 
+    align-self: flex-start; 
+    width: 100%; 
+    margin-top: 15px;
 }
 
 /* Listings Page */
@@ -292,6 +312,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
+    align-items: stretch; 
 }
 
 /* Property Details Page */

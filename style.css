@@ -1354,12 +1354,6 @@ html {
     display: none;
 }
 
-.form-group input:invalid,
-.form-group select:invalid,
-.form-group textarea:invalid {
-    border-color: var(--primary-red);
-}
-
 .form-group input:focus:invalid,
 .form-group select:focus:invalid,
 .form-group textarea:focus:invalid {
@@ -1421,14 +1415,6 @@ html {
 
 .property-badge.featured {
     background-color: #3498db; /* Blue for featured */
-}
-
-/* Add to your existing style.css file */
-input.invalid,
-textarea.invalid,
-select.invalid {
-  border-color: #ef4444 !important;
-  border-width: 2px;
 }
 
 /* Style for error messages under form fields */

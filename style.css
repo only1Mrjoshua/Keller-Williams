@@ -457,6 +457,25 @@ a:hover {
     grid-column: span 2;
 }
 
+/* Mobile-specific gallery styles */
+@media (max-width: 768px) {
+    .property-gallery {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-auto-rows: auto; /* Equal height rows */
+        gap: 15px; /* Slightly larger gap for better mobile spacing */
+    }
+    
+    .gallery-main {
+        grid-column: 1; /* Remove span 2 on mobile */
+    }
+    
+    .gallery-main, .gallery-item {
+        width: 100%; /* Full width */
+        min-height: 250px; /* Consistent height for all images */
+        aspect-ratio: 4/3; /* Optional: maintain consistent aspect ratio */
+    }
+}
+
 .property-content {
     display: grid;
     grid-template-columns: 1fr;

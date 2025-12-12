@@ -1,23 +1,23 @@
 const properties = [
     {
-        id: 1,
-        title: "Modern Downtown Apartment",
-        price: "$450,000",
-        location: "123 Main St, Downtown",
-        shortDescription: "Stylish 2-bedroom apartment in the heart of downtown with city views.",
-        fullDescription: "This stunning modern apartment features an open-concept living area, floor-to-ceiling windows with panoramic city views, high-end finishes, and a spacious balcony. The gourmet kitchen includes quartz countertops, stainless steel appliances, and custom cabinetry. Master suite has a walk-in closet and en-suite bathroom with heated floors. Building amenities include 24/7 concierge, fitness center, and rooftop terrace.",
-        image: "property1.jpg",
-        gallery: ["property1.jpg", "property1-gallery1.jpg", "property1-gallery2.jpg", "property1-gallery3.jpg", "property1-gallery4.jpg"],
-        bedrooms: 2,
-        bathrooms: 2,
-        sqft: 1200,
-        yearBuilt: 2019,
-        propertyType: "Apartment",
-        features: ["City View", "Balcony", "Concierge", "Gym", "Underground Parking"],
-        agent: {
-            name: "Sarah Johnson",
-            phone: "(555) 123-4567",
-            email: "sarah@realestate.com"
+        "id": 1,
+        "title": "New Construction Glendale Home",
+        "price": "$1,595,000",
+        "location": "4208 New York Ave, Glendale, CA 91214",
+        "shortDescription": "Beautifully crafted new construction home offering the perfect blend of modern style and functional living.",
+        "fullDescription": "Welcome to 4208 New York Avenue, a beautifully crafted new construction home offering the perfect blend of modern style and functional living. With 2,022 square feet of thoughtfully designed space, this 4-bedroom, 3.5-bathroom residence showcases meticulous attention to detail and high-end finishes throughout.\n\nStep inside to an open-concept floor plan filled with natural light. The chef's kitchen is the centerpiece of the home, featuring a spacious island, walk-in pantry, and seamless flow into the dining and living areas, perfect for entertaining or family gatherings. Large sliding glass doors open to a quaint, private backyard, extending your living space outdoors.\n\nThe home includes two luxurious en-suite bedrooms, ideal for guests or multi-generational living, and a convenient half bath for visitors. Each bedroom is generously sized, with ample closet space and modern finishes that create a sense of retreat and relaxation.\n\nA two-car attached garage provides convenience and extra storage, while the home's location in a top-rated, Blue Ribbon school district makes it an exceptional choice for families.",
+        "image": "images/property1.jpg",
+        "gallery": ["images/property1.jpg", "images/property1-gallery1.jpg", "images/property1-gallery2.jpg", "images/property1-gallery3.jpg", "images/property1-gallery4.jpg"],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 2022,
+        "yearBuilt": 2025,
+        "propertyType": "Single Family Residence",
+        "features": ["Chef's Kitchen", "Walk-In Pantry", "Open Floor Plan", "Private Backyard", "Attached Garage", "Blue Ribbon Schools"],
+        "agent": {
+            "name": "Bailey Hall",
+            "phone": "8186403478",
+            "email": "sarah@realestate.com"
         }
     },
     {
@@ -85,23 +85,23 @@ const properties = [
     },
     {
         id: 5,
-        title: "Modern Townhouse",
-        price: "$625,000",
-        location: "202 Elm St, Midtown",
-        shortDescription: "Contemporary 3-bedroom townhouse with rooftop terrace.",
-        fullDescription: "This modern townhouse offers three levels of sophisticated living space in the heart of Midtown. The main floor features an open-concept living and dining area that flows into a chef's kitchen with premium appliances. Upper level includes three bedrooms and two bathrooms, with the master suite featuring a walk-in closet and luxurious en-suite. The rooftop terrace is perfect for entertaining with stunning city views. Private garage parking and low maintenance make this an ideal urban residence.",
+        title: "Modern Farmhouse",
+        price: "$1,675,000",
+        location: "3500 Fairchild St, Glendale, CA 91214",
+        shortDescription: "A fully renovated 4-bedroom, 3-bath Single Family Residence, Updated with all new systems (roof, HVAC, electric, copper plumbing).",
+        fullDescription: "This fully remodeled single-family home offers two levels of sophisticated living space situated on a quiet cul-de-sac in Glendale. The main floor features an open-concept living and dining area accented by wooden beams that flows into a chef's kitchen equipped with a 48-inch gas range, massive island, and butler's pantry. The upper level includes three bedrooms and two bathrooms, with the primary suite featuring mountain views, a reading nook, and a luxurious resort-style bath. A main-floor guest suite, detached two-car garage with workshop, and expansive fenced yard with a custom playhouse make this an ideal private retreat.",
         image: "images/property5.jpg",
         gallery: ["images/property5.jpg", "images/property5-gallery1.jpg", "images/property5-gallery2.jpg", "images/property5-gallery3.jpg", "images/property5-gallery4.jpg"],
-        bedrooms: 3,
-        bathrooms: 2.5,
-        sqft: 1800,
-        yearBuilt: 2018,
-        propertyType: "Townhouse",
+        bedrooms: 4,
+        bathrooms: 3,
+        sqft: 1757,
+        yearBuilt: 2000,
+        propertyType: "Farmhouse",
         features: ["Rooftop Terrace", "Garage", "Modern Finishes", "Walkable", "Low Maintenance"],
         agent: {
-            name: "David Wilson",
-            phone: "(555) 567-8901",
-            email: "david@realestate.com"
+            name: "Emil Akopian",
+            phone: "(818) 278 0024",
+            email: "Emil.akopian@yahoo.com"
         }
     },
     {

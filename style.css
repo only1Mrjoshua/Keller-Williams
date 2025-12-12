@@ -1403,3 +1403,24 @@ html {
 .property-badge.featured {
     background-color: #3498db; /* Blue for featured */
 }
+
+/* Add to your existing style.css file */
+input.invalid,
+textarea.invalid,
+select.invalid {
+  border-color: #ef4444 !important;
+  border-width: 2px;
+}
+
+/* Style for error messages under form fields */
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  min-height: 20px;
+}
+
+/* Form validation feedback */
+.form-group:focus-within label {
+  color: #3b82f6;
+}

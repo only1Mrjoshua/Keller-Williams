@@ -139,47 +139,47 @@ document.addEventListener("DOMContentLoaded", function () {
       message: document.getElementById("message").value.trim(),
     };
 
+  try {
+  // Determine base URL (Localhost → local, Production → Render)
+  const BASE_URL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8000"
+      : "https://keller-williams-backend.onrender.com";
+
+  // Make the fetch request
+  const response = await fetch(`${BASE_URL}/contact/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    console.log("Success:", data);
+    toast.show("Message sent successfully!", "success");
+    freshForm.reset();
+  } else {
+    // Try to get error details
+    let errorMessage = "Failed to send message";
     try {
-      // Send data to your FastAPI backend
-      // IMPORTANT: Update this URL to match your FastAPI server
-      // Determine base URL
-      const BASE_URL =
-        window.location.hostname === "localhost"
-          ? "http://localhost:8000"
-          : "https://keller-williams-backend.onrender.com";
-
-      // Make the fetch request
-      const response = await fetch(`${BASE_URL}/contact/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Success:", data);
-        toast.show("Message sent successfully!", "success");
-        freshForm.reset();
-      } else {
-        // Try to get error details from response
-        let errorMessage = "Failed to send message";
-        try {
-          const errorData = await response.json();
-          errorMessage = errorData.detail || errorMessage;
-        } catch (e) {
-          errorMessage = `Server responded with status: ${response.status}`;
-        }
-        throw new Error(errorMessage);
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      toast.show(`Failed to send message: ${error.message}`, "error");
-    } finally {
-      // Re-enable submit button
-      submitButton.textContent = originalButtonText;
-      submitButton.disabled = false;
+      const errorData = await response.json();
+      errorMessage = errorData.detail || errorMessage;
+    } catch (e) {
+      errorMessage = `Server responded with status: ${response.status}`;
     }
+    throw new Error(errorMessage);
+  }
+
+} catch (error) {
+  console.error("Error sending message:", error);
+  toast.show(`Failed to send message: ${error.message}`, "error");
+
+} finally {
+  submitButton.textContent = originalButtonText;
+  submitButton.disabled = false;
+}
+
   });
 });

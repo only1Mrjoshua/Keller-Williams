@@ -180,98 +180,81 @@ function initPropertyContactForm() {
     }
 
     try {
-      // Send to the agent contact endpoint (form data)
-      // Determine base URL
-      const BASE_URL =
-        window.location.hostname === "localhost"
-          ? "http://localhost:8000"
-          : "https://keller-williams-backend.onrender.com";
+  const BASE_URL =
+    window.location.hostname === "localhost"
+      ? "http://localhost:8000"
+      : "https://keller-williams-backend.onrender.com";
 
-      // Make the fetch request
-      const response = await fetch(`${BASE_URL}/agent/contact/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(agentFormData).toString(),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log("Success:", data);
-        toast.show(
-          "Message sent successfully! We'll get back to you soon.",
-          "success"
-        );
-
-        // Reset the form
-        freshForm.reset();
-
-        // Also optionally send to the regular contact endpoint
-        try {
-          const regularContactData = {
-            name: agentFormData.name,
-            email: agentFormData.email,
-            phone: agentFormData.phone,
-            subject: propertyTitle,
-            message: agentFormData.message,
-          };
-
-          await fetch("http://localhost:8000/contact/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(regularContactData),
-          });
-        } catch (secondaryError) {
-          console.log(
-            "Secondary contact endpoint failed, but primary succeeded:",
-            secondaryError
-          );
-        }
-      } else {
-        // Try JSON endpoint if form endpoint fails
-        console.log("Form endpoint failed, trying JSON endpoint...");
-
-        const jsonResponse = await fetch(
-          "http://localhost:8000/agent/contact/json",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(agentFormData),
-          }
-        );
-
-        if (jsonResponse.ok) {
-          const data = await jsonResponse.json();
-          console.log("Success via JSON:", data);
-          toast.show("Message sent successfully!", "success");
-          freshForm.reset();
-        } else {
-          // Try to get error details from response
-          let errorMessage = "Failed to send message";
-          try {
-            const errorData = await jsonResponse.json();
-            errorMessage = errorData.detail || errorMessage;
-          } catch (e) {
-            errorMessage = `Server responded with status: ${jsonResponse.status}`;
-          }
-          throw new Error(errorMessage);
-        }
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      toast.show(`Failed to send message: ${error.message}`, "error");
-    } finally {
-      // Re-enable submit button
-      submitButton.textContent = originalButtonText;
-      submitButton.disabled = false;
-    }
+  // Primary request
+  const response = await fetch(`${BASE_URL}/agent/contact/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams(agentFormData).toString(),
   });
 
+  if (response.ok) {
+    const data = await response.json();
+    console.log("Success:", data);
+    toast.show("Message sent successfully!", "success");
+    freshForm.reset();
+
+    // Secondary request (also dynamic)
+    try {
+      const regularContactData = {
+        name: agentFormData.name,
+        email: agentFormData.email,
+        phone: agentFormData.phone,
+        subject: propertyTitle,
+        message: agentFormData.message,
+      };
+
+      await fetch(`${BASE_URL}/contact/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(regularContactData),
+      });
+    } catch (secondaryError) {
+      console.log("Secondary contact endpoint failed:", secondaryError);
+    }
+  } else {
+    console.log("Form endpoint failed, trying JSON endpoint...");
+
+    const jsonResponse = await fetch(`${BASE_URL}/agent/contact/json`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(agentFormData),
+    });
+
+    if (jsonResponse.ok) {
+      const data = await jsonResponse.json();
+      console.log("Success via JSON:", data);
+      toast.show("Message sent successfully!", "success");
+      freshForm.reset();
+    } else {
+      let errorMessage = "Failed to send message";
+      try {
+        const errorData = await jsonResponse.json();
+        errorMessage = errorData.detail || errorMessage;
+      } catch (e) {
+        errorMessage = `Server responded with status: ${jsonResponse.status}`;
+      }
+      throw new Error(errorMessage);
+    }
+  }
+} catch (error) {
+  console.error("Error sending message:", error);
+  toast.show(`Failed: ${error.message}`, "error");
+} finally {
+  submitButton.textContent = originalButtonText;
+  submitButton.disabled = false;
+}
+    });
   // Add input validation styles
   const inputs = freshForm.querySelectorAll(
     "input[required], textarea[required]"

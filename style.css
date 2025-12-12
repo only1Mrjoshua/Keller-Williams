@@ -1370,3 +1370,36 @@ html {
 .form-error-message p {
     margin: 5px 0;
 }
+
+/* Property Badge Styles */
+.property-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.property-badge.under-contract {
+    background-color: red; /* Red color for under contract */
+}
+
+.property-badge.sold {
+    background-color: var(--primary-red);
+}
+
+.property-badge.new {
+    background-color: #2ecc71; /* Green for new listings */
+}
+
+.property-badge.featured {
+    background-color: #3498db; /* Blue for featured */
+}

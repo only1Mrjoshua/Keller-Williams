@@ -56,6 +56,7 @@ const properties = [
         yearBuilt: 2000,
         propertyType: "Farmhouse",
         features: ["Rooftop Terrace", "Garage", "Modern Finishes", "Walkable", "Low Maintenance"],
+        status: "under-contract",
         agent: {
             name: "Emil Akopian",
             phone: "(818) 278 0024",

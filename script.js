@@ -1,90 +1,231 @@
-// DOM ready function
+// ===== MAIN APPLICATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile navigation toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    // Initialize mobile navigation
+    initMobileNavigation();
     
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
+    // Initialize search functionality
+    initSearch();
     
-    // Close mobile menu when clicking a link
-    const mobileLinks = document.querySelectorAll('.nav-links a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-        });
-    });
-    
-    // Load property details on property-details.html
+    // Initialize property functionality based on page
     if (window.location.pathname.includes('property-details.html')) {
         loadPropertyDetails();
     }
     
-    // Initialize featured properties on homepage
     if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
         loadFeaturedProperties();
     }
     
-    // Initialize listings page
     if (window.location.pathname.includes('listings.html')) {
         loadAllListings();
     }
     
-    // Handle homepage search form submission
+    // Initialize contact forms
+    initContactForms();
+    
+    // Close mobile menu when clicking outside
+    initOutsideClickHandler();
+});
+
+// ===== MOBILE NAVIGATION =====
+function initMobileNavigation() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (!hamburger || !navLinks) return;
+    
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking links
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+// ===== CLOSE MENU WHEN CLICKING OUTSIDE =====
+function initOutsideClickHandler() {
+    document.addEventListener('click', function(e) {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (!navLinks || !hamburger) return;
+        
+        const isClickInsideMenu = navLinks.contains(e.target) || hamburger.contains(e.target);
+        
+        if (!isClickInsideMenu && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// ===== SEARCH FUNCTIONALITY =====
+function initSearch() {
+    // Homepage search form
     const homeSearchForm = document.getElementById('searchForm');
     if (homeSearchForm) {
         homeSearchForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Get search values
-            const location = document.getElementById('location').value;
-            const price = document.getElementById('price').value;
-            const type = document.getElementById('type').value;
-            
-            // Build query parameters
-            let queryParams = [];
-            if (location) queryParams.push(`location=${location}`);
-            if (price) queryParams.push(`price=${price}`);
-            if (type) queryParams.push(`type=${type}`);
-            
-            // Redirect to listings page with filters
-            const queryString = queryParams.length ? `?${queryParams.join('&')}` : '';
-            window.location.href = `listings.html${queryString}`;
+            handleHomeSearch();
         });
     }
     
-    // Handle contact form submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm && !contactForm.hasAttribute('data-initialized')) {
-        contactForm.setAttribute('data-initialized', 'true');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! An agent will contact you shortly.');
-            contactForm.reset();
+    // Listings page search
+    const listingsSearch = document.getElementById('listingsSearch');
+    if (listingsSearch) {
+        listingsSearch.addEventListener('input', debounce(performListingsSearch, 300));
+        listingsSearch.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                performListingsSearch();
+            }
         });
     }
-});
+    
+    // Filter change listeners
+    ['priceFilter', 'propertyTypeFilter', 'bedroomsFilter'].forEach(filterId => {
+        const filter = document.getElementById(filterId);
+        if (filter) {
+            filter.addEventListener('change', performListingsSearch);
+        }
+    });
+    
+    // Clear all filters
+    const clearAllBtn = document.getElementById('clearAllFilters');
+    if (clearAllBtn) {
+        clearAllBtn.addEventListener('click', clearAllFilters);
+    }
+}
 
-// Load featured properties on homepage
+// ===== HOME PAGE SEARCH =====
+function handleHomeSearch() {
+    const location = document.getElementById('location')?.value || '';
+    const price = document.getElementById('price')?.value || '';
+    const type = document.getElementById('type')?.value || '';
+    
+    const queryParams = new URLSearchParams();
+    if (location) queryParams.set('location', location);
+    if (price) queryParams.set('price', price);
+    if (type) queryParams.set('type', type);
+    
+    const queryString = queryParams.toString();
+    window.location.href = `listings.html${queryString ? '?' + queryString : ''}`;
+}
+
+// ===== LISTINGS SEARCH =====
+function performListingsSearch() {
+    const searchTerm = document.getElementById('listingsSearch')?.value.trim().toLowerCase() || '';
+    const priceFilter = document.getElementById('priceFilter')?.value || '';
+    const typeFilter = document.getElementById('propertyTypeFilter')?.value || '';
+    const bedroomsFilter = document.getElementById('bedroomsFilter')?.value || '';
+    
+    const propertyCards = document.querySelectorAll('.property-card');
+    let visibleCount = 0;
+    
+    propertyCards.forEach(card => {
+        const title = card.getAttribute('data-title') || '';
+        const location = card.getAttribute('data-location') || '';
+        const priceNumber = parseFloat(card.getAttribute('data-price') || 0);
+        const propertyType = card.getAttribute('data-type') || '';
+        const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
+        
+        // Text search
+        const textMatch = !searchTerm || 
+                         title.includes(searchTerm) || 
+                         location.includes(searchTerm);
+        
+        // Price filter
+        let priceMatch = true;
+        if (priceFilter) {
+            switch (priceFilter) {
+                case 'under-500k': priceMatch = priceNumber <= 500000; break;
+                case '500k-1m': priceMatch = priceNumber >= 500000 && priceNumber <= 1000000; break;
+                case '1m-2m': priceMatch = priceNumber >= 1000000 && priceNumber <= 2000000; break;
+                case 'over-2m': priceMatch = priceNumber > 2000000; break;
+            }
+        }
+        
+        // Type filter
+        const typeMatch = !typeFilter || propertyType === typeFilter.toLowerCase();
+        
+        // Bedrooms filter
+        const bedroomsMatch = !bedroomsFilter || bedrooms >= parseInt(bedroomsFilter);
+        
+        // Show/hide based on all filters
+        if (textMatch && priceMatch && typeMatch && bedroomsMatch) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeIn 0.3s ease';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    updateSearchResults(visibleCount);
+}
+
+// ===== UPDATE SEARCH RESULTS =====
+function updateSearchResults(count) {
+    const listingCountElement = document.getElementById('listingCount');
+    if (listingCountElement) {
+        listingCountElement.textContent = count;
+    }
+    
+    // Show/hide no results message
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    if (noResultsMessage) {
+        const hasActiveFilters = document.querySelector('#listingsSearch:not([value=""])') ||
+                               document.querySelector('#priceFilter:not([value=""])') ||
+                               document.querySelector('#propertyTypeFilter:not([value=""])') ||
+                               document.querySelector('#bedroomsFilter:not([value=""])');
+        
+        if (count === 0 && hasActiveFilters) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+    }
+}
+
+// ===== CLEAR ALL FILTERS =====
+function clearAllFilters() {
+    document.getElementById('listingsSearch').value = '';
+    document.getElementById('priceFilter').value = '';
+    document.getElementById('propertyTypeFilter').value = '';
+    document.getElementById('bedroomsFilter').value = '';
+    performListingsSearch();
+    document.getElementById('listingsSearch').focus();
+}
+
+// ===== FEATURED PROPERTIES =====
 function loadFeaturedProperties() {
     const featuredContainer = document.getElementById('featuredProperties');
     if (!featuredContainer) return;
     
-    // Get first 3 properties as featured
     const featured = properties.slice(0, 3);
-    
     let html = '';
+    
     featured.forEach(property => {
         html += `
             <div class="property-card" data-id="${property.id}">
-                <!-- CHANGE: Use actual image instead of placeholder -->
-                <div class="property-img" style="background-image: url('${property.image}');">
-                    <!-- Remove the span or keep it as fallback -->
-                    <!-- <span style="display: none;">Property Image ${property.id}</span> -->
-                </div>
+                <div class="property-img" style="background-image: url('${property.image}');"></div>
                 <div class="property-info">
                     <div class="property-price">${property.price}</div>
                     <h3>${property.title}</h3>
@@ -99,19 +240,16 @@ function loadFeaturedProperties() {
     });
     
     featuredContainer.innerHTML = html;
-    
-    // Attach event listeners
-    attachListingEventListeners();
+    attachPropertyCardListeners();
 }
 
-// Load all listings on listings page with enhanced data attributes
+// ===== ALL LISTINGS =====
 function loadAllListings() {
     const listingsContainer = document.getElementById('listingsContainer');
     if (!listingsContainer) return;
     
     let html = '';
     properties.forEach(property => {
-        // Convert price to numeric value for filtering
         const priceNumber = extractPriceNumber(property.price);
         
         html += `
@@ -122,11 +260,7 @@ function loadAllListings() {
                  data-price="${priceNumber}"
                  data-location="${property.location.toLowerCase()}"
                  data-title="${property.title.toLowerCase()}">
-                <!-- CHANGE: Use actual image instead of placeholder -->
-                <div class="property-img" style="background-image: url('${property.image}');">
-                    <!-- Remove the span or keep it as fallback -->
-                    <!-- <span style="display: none;">Property Image ${property.id}</span> -->
-                </div>
+                <div class="property-img" style="background-image: url('${property.image}');"></div>
                 <div class="property-info">
                     <div class="property-price">${property.price}</div>
                     <h3>${property.title}</h3>
@@ -148,19 +282,15 @@ function loadAllListings() {
         listingCount.textContent = properties.length;
     }
     
-    // Attach event listeners
-    attachListingEventListeners();
-    
-    // Check for URL parameters and apply filters
+    attachPropertyCardListeners();
     applyURLFilters();
-    
-    // Initialize search functionality
-    initializeSearch();
+    createNoResultsMessage();
+    performListingsSearch(); // Initial search to apply URL filters
 }
 
-// Attach event listeners to listings
-function attachListingEventListeners() {
-    // Handle "View Details" button clicks
+// ===== ATTACH PROPERTY CARD LISTENERS =====
+function attachPropertyCardListeners() {
+    // View details buttons
     document.querySelectorAll('.view-details').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -169,7 +299,7 @@ function attachListingEventListeners() {
         });
     });
     
-    // Handle property card clicks
+    // Property card clicks
     document.querySelectorAll('.property-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (!e.target.classList.contains('btn') && !e.target.closest('.btn')) {
@@ -180,282 +310,121 @@ function attachListingEventListeners() {
     });
 }
 
-// Initialize search functionality on listings page
-function initializeSearch() {
-    const searchInput = document.getElementById('listingsSearch');
-    const priceFilter = document.getElementById('priceFilter');
-    const typeFilter = document.getElementById('propertyTypeFilter');
-    const bedroomsFilter = document.getElementById('bedroomsFilter');
-    const clearAllBtn = document.getElementById('clearAllFilters');
+// ===== CREATE NO RESULTS MESSAGE =====
+function createNoResultsMessage() {
+    const listingsGrid = document.querySelector('.listings-grid');
+    if (!listingsGrid || document.getElementById('noResultsMessage')) return;
     
-    if (!searchInput) return; // Not on listings page
+    const messageDiv = document.createElement('div');
+    messageDiv.id = 'noResultsMessage';
+    messageDiv.className = 'no-results-message';
+    messageDiv.style.display = 'none';
+    messageDiv.innerHTML = `
+        <h3>No Properties Match Your Criteria</h3>
+        <p>Try adjusting your search filters or browse all properties.</p>
+        <button id="clearSearchBtn" class="btn">Clear All Filters</button>
+    `;
     
-    // Create no results message if it doesn't exist
-    createNoResultsMessage();
+    listingsGrid.parentNode.insertBefore(messageDiv, listingsGrid.nextSibling);
     
-    // Function to perform search with all filters
-    function performSearch() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-        const priceValue = priceFilter ? priceFilter.value : '';
-        const typeValue = typeFilter ? typeFilter.value : '';
-        const bedroomsValue = bedroomsFilter ? bedroomsFilter.value : '';
-        
-        const listingCards = document.querySelectorAll('.property-card');
-        let visibleCount = 0;
-        
-        listingCards.forEach(card => {
-            // Get property data from data attributes
-            const title = card.getAttribute('data-title') || '';
-            const location = card.getAttribute('data-location') || '';
-            const priceNumber = parseFloat(card.getAttribute('data-price') || 0);
-            const propertyType = card.getAttribute('data-type') || '';
-            const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
-            
-            // Check text search (search in title or location)
-            let textMatch = true;
-            if (searchTerm !== '') {
-                textMatch = title.includes(searchTerm) || location.includes(searchTerm);
-            }
-            
-            // Check price filter
-            let priceMatch = true;
-            if (priceValue) {
-                switch (priceValue) {
-                    case 'under-500k':
-                        priceMatch = priceNumber <= 500000;
-                        break;
-                    case '500k-1m':
-                        priceMatch = priceNumber >= 500000 && priceNumber <= 1000000;
-                        break;
-                    case '1m-2m':
-                        priceMatch = priceNumber >= 1000000 && priceNumber <= 2000000;
-                        break;
-                    case 'over-2m':
-                        priceMatch = priceNumber > 2000000;
-                        break;
-                }
-            }
-            
-            // Check type filter
-            const typeMatch = typeValue === '' || propertyType === typeValue.toLowerCase();
-            
-            // Check bedrooms filter
-            const bedroomsMatch = bedroomsValue === '' || bedrooms >= parseInt(bedroomsValue);
-            
-            // Show/hide card based on all filters
-            if (textMatch && priceMatch && typeMatch && bedroomsMatch) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.3s ease';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
-        // Update results
-        updateSearchResults(visibleCount);
-    }
-    
-    // Update search results display
-    function updateSearchResults(count) {
-        // Update count
-        const listingCountElement = document.getElementById('listingCount');
-        if (listingCountElement) {
-            listingCountElement.textContent = count;
-        }
-        
-        // Show/hide no results message
-        const messageDiv = document.getElementById('noResultsMessage');
-        const searchInput = document.getElementById('listingsSearch');
-        const priceFilter = document.getElementById('priceFilter');
-        const typeFilter = document.getElementById('propertyTypeFilter');
-        const bedroomsFilter = document.getElementById('bedroomsFilter');
-        
-        const hasFilters = searchInput.value || 
-                          (priceFilter && priceFilter.value !== '') || 
-                          (typeFilter && typeFilter.value !== '') || 
-                          (bedroomsFilter && bedroomsFilter.value !== '');
-        
-        if (count === 0 && hasFilters) {
-            messageDiv.style.display = 'block';
-        } else {
-            messageDiv.style.display = 'none';
-        }
-    }
-    
-    // Create no results message
-    function createNoResultsMessage() {
-        const listingsContainer = document.querySelector('.listings-grid');
-        if (listingsContainer && !document.getElementById('noResultsMessage')) {
-            const messageDiv = document.createElement('div');
-            messageDiv.id = 'noResultsMessage';
-            messageDiv.className = 'no-results-message';
-            messageDiv.style.display = 'none';
-            messageDiv.innerHTML = `
-                <div style="text-align: center; padding: 60px 20px;">
-                    <i class="fas fa-search" style="font-size: 3rem; color: var(--medium-grey); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--dark-grey); margin-bottom: 10px;">No Properties Match Your Criteria</h3>
-                    <p style="color: var(--medium-grey); max-width: 500px; margin: 0 auto 30px;">
-                        Try adjusting your search filters or browse all properties.
-                    </p>
-                    <button id="clearSearchBtn" class="btn">Clear All Filters</button>
-                </div>
-            `;
-            listingsContainer.parentNode.insertBefore(messageDiv, listingsContainer.nextSibling);
-            
-            // Add event listener to clear button
-            document.getElementById('clearSearchBtn').addEventListener('click', clearAllFilters);
-        }
-    }
-    
-    // Clear all filters
-    function clearAllFilters() {
-        if (searchInput) searchInput.value = '';
-        if (priceFilter) priceFilter.value = '';
-        if (typeFilter) typeFilter.value = '';
-        if (bedroomsFilter) bedroomsFilter.value = '';
-        performSearch();
-        if (searchInput) searchInput.focus();
-    }
-    
-    // Event listeners
-    if (searchInput) {
-        searchInput.addEventListener('input', performSearch);
-        searchInput.addEventListener('keyup', function(e) {
-            if (e.key === 'Escape') {
-                this.value = '';
-                performSearch();
-            }
-        });
-    }
-    
-    if (priceFilter) {
-        priceFilter.addEventListener('change', performSearch);
-    }
-    
-    if (typeFilter) {
-        typeFilter.addEventListener('change', performSearch);
-    }
-    
-    if (bedroomsFilter) {
-        bedroomsFilter.addEventListener('change', performSearch);
-    }
-    
-    if (clearAllBtn) {
-        clearAllBtn.addEventListener('click', clearAllFilters);
-    }
-    
-    // Initial search to show all listings
-    performSearch();
+    document.getElementById('clearSearchBtn').addEventListener('click', clearAllFilters);
 }
 
-// Apply URL filters from homepage
+// ===== APPLY URL FILTERS =====
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
     
-    // Get filters from URL
-    const locationParam = urlParams.get('location');
-    const priceParam = urlParams.get('price');
-    const typeParam = urlParams.get('type');
-    
-    // Apply filters if they exist
-    if (locationParam || priceParam || typeParam) {
-        // Set search input if we have text search
-        const searchInput = document.getElementById('listingsSearch');
-        if (searchInput && locationParam) {
-            // Convert location parameter to searchable text
-            const locationText = locationParam.charAt(0).toUpperCase() + locationParam.slice(1);
-            searchInput.value = locationText;
-        }
-        
-        // Set price filter
-        if (priceParam) {
-            const priceFilter = document.getElementById('priceFilter');
-            if (priceFilter) {
-                priceFilter.value = priceParam;
+    ['location', 'price', 'type'].forEach(param => {
+        const value = urlParams.get(param);
+        if (value) {
+            const element = document.getElementById(param === 'type' ? 'propertyTypeFilter' : param === 'price' ? 'priceFilter' : 'listingsSearch');
+            if (element) {
+                element.value = value;
             }
         }
-        
-        // Set type filter
-        if (typeParam) {
-            const typeFilter = document.getElementById('propertyTypeFilter');
-            if (typeFilter) {
-                typeFilter.value = typeParam;
-            }
-        }
-    }
+    });
 }
 
-// Helper function to extract price number from price string
-function extractPriceNumber(priceString) {
-    // Remove currency symbols, commas, and spaces
-    const cleaned = priceString.replace(/[$,]/g, '');
-    // Extract the first number (handles ranges like "$500,000 - $600,000")
-    const matches = cleaned.match(/(\d+(?:\.\d+)?)/);
-    return matches ? parseFloat(matches[1]) : 0;
-}
-
-// Load property details on property details page
+// ===== PROPERTY DETAILS =====
 function loadPropertyDetails() {
-    // Get property ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const propertyId = parseInt(urlParams.get('id'));
     
     if (!propertyId || isNaN(propertyId)) {
-        document.querySelector('.property-details').innerHTML = `
-            <div class="container">
-                <h2>Property Not Found</h2>
-                <p>Sorry, the property you're looking for doesn't exist.</p>
-                <a href="listings.html" class="btn">Back to Listings</a>
-            </div>
-        `;
+        showPropertyNotFound();
         return;
     }
     
-    // Find the property
     const property = properties.find(p => p.id === propertyId);
     
     if (!property) {
-        document.querySelector('.property-details').innerHTML = `
-            <div class="container">
-                <h2>Property Not Found</h2>
-                <p>Sorry, the property you're looking for doesn't exist.</p>
-                <a href="listings.html" class="btn">Back to Listings</a>
-            </div>
-        `;
+        showPropertyNotFound();
         return;
     }
     
-    // Update page title
-    document.title = `${property.title} - Real Estate`;
-    
-    // Create gallery HTML
-// In loadPropertyDetails() function, update the gallery creation:
-    let galleryHtml = '';
-    property.gallery.forEach((img, index) => {
-        if (index === 0) {
-            galleryHtml += `
-                <div class="gallery-main" style="background-image: url('${img}');">
-                </div>`;
-        } else {
-            galleryHtml += `
-                <div class="gallery-item" style="background-image: url('${img}');">
-                </div>`;
-        }
-    });
-    
-    // Create features HTML
-    let featuresHtml = '';
-    property.features.forEach(feature => {
-        featuresHtml += `
-            <div class="feature-item">
-                <div class="feature-icon">✓</div>
-                <span>${feature}</span>
+    updatePropertyPage(property);
+}
+
+// ===== SHOW PROPERTY NOT FOUND =====
+function showPropertyNotFound() {
+    const propertyDetails = document.querySelector('.property-details');
+    if (propertyDetails) {
+        propertyDetails.innerHTML = `
+            <div class="container" style="text-align: center; padding: 80px 20px;">
+                <h2>Property Not Found</h2>
+                <p style="margin-bottom: 30px;">Sorry, the property you're looking for doesn't exist.</p>
+                <a href="listings.html" class="btn">Back to Listings</a>
             </div>
         `;
-    });
+    }
+}
+
+// ===== UPDATE PROPERTY PAGE =====
+function updatePropertyPage(property) {
+    document.title = `${property.title} - Real Estate`;
     
-    // Update the property details content
+    // Update gallery
+    const gallery = document.querySelector('.property-gallery');
+    if (gallery) {
+        let galleryHtml = '';
+        property.gallery.forEach((img, index) => {
+            const className = index === 0 ? 'gallery-main' : 'gallery-item';
+            galleryHtml += `<div class="${className}" style="background-image: url('${img}');"></div>`;
+        });
+        gallery.innerHTML = galleryHtml;
+    }
+    
+    // Update property header
+    const propertyTitle = document.querySelector('.property-title');
+    if (propertyTitle) {
+        propertyTitle.innerHTML = `
+            <h1>${property.title}</h1>
+            <div class="property-price">${property.price}</div>
+        `;
+    }
+    
+    // Update property location
+    const propertyLocation = document.querySelector('.property-location');
+    if (propertyLocation) {
+        propertyLocation.innerHTML = `<span>📍</span> ${property.location}`;
+    }
+    
+    // Update features
+    const featuresContainer = document.querySelector('.property-features');
+    if (featuresContainer) {
+        let featuresHtml = '';
+        property.features.forEach(feature => {
+            featuresHtml += `
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <span>${feature}</span>
+                </div>
+            `;
+        });
+        featuresContainer.innerHTML = featuresHtml;
+    }
+    
+    // Update property content
     const propertyContent = document.querySelector('.property-content');
     if (propertyContent) {
         propertyContent.innerHTML = `
@@ -465,7 +434,7 @@ function loadPropertyDetails() {
                 
                 <h3>Property Features</h3>
                 <div class="property-features">
-                    ${featuresHtml}
+                    <!-- Features will be inserted by updatePropertyPage -->
                 </div>
                 
                 <h3>Property Details</h3>
@@ -504,38 +473,94 @@ function loadPropertyDetails() {
                 </div>
             </div>
         `;
+        
+        // Re-initialize features and contact form
+        const newFeaturesContainer = propertyContent.querySelector('.property-features');
+        if (newFeaturesContainer) {
+            let featuresHtml = '';
+            property.features.forEach(feature => {
+                featuresHtml += `
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>${feature}</span>
+                    </div>
+                `;
+            });
+            newFeaturesContainer.innerHTML = featuresHtml;
+        }
     }
     
-    // Update property header
-    const propertyTitle = document.querySelector('.property-title');
-    if (propertyTitle) {
-        propertyTitle.innerHTML = `
-            <h1>${property.title}</h1>
-            <div class="property-price">${property.price}</div>
-        `;
-    }
-    
-    // Update property location
-    const propertyLocation = document.querySelector('.property-location');
-    if (propertyLocation) {
-        propertyLocation.innerHTML = `
-            <span>📍</span> ${property.location}
-        `;
-    }
-    
-    // Update gallery
-    const propertyGallery = document.querySelector('.property-gallery');
-    if (propertyGallery) {
-        propertyGallery.innerHTML = galleryHtml;
-    }
-    
-    // Re-attach event listener to contact form
-    const contactForm = document.getElementById('propertyContactForm');
-    if (contactForm) {
+    initPropertyContactForm();
+}
+
+// ===== INITIALIZE CONTACT FORMS =====
+function initContactForms() {
+    // General contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm && !contactForm.hasAttribute('data-initialized')) {
+        contactForm.setAttribute('data-initialized', 'true');
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! An agent will contact you shortly.');
-            contactForm.reset();
+            handleFormSubmission(this);
         });
     }
+    
+    // Property contact form
+    initPropertyContactForm();
+}
+
+// ===== INITIALIZE PROPERTY CONTACT FORM =====
+function initPropertyContactForm() {
+    const propertyContactForm = document.getElementById('propertyContactForm');
+    if (propertyContactForm && !propertyContactForm.hasAttribute('data-initialized')) {
+        propertyContactForm.setAttribute('data-initialized', 'true');
+        propertyContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this);
+        });
+    }
+}
+
+// ===== HANDLE FORM SUBMISSION =====
+function handleFormSubmission(form) {
+    // Simple validation
+    let isValid = true;
+    const requiredFields = form.querySelectorAll('[required]');
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            field.style.borderColor = 'var(--primary-red)';
+        } else {
+            field.style.borderColor = '';
+        }
+    });
+    
+    if (!isValid) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Show success message
+    alert('Thank you for your message! An agent will contact you shortly.');
+    form.reset();
+}
+
+// ===== HELPER FUNCTIONS =====
+function extractPriceNumber(priceString) {
+    const cleaned = priceString.replace(/[$,]/g, '');
+    const matches = cleaned.match(/(\d+(?:\.\d+)?)/);
+    return matches ? parseFloat(matches[1]) : 0;
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }

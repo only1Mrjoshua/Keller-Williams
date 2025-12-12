@@ -71,6 +71,7 @@ app.add_middleware(
         "http://127.0.0.1:5500",
         "http://localhost:5500",
         "http://localhost:8000",
+        "https://kwelitehomes.com",
         "https://keller-williams.onrender.com",
         "https://keller-williams-backend.onrender.com",
     ],

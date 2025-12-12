@@ -1327,32 +1327,46 @@ html {
     }
 }
 
-/* Error message styling */
+/* Form Validation Styles */
 .error-message {
-    color: #dc3545;
-    font-size: 14px;
+    color: var(--primary-red);
+    font-size: 0.85rem;
     margin-top: 5px;
     display: none;
 }
 
 .form-group input:invalid,
-.form-group textarea:invalid,
-.form-group select:invalid {
-    border-color: #dc3545;
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: var(--primary-red);
 }
 
 .form-group input:focus:invalid,
-.form-group textarea:focus:invalid,
-.form-group select:focus:invalid {
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+.form-group select:focus:invalid,
+.form-group textarea:focus:invalid {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
 }
 
-/* Success/Error message animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Loading state for submit button */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-.form-message {
+/* Success and Error message containers */
+.success-message,
+.form-error-message {
+    display: none;
     animation: fadeIn 0.3s ease;
+}
+
+.success-message h4,
+.form-error-message h4 {
+    margin-bottom: 5px;
+}
+
+.success-message p,
+.form-error-message p {
+    margin: 5px 0;
 }

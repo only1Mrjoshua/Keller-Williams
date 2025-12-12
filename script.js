@@ -542,28 +542,176 @@ function initPropertyContactForm() {
 }
 
 // ===== HANDLE FORM SUBMISSION =====
-function handleFormSubmission(form) {
-    // Simple validation
-    let isValid = true;
-    const requiredFields = form.querySelectorAll('[required]');
+async function handleFormSubmission(form) {
+    // Disable submit button to prevent multiple submissions
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
     
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            isValid = false;
-            field.style.borderColor = 'var(--primary-red)';
-        } else {
-            field.style.borderColor = '';
+    try {
+        // Simple validation
+        let isValid = true;
+        const requiredFields = form.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.borderColor = 'var(--primary-red)';
+                
+                // Show error message
+                const errorDiv = field.parentElement.querySelector('.error-message');
+                if (errorDiv) {
+                    errorDiv.textContent = 'This field is required';
+                    errorDiv.style.display = 'block';
+                }
+            } else {
+                field.style.borderColor = '';
+                const errorDiv = field.parentElement.querySelector('.error-message');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            }
+        });
+        
+        if (!isValid) {
+            throw new Error('Please fill in all required fields.');
         }
-    });
-    
-    if (!isValid) {
-        alert('Please fill in all required fields.');
+        
+        // Prepare form data based on which form it is
+        let formData;
+        
+        if (form.id === 'contactForm') {
+            // Contact page form
+            formData = {
+                fullName: form.querySelector('#fullName').value.trim(),
+                email: form.querySelector('#email').value.trim(),
+                phone: form.querySelector('#phone').value.trim() || null,
+                subject: form.querySelector('#subject').value,
+                message: form.querySelector('#message').value.trim()
+            };
+        } else if (form.id === 'propertyContactForm') {
+            // Property contact form
+            formData = {
+                fullName: form.querySelector('input[type="text"]').value.trim(),
+                email: form.querySelector('input[type="email"]').value.trim(),
+                phone: form.querySelector('input[type="tel"]')?.value.trim() || null,
+                subject: 'Property Inquiry',
+                message: form.querySelector('textarea').value.trim(),
+                // Include property info if available
+                propertyId: new URLSearchParams(window.location.search).get('id'),
+                pageUrl: window.location.href
+            };
+        } else {
+            // Generic form
+            formData = Object.fromEntries(new FormData(form));
+        }
+        
+        // Send to your FastAPI endpoint
+        const response = await fetch('/contact/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.detail || `Server responded with status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        // Show success message
+        showFormSuccessMessage(form);
+        
+        // Reset form
+        form.reset();
+        
+        console.log('Contact message submitted successfully:', result);
+        
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        
+        // Show error message to user
+        showFormError(form, error.message);
+        
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
         return;
     }
     
-    // Show success message
-    alert('Thank you for your message! An agent will contact you shortly.');
-    form.reset();
+    // Re-enable submit button
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+}
+
+// ===== SHOW SUCCESS MESSAGE =====
+function showFormSuccessMessage(form) {
+    // Create or show success message
+    let successDiv = form.parentElement.querySelector('.success-message');
+    
+    if (!successDiv) {
+        successDiv = document.createElement('div');
+        successDiv.className = 'success-message';
+        successDiv.style.cssText = `
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            text-align: center;
+        `;
+        form.parentElement.appendChild(successDiv);
+    }
+    
+    successDiv.innerHTML = `
+        <h4>✓ Message Sent Successfully!</h4>
+        <p>Thank you for your message. Our team will get back to you within 24 hours.</p>
+    `;
+    successDiv.style.display = 'block';
+    
+    // Hide success message after 10 seconds
+    setTimeout(() => {
+        successDiv.style.display = 'none';
+    }, 10000);
+}
+
+// ===== SHOW ERROR MESSAGE =====
+function showFormError(form, errorMessage) {
+    // Create or show error message
+    let errorDiv = form.parentElement.querySelector('.form-error-message');
+    
+    if (!errorDiv) {
+        errorDiv = document.createElement('div');
+        errorDiv.className = 'form-error-message';
+        errorDiv.style.cssText = `
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #f5c6cb;
+            text-align: center;
+        `;
+        form.parentElement.appendChild(errorDiv);
+    }
+    
+    errorDiv.innerHTML = `
+        <h4>⚠️ Error Submitting Form</h4>
+        <p>${errorMessage}</p>
+        <p>Please try again or call us directly.</p>
+    `;
+    errorDiv.style.display = 'block';
+    
+    // Hide error message after 10 seconds
+    setTimeout(() => {
+        errorDiv.style.display = 'none';
+    }, 10000);
 }
 
 // ===== HELPER FUNCTIONS =====

@@ -17,7 +17,7 @@ const properties = [
         "agent": {
             "name": "Bailey Hall",
             "phone": "8186403478",
-            "email": "sarah@realestate.com"
+            "email": ""
         }
     },
     {
@@ -38,7 +38,7 @@ const properties = [
         "agent": {
             "name": "Brett Howard",
             "phone": "818-355-6017",
-            "email": "michael@realestate.com"
+            "email": ""
         }
     },
     {
@@ -81,7 +81,7 @@ const properties = [
         "agent": {
             "name": "Norman Kawaguchi",
             "phone": "626-616-6938",
-            "email": "jennifer@realestate.com"
+            "email": ""
         }
     },
     {
@@ -102,7 +102,7 @@ const properties = [
         "agent": {
             "name": "Maya Gulbekova",
             "phone": "818-427-1772",
-            "email": "robert@realestate.com"
+            "email": ""
         }
     },
     {
@@ -123,7 +123,7 @@ const properties = [
         "agent": {
             "name": "Brent Ballard & Trey Ballard",
             "phone": "(818)919-0282",
-            "email": "amanda@realestate.com"
+            "email": ""
         }
     },
     {
@@ -144,7 +144,7 @@ const properties = [
         "agent": {
             "name": "Artin Sarkissian",
             "phone": "818-437-2433",
-            "email": "thomas@realestate.com"
+            "email": ""
         }
     },
     {
@@ -165,7 +165,7 @@ const properties = [
         "agent": {
             "name": "Angel Flores & Ariana Hernandez Camargo",
             "phone": "619-325-7310",
-            "email": "elizabeth@realestate.com"
+            "email": ""
         }
     },
     {
@@ -186,7 +186,7 @@ const properties = [
         "agent": {
             "name": "Yi Wang",
             "phone": "lookforjeff@gmail.com",
-            "email": "chris@realestate.com"
+            "email": ""
         }
     },
     {
@@ -207,7 +207,7 @@ const properties = [
         "agent": {
             "name": "Lois E Zapernick",
             "phone": "602-377-6297",
-            "email": "patricia@realestate.com"
+            "email": ""
         }
     },
     {
@@ -228,7 +228,7 @@ const properties = [
         "agent": {
             "name": "Richard Battaglia",
             "phone": "323-422-7886",
-            "email": "james@realestate.com"
+            "email": ""
         }
     },
     {
@@ -249,7 +249,7 @@ const properties = [
         "agent": {
             "name": "Tushar V Vakhariya & Renee Lossia Acho",
             "phone": "248-786-7790",
-            "email": "victoria@realestate.com"
+            "email": ""
         }
     }
 ];

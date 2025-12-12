@@ -16,8 +16,8 @@ const properties = [
         "features": ["Chef's Kitchen", "Walk-In Pantry", "Open Floor Plan", "Private Backyard", "Attached Garage", "Blue Ribbon Schools"],
         "agent": {
             "name": "Bailey Hall",
-            "phone": "",
-            "email": ""
+            "phone": "8186403478",
+            "email": "sarah@realestate.com"
         }
     },
     {

@@ -42,24 +42,24 @@ const properties = [
         }
     },
     {
-        "id": 3,
-        "title": "Colonial-Style Estate on Royal Blvd",
-        "price": "$1,874,000",
-        "location": "1535 Royal Blvd, Glendale, CA 91207",
-        "shortDescription": "Exceptional Colonial-style residence in Glendale's prestigious Royal Boulevard neighborhood on a private, gated 0.51 acre lot.",
-        "fullDescription": "Welcome to an exceptional opportunity to own this remarkable Colonial-style residence in Glendale's prestigious Royal Boulevard neighborhood, a celebrated enclave known for its timeless architecture and storied charm. Nestled on a private, gated lot, surrounded by mature trees, this beautifully preserved residence exudes character and vintage appeal with classic architectural details, proportions and period charm, perfectly suited to today's discerning homebuyers. Set on a generous 22,000 sqft. lot with park-like grounds and sparkling pool offering complete privacy and seclusion with thoughtfully designed living spaces. Sweeping drive leads to a dramatic grand entry, welcoming you in an elegant living room, rich in historic character highlighted by a stately fireplace, soaring ceilings and period details that echo the craftsmanship of a bygone era. Formal dining room sets the tone for impressive entertaining with its enduring beauty. A private library/office, enhanced by its own fireplace, provides and inspiring retreat for work and study. Featuring 4 bedrooms, including two primary suites conveniently located - one on each level. Second floor gracious master features luxurious bathroom and provides an access to a large view balcony. The beautifully renovated kitchen showcases a grand center island, custom cabinetry, and a sunlit breakfast nook. The expansive lot offers incredible scope for indoor/outdoor living, whether hosting by the sparkling pool or enjoying estates serene garden spaces. Entertain in style with a dedicated pool lounge with professional bar, creating the perfect setting for intimate evenings or grand celebrations. Property has two wings with a separate entries, giving an opportunity to enhance the classic period details, update for modern comfort, or expand to fit your lifestyle. Gated and secure, it is a true sanctuary just minutes from Glendale City conveniences.",
-        "image": "images/property3.jpg",
-        "gallery": ["images/property3.jpg", "images/property3-gallery1.jpg", "images/property3-gallery2.jpg", "images/property3-gallery3.jpg", "images/property3-gallery4.jpg"],
-        "bedrooms": 4,
-        "bathrooms": 4,
-        "sqft": 3360,
-        "yearBuilt": 1941,
-        "propertyType": "Single Family Residence",
-        "features": ["Gated Lot", "Sparkling Pool", "Private Library/Office", "Two Primary Suites", "Park-like Grounds", "Dedicated Pool Lounge", "Historic Character"],
-        "agent": {
-            "name": "Maya Gulbekova",
-            "phone": "818-427-1772",
-            "email": "robert@realestate.com"
+        id: 3,
+        title: "Modern Farmhouse",
+        price: "$1,675,000",
+        location: "3500 Fairchild St, Glendale, CA 91214",
+        shortDescription: "A fully renovated 4-bedroom, 3-bath Single Family Residence, Updated with all new systems (roof, HVAC, electric, copper plumbing).",
+        fullDescription: "This fully remodeled single-family home offers two levels of sophisticated living space situated on a quiet cul-de-sac in Glendale. The main floor features an open-concept living and dining area accented by wooden beams that flows into a chef's kitchen equipped with a 48-inch gas range, massive island, and butler's pantry. The upper level includes three bedrooms and two bathrooms, with the primary suite featuring mountain views, a reading nook, and a luxurious resort-style bath. A main-floor guest suite, detached two-car garage with workshop, and expansive fenced yard with a custom playhouse make this an ideal private retreat.",
+        image: "images/property5.jpg",
+        gallery: ["images/property5.jpg", "images/property5-gallery1.jpg", "images/property5-gallery2.jpg", "images/property5-gallery3.jpg", "images/property5-gallery4.jpg"],
+        bedrooms: 4,
+        bathrooms: 3,
+        sqft: 1757,
+        yearBuilt: 2000,
+        propertyType: "Farmhouse",
+        features: ["Rooftop Terrace", "Garage", "Modern Finishes", "Walkable", "Low Maintenance"],
+        agent: {
+            name: "Emil Akopian",
+            phone: "(818) 278 0024",
+            email: "Emil.akopian@yahoo.com"
         }
     },
     {
@@ -84,24 +84,24 @@ const properties = [
         }
     },
     {
-        id: 5,
-        title: "Modern Farmhouse",
-        price: "$1,675,000",
-        location: "3500 Fairchild St, Glendale, CA 91214",
-        shortDescription: "A fully renovated 4-bedroom, 3-bath Single Family Residence, Updated with all new systems (roof, HVAC, electric, copper plumbing).",
-        fullDescription: "This fully remodeled single-family home offers two levels of sophisticated living space situated on a quiet cul-de-sac in Glendale. The main floor features an open-concept living and dining area accented by wooden beams that flows into a chef's kitchen equipped with a 48-inch gas range, massive island, and butler's pantry. The upper level includes three bedrooms and two bathrooms, with the primary suite featuring mountain views, a reading nook, and a luxurious resort-style bath. A main-floor guest suite, detached two-car garage with workshop, and expansive fenced yard with a custom playhouse make this an ideal private retreat.",
-        image: "images/property5.jpg",
-        gallery: ["images/property5.jpg", "images/property5-gallery1.jpg", "images/property5-gallery2.jpg", "images/property5-gallery3.jpg", "images/property5-gallery4.jpg"],
-        bedrooms: 4,
-        bathrooms: 3,
-        sqft: 1757,
-        yearBuilt: 2000,
-        propertyType: "Farmhouse",
-        features: ["Rooftop Terrace", "Garage", "Modern Finishes", "Walkable", "Low Maintenance"],
-        agent: {
-            name: "Emil Akopian",
-            phone: "(818) 278 0024",
-            email: "Emil.akopian@yahoo.com"
+        "id": 5,
+        "title": "Colonial-Style Estate on Royal Blvd",
+        "price": "$1,874,000",
+        "location": "1535 Royal Blvd, Glendale, CA 91207",
+        "shortDescription": "Exceptional Colonial-style residence in Glendale's prestigious Royal Boulevard neighborhood on a private, gated 0.51 acre lot.",
+        "fullDescription": "Welcome to an exceptional opportunity to own this remarkable Colonial-style residence in Glendale's prestigious Royal Boulevard neighborhood, a celebrated enclave known for its timeless architecture and storied charm. Nestled on a private, gated lot, surrounded by mature trees, this beautifully preserved residence exudes character and vintage appeal with classic architectural details, proportions and period charm, perfectly suited to today's discerning homebuyers. Set on a generous 22,000 sqft. lot with park-like grounds and sparkling pool offering complete privacy and seclusion with thoughtfully designed living spaces. Sweeping drive leads to a dramatic grand entry, welcoming you in an elegant living room, rich in historic character highlighted by a stately fireplace, soaring ceilings and period details that echo the craftsmanship of a bygone era. Formal dining room sets the tone for impressive entertaining with its enduring beauty. A private library/office, enhanced by its own fireplace, provides and inspiring retreat for work and study. Featuring 4 bedrooms, including two primary suites conveniently located - one on each level. Second floor gracious master features luxurious bathroom and provides an access to a large view balcony. The beautifully renovated kitchen showcases a grand center island, custom cabinetry, and a sunlit breakfast nook. The expansive lot offers incredible scope for indoor/outdoor living, whether hosting by the sparkling pool or enjoying estates serene garden spaces. Entertain in style with a dedicated pool lounge with professional bar, creating the perfect setting for intimate evenings or grand celebrations. Property has two wings with a separate entries, giving an opportunity to enhance the classic period details, update for modern comfort, or expand to fit your lifestyle. Gated and secure, it is a true sanctuary just minutes from Glendale City conveniences.",
+        "image": "images/property3.jpg",
+        "gallery": ["images/property3.jpg", "images/property3-gallery1.jpg", "images/property3-gallery2.jpg", "images/property3-gallery3.jpg", "images/property3-gallery4.jpg"],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 3360,
+        "yearBuilt": 1941,
+        "propertyType": "Single Family Residence",
+        "features": ["Gated Lot", "Sparkling Pool", "Private Library/Office", "Two Primary Suites", "Park-like Grounds", "Dedicated Pool Lounge", "Historic Character"],
+        "agent": {
+            "name": "Maya Gulbekova",
+            "phone": "818-427-1772",
+            "email": "robert@realestate.com"
         }
     },
     {

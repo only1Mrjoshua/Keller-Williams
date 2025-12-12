@@ -662,10 +662,24 @@ a:hover {
 }
 
 .hero-about {
-    background-color: var(--ash);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/download.webp') center/cover no-repeat;
     padding: clamp(40px, 8vw, 80px) 0;
     text-align: center;
     margin-bottom: clamp(40px, 8vw, 80px);
+}
+
+.hero-about h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: clamp(15px, 4vw, 20px);
+    color: var(--white);
+}
+
+.hero-about p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto clamp(30px, 6vw, 40px);
+    padding: 0 20px;
 }
 
 .stats-grid {
@@ -782,15 +796,25 @@ a:hover {
 }
 
 /* ===== SERVICES PAGE ===== */
-.services-page {
-    padding: clamp(40px, 8vw, 80px) 0;
-}
-
 .services-hero {
-    background-color: var(--ash);
+    background: linear-gradient(160deg, #1b1b1d, #2a2a2d);
     padding: clamp(40px, 8vw, 80px) 0;
     text-align: center;
     margin-bottom: clamp(40px, 8vw, 80px);
+}
+
+.services-hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: clamp(15px, 4vw, 20px);
+    color: var(--white);
+}
+
+.services-hero p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto clamp(30px, 6vw, 40px);
+    padding: 0 20px;
 }
 
 .payment-plan {
@@ -886,9 +910,20 @@ a:hover {
 
 /* ===== SEARCH FUNCTIONALITY ===== */
 .search-header {
-    background-color: var(--ash);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/download\ \(1\).webp') center/cover no-repeat;
     padding: clamp(30px, 6vw, 40px) 0;
     margin-bottom: clamp(30px, 5vw, 40px);
+}
+
+.search-header h1 {
+    color: var(--white);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.search-header p {
+    color: var(--white);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    max-width: 600px;
 }
 
 .search-container {
@@ -960,6 +995,7 @@ a:hover {
     border-top: 1px solid var(--light-grey);
     flex-wrap: wrap;
     gap: 15px;
+    color: var(--white);
 }
 
 .clear-search {

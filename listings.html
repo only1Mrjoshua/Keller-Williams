@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings - Prime Realty</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo"
+          >Prime<span style="color: var(--black)">Realty</span></a
+        >
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html" class="active">Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="search-header">
+      <div class="container">
+        <div class="search-container">
+          <h1>Find Your Perfect Property</h1>
+          <p>Browse our curated selection of premium properties</p>
+
+          <!-- Search Box -->
+          <div class="search-box">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              id="listingsSearch"
+              placeholder="Search by title, location, or price..."
+            />
+          </div>
+
+          <!-- Search Filters -->
+          <div class="search-filters">
+            <select id="priceFilter">
+              <option value="">All Price Ranges</option>
+              <option value="under-500k">Under $500,000</option>
+              <option value="500k-1m">$500,000 - $1M</option>
+              <option value="1m-2m">$1M - $2M</option>
+              <option value="over-2m">Over $2M</option>
+            </select>
+
+            <select id="propertyTypeFilter">
+              <option value="">All Property Types</option>
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="condo">Condo</option>
+              <option value="townhouse">Townhouse</option>
+              <option value="penthouse">Penthouse</option>
+              <option value="estate">Estate</option>
+              <option value="villa">Villa</option>
+            </select>
+
+            <select id="bedroomsFilter">
+              <option value="">Any Bedrooms</option>
+              <option value="1">1+ Bedrooms</option>
+              <option value="2">2+ Bedrooms</option>
+              <option value="3">3+ Bedrooms</option>
+              <option value="4">4+ Bedrooms</option>
+            </select>
+          </div>
+
+          <!-- Search Stats -->
+          <div class="search-stats">
+            <div><span id="listingCount">12</span> properties found</div>
+            <button class="clear-search" id="clearAllFilters">
+              <i class="fas fa-times"></i> Clear all filters
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listings Page -->
+    <section class="listings-page">
+      <div class="container">
+        <div class="listings-grid" id="listingsContainer">
+          <!-- All listings will be loaded by JavaScript -->
+          <!-- Each listing card has the structure:
+                <div class="property-card" data-id="1">
+                    <div class="property-img">
+                        <span>Property Image 1</span>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$450,000</div>
+                        <h3>Modern Downtown Apartment</h3>
+                        <div class="property-location">
+                            <span>📍</span> 123 Main St, Downtown
+                        </div>
+                        <p>Stylish 2-bedroom apartment in the heart of downtown with city views.</p>
+                        <button class="btn view-details" data-id="1">View Details</button>
+                    </div>
+                </div>
+                -->
+        </div>
+
+        <!-- No results message will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">PrimeRealty</div>
+            <p>
+              Prime Realty is a leading real estate agency specializing in
+              luxury properties and exceptional customer service.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, Suite
+              100
+            </p>
+            <p><i class="fas fa-phone"></i> (555) 123-REAL</p>
+            <p><i class="fas fa-envelope"></i> info@primerealty.com</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 Prime Realty. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

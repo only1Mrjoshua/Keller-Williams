@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Keller WIlliams</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo"
+          >Keller<span style="color: var(--black)">Williams</span></a
+        >
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Page Header -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="fade-in-up">Get In Touch With Us</h1>
+        <p class="fade-in-up">
+          We're here to help you find your dream property. Reach out to our
+          expert team for personalized assistance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Page Content -->
+    <section class="contact-page">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Information -->
+          <div class="contact-info fade-in-up">
+            <h3>Contact Information</h3>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Call Us</h4>
+                <p>(555) 123-REAL</p>
+                <a
+                  href="tel:5551237325"
+                  class="btn"
+                  style="margin-top: 10px; padding: 8px 20px"
+                  >Call Now</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email Us</h4>
+                <p>info@primerealty.com</p>
+                <a
+                  href="mailto:info@primerealty.com"
+                  class="btn btn-outline"
+                  style="margin-top: 10px; padding: 8px 20px"
+                  >Send Email</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Visit Our Office</h4>
+                <p>123 Real Estate Avenue</p>
+                <p>Suite 100, Downtown</p>
+                <p>Metro City, MC 12345</p>
+                <a
+                  href="#map"
+                  class="btn btn-outline"
+                  style="margin-top: 10px; padding: 8px 20px"
+                  >View on Map</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9am - 7pm</p>
+                <p>Saturday: 10am - 5pm</p>
+                <p>Sunday: 12pm - 4pm</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-container fade-in-up">
+            <h3>Send Us a Message</h3>
+            <p>
+              Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="">Select a subject</option>
+                  <option value="buying">Buying a Property</option>
+                  <option value="selling">Selling a Property</option>
+                  <option value="renting">Renting</option>
+                  <option value="consultation">Free Consultation</option>
+                  <option value="other">Other Inquiry</option>
+                </select>
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message *</label>
+                <textarea id="message" name="message" required></textarea>
+                <div class="error-message"></div>
+              </div>
+
+              <button type="submit" class="btn" style="width: 100%">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div id="map" class="map-container fade-in-up">
+          <h3 style="margin-bottom: 20px">Our Location</h3>
+          <div class="map-placeholder">
+            <div>
+              <i
+                class="fas fa-map-marked-alt"
+                style="font-size: 3rem; margin-bottom: 15px"
+              ></i>
+              <p>Google Maps Integration Here</p>
+              <p style="font-size: 0.9rem; margin-top: 10px">
+                123 Real Estate Avenue, Metro City
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">PrimeRealty</div>
+            <p>
+              Prime Realty is a leading real estate agency specializing in
+              luxury properties and exceptional customer service.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, Suite
+              100
+            </p>
+            <p><i class="fas fa-phone"></i> (555) 123-REAL</p>
+            <p><i class="fas fa-envelope"></i> info@primerealty.com</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            Keller Williams Realty, LLC, a franchise company, is an Equal
+            Opportunity Employer and supports the Fair Housing Act. Each Keller
+            Williams® office is independently owned and operated. Copyright ©
+            1996-2025 Keller Williams Realty, LLC. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="contact-script.js"></script>
+  </body>
+</html>

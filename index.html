@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keller Williams - Find Your Dream Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo"
+          >Keller<span style="color: var(--black)">Williams</span></a
+        >
+        <button class="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="listings.html">Listings</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Find Your Dream Home Today</h1>
+        <p>
+          Keller Williams Real Estate Services offers the finest selection of
+          luxury homes, apartments, and commercial properties in the most
+          desirable locations.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <form class="search-form" id="searchForm">
+            <div class="form-group">
+              <label for="location">Location</label>
+              <select id="location" name="location">
+                <option value="">Any Location</option>
+                <option value="downtown">Downtown</option>
+                <option value="suburbia">Suburbia</option>
+                <option value="waterfront">Waterfront</option>
+                <option value="rural">Rural</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price">Price Range</label>
+              <select id="price" name="price">
+                <option value="">Any Price</option>
+                <option value="under-500k">Under $500,000</option>
+                <option value="500k-1m">$500,000 - $1M</option>
+                <option value="1m-2m">$1M - $2M</option>
+                <option value="over-2m">Over $2M</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="type">Property Type</label>
+              <select id="type" name="type">
+                <option value="">Any Type</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <option value="condo">Condo</option>
+                <option value="townhouse">Townhouse</option>
+              </select>
+            </div>
+            <div class="form-group search-btn">
+              <button type="submit" class="btn">Search Properties</button>
+            </div>
+          </form>
+        </div>
+
+        <a href="listings.html" class="btn" style="margin-top: 40px"
+          >View All Listings</a
+        >
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured-properties">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Properties</h2>
+          <p>Discover our handpicked selection of premium properties</p>
+        </div>
+
+        <div class="properties-grid" id="featuredProperties">
+          <!-- Featured properties will be loaded by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">KellerWilliams</div>
+            <p>
+              Keller Williams Real Estate Services is a leading real estate
+              agency specializing in luxury properties and exceptional customer
+              service.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="listings.html">Listings</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 123 Real Estate Ave, Suite
+              100
+            </p>
+            <p><i class="fas fa-phone"></i> (555) 123-REAL</p>
+            <p><i class="fas fa-envelope"></i> info@primerealty.com</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            Keller Williams Realty, LLC, a franchise company, is an Equal
+            Opportunity Employer and supports the Fair Housing Act. Each Keller
+            Williams® office is independently owned and operated. Copyright ©
+            1996-2025 Keller Williams Realty, LLC. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

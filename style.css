@@ -114,6 +114,11 @@ a:hover {
     min-height: 70px;
 }
 
+.navbar .container a img {
+    width: 150px;
+    height: auto;
+}
+
 .logo {
     font-size: clamp(1.5rem, 4vw, 1.8rem);
     font-weight: 700;
@@ -506,6 +511,11 @@ a:hover {
     font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
+}
+
+.footer-about .footer-logo a img {
+    width: 150px;
+    height: auto;
 }
 
 .footer-links h4,

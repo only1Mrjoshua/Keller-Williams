@@ -1,12 +1,28 @@
+// Add this script to your page
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all read more buttons
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const description = this.closest('.property-description');
+            const isExpanded = description.classList.contains('expanded');
+            
+            if (isExpanded) {
+                description.classList.remove('expanded');
+                this.textContent = 'Read More';
+            } else {
+                description.classList.add('expanded');
+                this.textContent = 'Read Less';
+            }
+        });
+    });
+});
+
+
 // ===== MAIN APPLICATION =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize mobile navigation
     initMobileNavigation();
-    
-    // Initialize search functionality
     initSearch();
     
-    // Initialize property functionality based on page
     if (window.location.pathname.includes('property-details.html')) {
         loadPropertyDetails();
     }
@@ -19,27 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
         loadAllListings();
     }
     
-    // Initialize contact forms
     initContactForms();
-    
-    // Close mobile menu when clicking outside
     initOutsideClickHandler();
 });
 
-// ===== MOBILE NAVIGATION =====
 function initMobileNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
     if (!hamburger || !navLinks) return;
     
-    // Toggle mobile menu
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
         
-        // Prevent body scroll when menu is open
         if (navLinks.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -47,7 +57,6 @@ function initMobileNavigation() {
         }
     });
     
-    // Close menu when clicking links
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(link => {
         link.addEventListener('click', function() {
@@ -58,7 +67,6 @@ function initMobileNavigation() {
     });
 }
 
-// ===== CLOSE MENU WHEN CLICKING OUTSIDE =====
 function initOutsideClickHandler() {
     document.addEventListener('click', function(e) {
         const hamburger = document.querySelector('.hamburger');
@@ -76,9 +84,7 @@ function initOutsideClickHandler() {
     });
 }
 
-// ===== SEARCH FUNCTIONALITY =====
 function initSearch() {
-    // Homepage search form
     const homeSearchForm = document.getElementById('searchForm');
     if (homeSearchForm) {
         homeSearchForm.addEventListener('submit', function(e) {
@@ -87,7 +93,6 @@ function initSearch() {
         });
     }
     
-    // Listings page search
     const listingsSearch = document.getElementById('listingsSearch');
     if (listingsSearch) {
         listingsSearch.addEventListener('input', debounce(performListingsSearch, 300));
@@ -99,7 +104,6 @@ function initSearch() {
         });
     }
     
-    // Filter change listeners
     ['priceFilter', 'propertyTypeFilter', 'bedroomsFilter'].forEach(filterId => {
         const filter = document.getElementById(filterId);
         if (filter) {
@@ -107,14 +111,12 @@ function initSearch() {
         }
     });
     
-    // Clear all filters
     const clearAllBtn = document.getElementById('clearAllFilters');
     if (clearAllBtn) {
         clearAllBtn.addEventListener('click', clearAllFilters);
     }
 }
 
-// ===== HOME PAGE SEARCH =====
 function handleHomeSearch() {
     const location = document.getElementById('location')?.value || '';
     const price = document.getElementById('price')?.value || '';
@@ -129,7 +131,6 @@ function handleHomeSearch() {
     window.location.href = `listings.html${queryString ? '?' + queryString : ''}`;
 }
 
-// ===== LISTINGS SEARCH =====
 function performListingsSearch() {
     const searchTerm = document.getElementById('listingsSearch')?.value.trim().toLowerCase() || '';
     const priceFilter = document.getElementById('priceFilter')?.value || '';
@@ -146,12 +147,10 @@ function performListingsSearch() {
         const propertyType = card.getAttribute('data-type') || '';
         const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
         
-        // Text search
         const textMatch = !searchTerm || 
                          title.includes(searchTerm) || 
                          location.includes(searchTerm);
         
-        // Price filter
         let priceMatch = true;
         if (priceFilter) {
             switch (priceFilter) {
@@ -162,13 +161,10 @@ function performListingsSearch() {
             }
         }
         
-        // Type filter
         const typeMatch = !typeFilter || propertyType === typeFilter.toLowerCase();
         
-        // Bedrooms filter
         const bedroomsMatch = !bedroomsFilter || bedrooms >= parseInt(bedroomsFilter);
         
-        // Show/hide based on all filters
         if (textMatch && priceMatch && typeMatch && bedroomsMatch) {
             card.style.display = 'block';
             card.style.animation = 'fadeIn 0.3s ease';
@@ -181,14 +177,12 @@ function performListingsSearch() {
     updateSearchResults(visibleCount);
 }
 
-// ===== UPDATE SEARCH RESULTS =====
 function updateSearchResults(count) {
     const listingCountElement = document.getElementById('listingCount');
     if (listingCountElement) {
         listingCountElement.textContent = count;
     }
     
-    // Show/hide no results message
     const noResultsMessage = document.getElementById('noResultsMessage');
     if (noResultsMessage) {
         const hasActiveFilters = document.querySelector('#listingsSearch:not([value=""])') ||
@@ -204,7 +198,6 @@ function updateSearchResults(count) {
     }
 }
 
-// ===== CLEAR ALL FILTERS =====
 function clearAllFilters() {
     document.getElementById('listingsSearch').value = '';
     document.getElementById('priceFilter').value = '';
@@ -214,7 +207,6 @@ function clearAllFilters() {
     document.getElementById('listingsSearch').focus();
 }
 
-// ===== FEATURED PROPERTIES =====
 function loadFeaturedProperties() {
     const featuredContainer = document.getElementById('featuredProperties');
     if (!featuredContainer) return;
@@ -243,7 +235,6 @@ function loadFeaturedProperties() {
     attachPropertyCardListeners();
 }
 
-// ===== ALL LISTINGS =====
 function loadAllListings() {
     const listingsContainer = document.getElementById('listingsContainer');
     if (!listingsContainer) return;
@@ -276,7 +267,6 @@ function loadAllListings() {
     
     listingsContainer.innerHTML = html;
     
-    // Update listing count
     const listingCount = document.getElementById('listingCount');
     if (listingCount) {
         listingCount.textContent = properties.length;
@@ -285,12 +275,10 @@ function loadAllListings() {
     attachPropertyCardListeners();
     applyURLFilters();
     createNoResultsMessage();
-    performListingsSearch(); // Initial search to apply URL filters
+    performListingsSearch();
 }
 
-// ===== ATTACH PROPERTY CARD LISTENERS =====
 function attachPropertyCardListeners() {
-    // View details buttons
     document.querySelectorAll('.view-details').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -299,7 +287,6 @@ function attachPropertyCardListeners() {
         });
     });
     
-    // Property card clicks
     document.querySelectorAll('.property-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (!e.target.classList.contains('btn') && !e.target.closest('.btn')) {
@@ -310,7 +297,6 @@ function attachPropertyCardListeners() {
     });
 }
 
-// ===== CREATE NO RESULTS MESSAGE =====
 function createNoResultsMessage() {
     const listingsGrid = document.querySelector('.listings-grid');
     if (!listingsGrid || document.getElementById('noResultsMessage')) return;
@@ -330,7 +316,6 @@ function createNoResultsMessage() {
     document.getElementById('clearSearchBtn').addEventListener('click', clearAllFilters);
 }
 
-// ===== APPLY URL FILTERS =====
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
     
@@ -345,7 +330,6 @@ function applyURLFilters() {
     });
 }
 
-// ===== PROPERTY DETAILS =====
 function loadPropertyDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const propertyId = parseInt(urlParams.get('id'));
@@ -365,7 +349,6 @@ function loadPropertyDetails() {
     updatePropertyPage(property);
 }
 
-// ===== SHOW PROPERTY NOT FOUND =====
 function showPropertyNotFound() {
     const propertyDetails = document.querySelector('.property-details');
     if (propertyDetails) {
@@ -379,11 +362,9 @@ function showPropertyNotFound() {
     }
 }
 
-// ===== UPDATE PROPERTY PAGE =====
 function updatePropertyPage(property) {
     document.title = `${property.title} - Real Estate`;
     
-    // Update gallery
     const gallery = document.querySelector('.property-gallery');
     if (gallery) {
         let galleryHtml = '';
@@ -394,7 +375,6 @@ function updatePropertyPage(property) {
         gallery.innerHTML = galleryHtml;
     }
     
-    // Update property header
     const propertyTitle = document.querySelector('.property-title');
     if (propertyTitle) {
         propertyTitle.innerHTML = `
@@ -403,13 +383,11 @@ function updatePropertyPage(property) {
         `;
     }
     
-    // Update property location
     const propertyLocation = document.querySelector('.property-location');
     if (propertyLocation) {
         propertyLocation.innerHTML = `<span>📍</span> ${property.location}`;
     }
     
-    // Update features
     const featuresContainer = document.querySelector('.property-features');
     if (featuresContainer) {
         let featuresHtml = '';
@@ -424,7 +402,6 @@ function updatePropertyPage(property) {
         featuresContainer.innerHTML = featuresHtml;
     }
     
-    // Update property content
     const propertyContent = document.querySelector('.property-content');
     if (propertyContent) {
         propertyContent.innerHTML = `
@@ -474,7 +451,6 @@ function updatePropertyPage(property) {
             </div>
         `;
         
-        // Re-initialize features and contact form
         const newFeaturesContainer = propertyContent.querySelector('.property-features');
         if (newFeaturesContainer) {
             let featuresHtml = '';
@@ -493,37 +469,31 @@ function updatePropertyPage(property) {
     initPropertyContactForm();
 }
 
-// ===== INITIALIZE CONTACT FORMS =====
 function initContactForms() {
-    // General contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm && !contactForm.hasAttribute('data-initialized')) {
         contactForm.setAttribute('data-initialized', 'true');
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            handleFormSubmission(this);
+            await handleContactFormSubmission(this);
         });
     }
     
-    // Property contact form
     initPropertyContactForm();
 }
 
-// ===== INITIALIZE PROPERTY CONTACT FORM =====
 function initPropertyContactForm() {
     const propertyContactForm = document.getElementById('propertyContactForm');
     if (propertyContactForm && !propertyContactForm.hasAttribute('data-initialized')) {
         propertyContactForm.setAttribute('data-initialized', 'true');
-        propertyContactForm.addEventListener('submit', function(e) {
+        propertyContactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            handleFormSubmission(this);
+            await handleContactFormSubmission(this);
         });
     }
 }
 
-// ===== HANDLE FORM SUBMISSION =====
-function handleFormSubmission(form) {
-    // Simple validation
+async function handleContactFormSubmission(form) {
     let isValid = true;
     const requiredFields = form.querySelectorAll('[required]');
     
@@ -541,12 +511,52 @@ function handleFormSubmission(form) {
         return;
     }
     
-    // Show success message
-    alert('Thank you for your message! An agent will contact you shortly.');
-    form.reset();
+    const formData = {
+        name: form.querySelector('[placeholder="Your Name"]')?.value || form.querySelector('#fullName')?.value || '',
+        email: form.querySelector('[placeholder="Your Email"]')?.value || form.querySelector('#email')?.value || '',
+        phone: form.querySelector('[placeholder="Your Phone"]')?.value || form.querySelector('#phone')?.value || '',
+        subject: form.querySelector('#subject')?.value || 'General Inquiry',
+        message: form.querySelector('textarea')?.value || ''
+    };
+    
+    if (!formData.name || !formData.email || !formData.message) {
+        alert('Please fill in all required fields: name, email, and message.');
+        return;
+    }
+    
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    try {
+        const baseUrl = window.location.origin;
+        const apiUrl = `${baseUrl}/contact/`;
+        
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your message! An agent will contact you shortly.');
+            form.reset();
+        } else {
+            const errorData = await response.json();
+            throw new Error(errorData.detail || 'Failed to send message.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again later.');
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
 }
 
-// ===== HELPER FUNCTIONS =====
 function extractPriceNumber(priceString) {
     const cleaned = priceString.replace(/[$,]/g, '');
     const matches = cleaned.match(/(\d+(?:\.\d+)?)/);

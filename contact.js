@@ -6,18 +6,18 @@ class ToastNotification {
   }
 
   init() {
-    if (!document.querySelector('.toast-container')) {
-      this.container = document.createElement('div');
-      this.container.className = 'toast-container';
+    if (!document.querySelector(".toast-container")) {
+      this.container = document.createElement("div");
+      this.container.className = "toast-container";
       document.body.appendChild(this.container);
       this.addToastStyles();
     } else {
-      this.container = document.querySelector('.toast-container');
+      this.container = document.querySelector(".toast-container");
     }
   }
 
   addToastStyles() {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .toast-container {
         position: fixed;
@@ -78,24 +78,24 @@ class ToastNotification {
     document.head.appendChild(style);
   }
 
-  show(message, type = 'success') {
-    const toast = document.createElement('div');
+  show(message, type = "success") {
+    const toast = document.createElement("div");
     toast.className = `toast ${type}`;
-    
-    const icon = document.createElement('span');
-    icon.className = 'toast-icon';
-    icon.innerHTML = type === 'success' ? '✓' : '✗';
-    
-    const messageElement = document.createElement('span');
-    messageElement.className = 'toast-message';
+
+    const icon = document.createElement("span");
+    icon.className = "toast-icon";
+    icon.innerHTML = type === "success" ? "✓" : "✗";
+
+    const messageElement = document.createElement("span");
+    messageElement.className = "toast-message";
     messageElement.textContent = message;
-    
+
     toast.appendChild(icon);
     toast.appendChild(messageElement);
     this.container.appendChild(toast);
-    
+
     setTimeout(() => {
-      toast.style.animation = 'fadeOut 0.3s ease forwards';
+      toast.style.animation = "fadeOut 0.3s ease forwards";
       setTimeout(() => {
         if (toast.parentNode) {
           toast.parentNode.removeChild(toast);
@@ -107,57 +107,64 @@ class ToastNotification {
 
 const toast = new ToastNotification();
 
-document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contactForm');
-  
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
+
   if (!contactForm) {
-    console.error('Contact form not found!');
+    console.error("Contact form not found!");
     return;
   }
-  
+
   // Remove any existing event listeners to prevent conflicts
   const newForm = contactForm.cloneNode(true);
   contactForm.parentNode.replaceChild(newForm, contactForm);
-  
-  const freshForm = document.getElementById('contactForm');
-  
-  freshForm.addEventListener('submit', async function(event) {
+
+  const freshForm = document.getElementById("contactForm");
+
+  freshForm.addEventListener("submit", async function (event) {
     event.preventDefault();
-    
+
     // Disable submit button
     const submitButton = freshForm.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = "Sending...";
     submitButton.disabled = true;
-    
+
     // Collect form data
     const formData = {
-      name: document.getElementById('fullName').value.trim(), // Note: Change from fullName to name
-      email: document.getElementById('email').value.trim(),
-      phone: document.getElementById('phone').value.trim() || null,
-      subject: document.getElementById('subject').value || "General Inquiry",
-      message: document.getElementById('message').value.trim()
+      name: document.getElementById("fullName").value.trim(), // Note: Change from fullName to name
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("phone").value.trim() || null,
+      subject: document.getElementById("subject").value || "General Inquiry",
+      message: document.getElementById("message").value.trim(),
     };
-    
+
     try {
       // Send data to your FastAPI backend
       // IMPORTANT: Update this URL to match your FastAPI server
-      const response = await fetch('http://localhost:8000/contact/', {
-        method: 'POST',
+      // Determine base URL
+      const BASE_URL =
+        window.location.hostname === "localhost"
+          ? "http://localhost:8000"
+          : "https://keller-williams-backend.onrender.com";
+
+      // Make the fetch request
+      const response = await fetch(`${BASE_URL}/contact/`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
-        console.log('Success:', data);
-        toast.show('Message sent successfully!', 'success');
+        console.log("Success:", data);
+        toast.show("Message sent successfully!", "success");
         freshForm.reset();
       } else {
         // Try to get error details from response
-        let errorMessage = 'Failed to send message';
+        let errorMessage = "Failed to send message";
         try {
           const errorData = await response.json();
           errorMessage = errorData.detail || errorMessage;
@@ -167,8 +174,8 @@ document.addEventListener('DOMContentLoaded', function() {
         throw new Error(errorMessage);
       }
     } catch (error) {
-      console.error('Error sending message:', error);
-      toast.show(`Failed to send message: ${error.message}`, 'error');
+      console.error("Error sending message:", error);
+      toast.show(`Failed to send message: ${error.message}`, "error");
     } finally {
       // Re-enable submit button
       submitButton.textContent = originalButtonText;

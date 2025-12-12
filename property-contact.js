@@ -6,18 +6,18 @@ class ToastNotification {
   }
 
   init() {
-    if (!document.querySelector('.toast-container')) {
-      this.container = document.createElement('div');
-      this.container.className = 'toast-container';
+    if (!document.querySelector(".toast-container")) {
+      this.container = document.createElement("div");
+      this.container.className = "toast-container";
       document.body.appendChild(this.container);
       this.addToastStyles();
     } else {
-      this.container = document.querySelector('.toast-container');
+      this.container = document.querySelector(".toast-container");
     }
   }
 
   addToastStyles() {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .toast-container {
         position: fixed;
@@ -83,24 +83,24 @@ class ToastNotification {
     document.head.appendChild(style);
   }
 
-  show(message, type = 'success') {
-    const toast = document.createElement('div');
+  show(message, type = "success") {
+    const toast = document.createElement("div");
     toast.className = `toast ${type}`;
-    
-    const icon = document.createElement('span');
-    icon.className = 'toast-icon';
-    icon.innerHTML = type === 'success' ? '✓' : type === 'error' ? '✗' : '⚠';
-    
-    const messageElement = document.createElement('span');
-    messageElement.className = 'toast-message';
+
+    const icon = document.createElement("span");
+    icon.className = "toast-icon";
+    icon.innerHTML = type === "success" ? "✓" : type === "error" ? "✗" : "⚠";
+
+    const messageElement = document.createElement("span");
+    messageElement.className = "toast-message";
     messageElement.textContent = message;
-    
+
     toast.appendChild(icon);
     toast.appendChild(messageElement);
     this.container.appendChild(toast);
-    
+
     setTimeout(() => {
-      toast.style.animation = 'fadeOut 0.3s ease forwards';
+      toast.style.animation = "fadeOut 0.3s ease forwards";
       setTimeout(() => {
         if (toast.parentNode) {
           toast.parentNode.removeChild(toast);
@@ -116,85 +116,97 @@ const toast = new ToastNotification();
 // Main form handler function
 function initPropertyContactForm() {
   // Find the property contact form
-  const propertyContactForm = document.getElementById('propertyContactForm');
-  
+  const propertyContactForm = document.getElementById("propertyContactForm");
+
   if (!propertyContactForm) {
-    console.log('Property contact form not found on this page.');
+    console.log("Property contact form not found on this page.");
     return;
   }
-  
+
   // Remove any existing event listeners by cloning the form
   const newForm = propertyContactForm.cloneNode(true);
   propertyContactForm.parentNode.replaceChild(newForm, propertyContactForm);
-  
-  const freshForm = document.getElementById('propertyContactForm');
-  
+
+  const freshForm = document.getElementById("propertyContactForm");
+
   // Add new submit event listener
-  freshForm.addEventListener('submit', async function(event) {
+  freshForm.addEventListener("submit", async function (event) {
     event.preventDefault();
-    
+
     // Disable submit button
     const submitButton = freshForm.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
+    submitButton.textContent = "Sending...";
     submitButton.disabled = true;
-    
+
     // Get property ID from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const propertyId = urlParams.get('id');
-    
+    const propertyId = urlParams.get("id");
+
     // Get property title for the message
-    const propertyTitle = document.querySelector('.property-title h1')?.textContent || 'Property Inquiry';
-    
+    const propertyTitle =
+      document.querySelector(".property-title h1")?.textContent ||
+      "Property Inquiry";
+
     // Collect form data
-    const formInputs = freshForm.querySelectorAll('input, textarea');
+    const formInputs = freshForm.querySelectorAll("input, textarea");
     const formData = {};
-    
-    formInputs.forEach(input => {
-      if (input.type !== 'submit') {
+
+    formInputs.forEach((input) => {
+      if (input.type !== "submit") {
         formData[input.name || input.type] = input.value.trim();
       }
     });
-    
+
     // Prepare data for the agent endpoint
     const agentFormData = {
-      name: formData.text || '', // Your name field (text input)
-      email: formData.email || '',
+      name: formData.text || "", // Your name field (text input)
+      email: formData.email || "",
       phone: formData.tel || null,
-      message: formData.textarea || ''
+      message: formData.textarea || "",
     };
-    
+
     // Add property info to message if available
     if (propertyId) {
       agentFormData.message = `Property Inquiry for: ${propertyTitle}\nProperty ID: ${propertyId}\n\nMessage:\n${agentFormData.message}`;
     }
-    
+
     // Validate required fields
     if (!agentFormData.name || !agentFormData.email || !agentFormData.message) {
-      toast.show('Please fill in all required fields.', 'warning');
+      toast.show("Please fill in all required fields.", "warning");
       submitButton.textContent = originalButtonText;
       submitButton.disabled = false;
       return;
     }
-    
+
     try {
       // Send to the agent contact endpoint (form data)
-      const response = await fetch('http://localhost:8000/agent/contact/', {
-        method: 'POST',
+      // Determine base URL
+      const BASE_URL =
+        window.location.hostname === "localhost"
+          ? "http://localhost:8000"
+          : "https://keller-williams-backend.onrender.com";
+
+      // Make the fetch request
+      const response = await fetch(`${BASE_URL}/agent/contact/`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams(agentFormData).toString()
+        body: new URLSearchParams(agentFormData).toString(),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
-        console.log('Success:', data);
-        toast.show('Message sent successfully! We\'ll get back to you soon.', 'success');
-        
+        console.log("Success:", data);
+        toast.show(
+          "Message sent successfully! We'll get back to you soon.",
+          "success"
+        );
+
         // Reset the form
         freshForm.reset();
-        
+
         // Also optionally send to the regular contact endpoint
         try {
           const regularContactData = {
@@ -202,40 +214,45 @@ function initPropertyContactForm() {
             email: agentFormData.email,
             phone: agentFormData.phone,
             subject: propertyTitle,
-            message: agentFormData.message
+            message: agentFormData.message,
           };
-          
-          await fetch('http://localhost:8000/contact/', {
-            method: 'POST',
+
+          await fetch("http://localhost:8000/contact/", {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(regularContactData)
+            body: JSON.stringify(regularContactData),
           });
         } catch (secondaryError) {
-          console.log('Secondary contact endpoint failed, but primary succeeded:', secondaryError);
+          console.log(
+            "Secondary contact endpoint failed, but primary succeeded:",
+            secondaryError
+          );
         }
-        
       } else {
         // Try JSON endpoint if form endpoint fails
-        console.log('Form endpoint failed, trying JSON endpoint...');
-        
-        const jsonResponse = await fetch('http://localhost:8000/agent/contact/json', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(agentFormData)
-        });
-        
+        console.log("Form endpoint failed, trying JSON endpoint...");
+
+        const jsonResponse = await fetch(
+          "http://localhost:8000/agent/contact/json",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(agentFormData),
+          }
+        );
+
         if (jsonResponse.ok) {
           const data = await jsonResponse.json();
-          console.log('Success via JSON:', data);
-          toast.show('Message sent successfully!', 'success');
+          console.log("Success via JSON:", data);
+          toast.show("Message sent successfully!", "success");
           freshForm.reset();
         } else {
           // Try to get error details from response
-          let errorMessage = 'Failed to send message';
+          let errorMessage = "Failed to send message";
           try {
             const errorData = await jsonResponse.json();
             errorMessage = errorData.detail || errorMessage;
@@ -246,51 +263,57 @@ function initPropertyContactForm() {
         }
       }
     } catch (error) {
-      console.error('Error sending message:', error);
-      toast.show(`Failed to send message: ${error.message}`, 'error');
+      console.error("Error sending message:", error);
+      toast.show(`Failed to send message: ${error.message}`, "error");
     } finally {
       // Re-enable submit button
       submitButton.textContent = originalButtonText;
       submitButton.disabled = false;
     }
   });
-  
+
   // Add input validation styles
-  const inputs = freshForm.querySelectorAll('input[required], textarea[required]');
-  inputs.forEach(input => {
-    input.addEventListener('blur', function() {
-      if (this.value.trim() === '') {
-        this.style.borderColor = '#ef4444';
+  const inputs = freshForm.querySelectorAll(
+    "input[required], textarea[required]"
+  );
+  inputs.forEach((input) => {
+    input.addEventListener("blur", function () {
+      if (this.value.trim() === "") {
+        this.style.borderColor = "#ef4444";
       } else {
-        this.style.borderColor = '';
+        this.style.borderColor = "";
       }
     });
-    
-    input.addEventListener('input', function() {
-      if (this.value.trim() !== '') {
-        this.style.borderColor = '';
+
+    input.addEventListener("input", function () {
+      if (this.value.trim() !== "") {
+        this.style.borderColor = "";
       }
     });
   });
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Check if we're on a property details page
-  if (window.location.pathname.includes('property-details.html') || 
-      document.querySelector('.property-details')) {
-    
+  if (
+    window.location.pathname.includes("property-details.html") ||
+    document.querySelector(".property-details")
+  ) {
     // Wait a bit to ensure the form is loaded by the main script
     setTimeout(() => {
       initPropertyContactForm();
     }, 500);
-    
+
     // Also try to initialize on any DOM changes
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
         if (mutation.addedNodes.length) {
-          const hasPropertyForm = Array.from(mutation.addedNodes).some(node => 
-            node.nodeType === 1 && node.querySelector && node.querySelector('#propertyContactForm')
+          const hasPropertyForm = Array.from(mutation.addedNodes).some(
+            (node) =>
+              node.nodeType === 1 &&
+              node.querySelector &&
+              node.querySelector("#propertyContactForm")
           );
           if (hasPropertyForm) {
             initPropertyContactForm();
@@ -298,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
-    
+
     observer.observe(document.body, { childList: true, subtree: true });
   }
 });

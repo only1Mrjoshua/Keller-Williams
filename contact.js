@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const BASE_URL =
     window.location.hostname === "localhost"
       ? "http://localhost:8000"
-      : "https://kwelitehomes.com";
+      : "https://keller-williams-backend.onrender.com";
 
   // Make the fetch request
   const response = await fetch(`${BASE_URL}/contact/`, {

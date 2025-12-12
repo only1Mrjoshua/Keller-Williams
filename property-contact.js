@@ -183,7 +183,7 @@ function initPropertyContactForm() {
   const BASE_URL =
     window.location.hostname === "localhost"
       ? "http://localhost:8000"
-      : "https://kwelitehomes.com";
+      : "https://keller-williams-backend.onrender.com";
 
   // Primary request
   const response = await fetch(`${BASE_URL}/agent/contact/`, {

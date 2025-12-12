@@ -17,7 +17,6 @@ const properties = [
         "agent": {
             "name": "Bailey Hall",
             "phone": "8186403478",
-            "email": ""
         }
     },
     {
@@ -38,7 +37,6 @@ const properties = [
         "agent": {
             "name": "Brett Howard",
             "phone": "818-355-6017",
-            "email": ""
         }
     },
     {
@@ -60,7 +58,6 @@ const properties = [
         agent: {
             name: "Emil Akopian",
             phone: "(818) 278 0024",
-            email: "Emil.akopian@yahoo.com"
         }
     },
     {
@@ -81,7 +78,6 @@ const properties = [
         "agent": {
             "name": "Norman Kawaguchi",
             "phone": "626-616-6938",
-            "email": ""
         }
     },
     {
@@ -102,7 +98,6 @@ const properties = [
         "agent": {
             "name": "Maya Gulbekova",
             "phone": "818-427-1772",
-            "email": ""
         }
     },
     {
@@ -123,7 +118,6 @@ const properties = [
         "agent": {
             "name": "Brent Ballard & Trey Ballard",
             "phone": "(818)919-0282",
-            "email": ""
         }
     },
     {
@@ -144,7 +138,6 @@ const properties = [
         "agent": {
             "name": "Artin Sarkissian",
             "phone": "818-437-2433",
-            "email": ""
         }
     },
     {
@@ -165,7 +158,6 @@ const properties = [
         "agent": {
             "name": "Angel Flores & Ariana Hernandez Camargo",
             "phone": "619-325-7310",
-            "email": ""
         }
     },
     {
@@ -186,7 +178,6 @@ const properties = [
         "agent": {
             "name": "Yi Wang",
             "phone": "lookforjeff@gmail.com",
-            "email": ""
         }
     },
     {
@@ -207,7 +198,6 @@ const properties = [
         "agent": {
             "name": "Lois E Zapernick",
             "phone": "602-377-6297",
-            "email": ""
         }
     },
     {
@@ -228,7 +218,6 @@ const properties = [
         "agent": {
             "name": "Richard Battaglia",
             "phone": "323-422-7886",
-            "email": ""
         }
     },
     {
@@ -249,7 +238,6 @@ const properties = [
         "agent": {
             "name": "Tushar V Vakhariya & Renee Lossia Acho",
             "phone": "248-786-7790",
-            "email": ""
         }
     }
 ];

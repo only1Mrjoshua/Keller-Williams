@@ -499,7 +499,6 @@ function updatePropertyPage(property) {
                     </div>
                     <div class="agent-contact">
                         <p><strong>Phone:</strong> ${property.agent.phone}</p>
-                        <p><strong>Email:</strong> ${property.agent.email}</p>
                     </div>
                     <form class="contact-form" id="propertyContactForm">
                         <input type="text" placeholder="Your Name" required>

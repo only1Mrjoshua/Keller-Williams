@@ -197,7 +197,7 @@ function initPropertyContactForm() {
   if (response.ok) {
     const data = await response.json();
     console.log("Success:", data);
-    toast.show("Message sent successfully!", "success");
+    toast.show("Message sent successfully! We'll get back to you.", "success");
     freshForm.reset();
 
     // Secondary request (also dynamic)

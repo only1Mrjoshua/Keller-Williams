@@ -1505,3 +1505,88 @@ html {
 .form-group:focus-within label {
   color: #3b82f6;
 }
+
+/* ===== MOBILE TEAM IMAGE FIXES ===== */
+@media (max-width: 767px) {
+    .team-card {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+    
+    .team-img {
+        width: 100%;
+        height: 0;
+        padding-top: 75%; /* Creates 4:3 aspect ratio */
+        position: relative;
+        flex-shrink: 0; /* Prevent shrinking */
+        background-color: var(--light-grey);
+        overflow: hidden;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .team-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+    }
+    
+    .team-info {
+        padding: 20px 15px;
+        flex-grow: 0; /* Don't grow info section */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .team-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .team-role {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .team-info p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 30px;
+    }
+}
+
+/* For very small devices */
+@media (max-width: 360px) {
+    .team-img {
+        padding-top: 80%; /* Slightly taller aspect ratio for very small screens */
+    }
+    
+    .team-info {
+        padding: 15px 12px;
+    }
+    
+    .team-info h3 {
+        font-size: 1rem;
+    }
+    
+    .team-role {
+        font-size: 0.85rem;
+    }
+    
+    .team-info p {
+        font-size: 0.8rem;
+    }
+}

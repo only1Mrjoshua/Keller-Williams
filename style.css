@@ -833,6 +833,82 @@ a:hover {
     transition: var(--transition);
 }
 
+/* ===== TEAM CARD - HALF IMAGE STYLE ===== */
+.team-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-img {
+    width: 100%;
+    height: 200px; /* Fixed height for image section */
+    background-color: var(--light-grey);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.team-info {
+    padding: clamp(20px, 4vw, 25px);
+    text-align: center;
+    flex-grow: 1; /* Allow text section to grow */
+    display: flex;
+    flex-direction: column;
+}
+
+.team-info h3 {
+    margin-bottom: 8px;
+    font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    color: var(--black);
+}
+
+.team-role {
+    color: var(--primary-red);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.team-info p {
+    margin-bottom: 0;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.5;
+    color: var(--medium-grey);
+    flex-grow: 1; /* Push text to expand within available space */
+}
+
+/* For better aspect ratio control */
+@media (max-width: 768px) {
+    .team-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-img {
+        height: 160px;
+    }
+}
+
 .team-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);

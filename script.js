@@ -243,8 +243,8 @@ function loadFeaturedProperties() {
     let html = '';
     
     featured.forEach(property => {
-        // Check if this is property ID 3 for under contract badge
-        const badge = property.id === 3 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+        // Check if this is property ID 15 for under contract badge
+        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         html += `
             <div class="property-card" data-id="${property.id}">
@@ -276,9 +276,9 @@ function loadAllListings() {
     let html = '';
     properties.forEach(property => {
         const priceNumber = extractPriceNumber(property.price);
-        
-        // Check if this is property ID 3 for under contract badge
-        const badge = property.id === 3 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+
+        // Check if this is property ID 15 for under contract badge
+        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         html += `
             <div class="property-card" 
@@ -418,12 +418,12 @@ function updatePropertyPage(property) {
     if (gallery) {
         let galleryHtml = '';
         // Add badge to first/main gallery image if property is ID 3
-        const badge = property.id === 3 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         property.gallery.forEach((img, index) => {
             const className = index === 0 ? 'gallery-main' : 'gallery-item';
             // Only add badge to main image
-            if (index === 0 && property.id === 3) {
+            if (index === 0 && property.id === 15) {
                 galleryHtml += `<div class="${className}" style="background-image: url('${img}'); position: relative;">${badge}</div>`;
             } else {
                 galleryHtml += `<div class="${className}" style="background-image: url('${img}');"></div>`;

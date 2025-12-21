@@ -266,6 +266,138 @@ const properties = [
     },
     {
         "id": 13,
+        "title": "Sazerac Model – 3 Bed 2 Bath Modern Home",
+        "price": "$39,800",
+        "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
+        "shortDescription": "The Sazerac is a beautifully designed 3-bedroom, 2-bath home offering 1,941 sq. ft. of modern living space with an open-concept layout, vaulted ceilings, and a chef-style kitchen.",
+        "fullDescription": "<strong style=\"color: red;\">Furniture, appliances, and certain fixtures shown are excluded from the sale of the property. Select items may be available for purchase under a separate agreement subject to negotiation.</strong><br><br>The Sazerac is a beautifully designed 3-bedroom, 2-bath home that offers 1,941 sq. ft. of modern living space. With an open-concept layout, vaulted ceilings, and a chef-style kitchen complete with a center island and barn-door range hood, this home is perfect for entertaining. The primary suite features a spacious walk-in shower and elegant finishes, while thoughtful touches like USB outlets, shaker cabinetry, and blackout blinds add style and function. Built to HUD standards with quality construction and smart insulation, the Sazerac combines comfort, durability, and high-end design, making it an ideal choice for families seeking space and sophistication.",
+        "image": "images/025-champion-warehouse-sazerac-exterior2.webp",
+        "alt": "Sazerac model modern manufactured home exterior",
+        "gallery": [
+            "images/025-champion-warehouse-sazerac-exterior2.webp",
+            "images/025-champion-warehouse-sazerac-interior1.webp",
+            "images/025-champion-warehouse-sazerac-interior2.webp",
+            "images/025-champion-warehouse-sazerac-interior3.webp",
+            "images/025-champion-warehouse-sazerac-interior4.webp"
+        ],
+        "galleryAlt": [
+            "Sazerac home exterior with modern design",
+            "Open-concept living area with vaulted ceilings",
+            "Chef-style kitchen with center island and barn-door hood",
+            "Primary suite bathroom with walk-in shower",
+            "Bedroom featuring blackout blinds and stylish finishes"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1941,
+        "yearBuilt": 2025,
+        "propertyType": "Manufactured Home",
+        "features": [
+            "Open-Concept Layout",
+            "Vaulted Ceilings",
+            "Chef-Style Kitchen",
+            "Center Island",
+            "Barn-Door Range Hood",
+            "Primary Suite Walk-In Shower",
+            "USB Outlets",
+            "Shaker Cabinetry",
+            "Blackout Blinds",
+            "Built to HUD Standards",
+            "Smart Insulation"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 14,
+        "title": "New Moon 2856A – 3 Bed 2 Bath Double Wide Home",
+        "price": "$38,350",
+        "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
+        "shortDescription": "This spacious 1,493 sq.ft. double-wide floorplan features expansive windows, a large kitchen/dining area, living room with built-in entertainment center, and a unique laundry/utility room.",
+        "fullDescription": "<strong style=\"color: red;\">Furniture, appliances, and certain fixtures shown are excluded from the sale of the property. Select items may be available for purchase under a separate agreement subject to negotiation.</strong><br><br>This double-wide floorplan is 1,493 sq.ft. and has expansive windows that allow a vast amount of light, a spacious kitchen/dining area and a living room with a built-in entertainment center. The Master bathroom has a stand-in shower and a built-in vanity, the additional bedrooms are on the opposite side of the home next to the unique laundry/utility room. For more information or to schedule a showing call us today!",
+        "image": "images/New-Moon-2856A-Exterior-3.webp",
+        "alt": "New Moon 2856A double wide manufactured home exterior",
+        "gallery": [
+            "images/New-Moon-2856A-Exterior-3.webp",
+            "images/NM2856A kitchen 3.webp",
+            "images/NM2856A master bath 3.webp",
+            "images/New-Moon-2856A-Living-Room-1.webp",
+            "images/New-Moon-2856A-Living-Room-2.webp"
+        ],
+        "galleryAlt": [
+            "New Moon 2856A double wide home exterior",
+            "Spacious kitchen and dining area",
+            "Master bathroom with stand-in shower and built-in vanity",
+            "Living room with built-in entertainment center view 1",
+            "Living room with built-in entertainment center view 2"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1493,
+        "yearBuilt": 2025,
+        "propertyType": "Manufactured Home – Double Wide",
+        "features": [
+            "Expansive Windows",
+            "Spacious Kitchen/Dining Area",
+            "Living Room with Built-in Entertainment Center",
+            "Master Bath with Stand-in Shower",
+            "Built-in Vanity",
+            "Unique Laundry/Utility Room",
+            "Double Wide Floorplan",
+            "Abundant Natural Light"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 15,
+        "title": "New Moon 3252A – 3 Bed 2 Bath Double Wide Home",
+        "price": "$47,000",
+        "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
+        "shortDescription": "This spacious 1,493 sq.ft. double-wide floorplan features expansive windows, a large kitchen/dining area, living room with built-in entertainment center, and a unique laundry/utility room.",
+        "fullDescription": "<strong style=\"color: red;\">Furniture, appliances, and certain fixtures shown are excluded from the sale of the property. Select items may be available for purchase under a separate agreement subject to negotiation.</strong><br><br>This double-wide floorplan is 1,493 sq.ft. and has expansive windows that allow a vast amount of light, a spacious kitchen/dining area and a living room with a built-in entertainment center. The Master bathroom has a stand-in shower and a built-in vanity, the additional bedrooms are on the opposite side of the home next to the unique laundry/utility room. For more information or to schedule a showing call us today!",
+        "image": "images/NM3252A-Exterior.webp",
+        "alt": "New Moon 3252A double wide manufactured home exterior",
+        "gallery": [
+            "images/NM3252A-Exterior.webp",
+            "images/NM3252A-Living-Room.webp",
+            "images/NM3252A-Kitchen.webp",
+            "images/NM3252A-Primary.webp",
+            "images/NM3252A-Primary-Bath.webp"
+        ],
+        "galleryAlt": [
+            "New Moon 3252A double wide home exterior",
+            "Living room with built-in entertainment center",
+            "Spacious kitchen and dining area",
+            "Primary bedroom",
+            "Primary bathroom with stand-in shower and built-in vanity"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1493,
+        "yearBuilt": 2025,
+        "propertyType": "Manufactured Home – Double Wide",
+        "features": [
+            "Expansive Windows",
+            "Spacious Kitchen/Dining Area",
+            "Living Room with Built-in Entertainment Center",
+            "Master Bath with Stand-in Shower",
+            "Built-in Vanity",
+            "Unique Laundry/Utility Room",
+            "Double Wide Floorplan",
+            "Abundant Natural Light"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 16,
         "title": "Lakewood Model – 3 Bed 2 Bath Single Wide Home",
         "price": "$99,675",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -310,7 +442,7 @@ const properties = [
         }
     },
     {
-        "id": 14,
+        "id": 17,
         "title": "Peterson Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$110,100",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -355,7 +487,7 @@ const properties = [
         }
     },
     {
-        "id": 15,
+        "id": 18,
         "title": "Greenwood Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$103,900",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -400,7 +532,7 @@ const properties = [
         }
     },
     {
-        "id": 16,
+        "id": 19,
         "title": "Capron Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$96,500",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -445,7 +577,7 @@ const properties = [
         }
     },
     {
-        "id": 17,
+        "id": 20,
         "title": "Georgetown Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$100,390",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -490,7 +622,7 @@ const properties = [
         }
     },
     {
-        "id": 18,
+        "id": 21,
         "title": "Lapton Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$105,000",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",

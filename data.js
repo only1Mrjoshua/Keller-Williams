@@ -53,15 +53,15 @@ const properties = [
         "price": "$195,000",
         "location": "1512 E 5th St SPACE 117, Ontario, CA 91764",
         "shortDescription": "One of the largest 3-bedroom homes in the park, offering a generous open layout, spacious master bedroom, fresh interior paint, and a prime corner lot with an inviting open porch.",
-        "fullDescription": "<strong style=\"color: red;\">This home is located on leased land. Monthly space lease is $1,433. Financing terms and availability are subject to lender approval.</strong><br><br>This beautifully maintained 3-bedroom, 2-bath double-wide manufactured home spans 1,497 sq. ft. and is one of the largest homes in the community. Situated on a desirable corner lot, the property features fresh interior paint, updated light fixtures, new carpet and linoleum flooring, and a generous open-concept layout ideal for comfortable living and entertaining. The spacious master bedroom includes a walk-in closet, while the eat-in kitchen offers laminate countertops and ample cabinetry. Additional highlights include central air conditioning, gas forced-air heating, a large storage shed, an inviting open porch, carport parking for up to three vehicles, and a dedicated laundry room. Located within a well-maintained community offering a pool, clubhouse, recreation room, and laundry facilities, this home delivers space, comfort, and convenience—ready for you to move in and make it your own.",
+        "fullDescription": "This beautifully maintained 3-bedroom, 2-bath double-wide manufactured home spans 1,497 sq. ft. and is one of the largest homes in the community. Situated on a desirable corner lot, the property features fresh interior paint, updated light fixtures, new carpet and linoleum flooring, and a generous open-concept layout ideal for comfortable living and entertaining. The spacious master bedroom includes a walk-in closet, while the eat-in kitchen offers laminate countertops and ample cabinetry. Additional highlights include central air conditioning, gas forced-air heating, a large storage shed, an inviting open porch, carport parking for up to three vehicles, and a dedicated laundry room. Located within a well-maintained community offering a pool, clubhouse, recreation room, and laundry facilities, this home delivers space, comfort, and convenience—ready for you to move in and make it your own.",
         "image": "images/a097180fa3269dfa562881c6617cefef-cc_ft_960.webp",
         "alt": "Manufactured home exterior on corner lot in Ontario California",
         "gallery": [
             "images/a097180fa3269dfa562881c6617cefef-cc_ft_960.webp",
-            "images/61de8d9f6e11c3205b77989570b046ae-cc_ft_960.webp",
-            "images/2ed932da91cdd5fa0cf599f31d1582b-cc_ft_576.webp",
+            "images/61de8d9f6e11c3205b77898570b046ae-cc_ft_960.webp",
+            "images/2ed932da91cdd5fa0c5f699f31d1582b-cc_ft_576.webp",
             "images/78cef26143e0eb2c2d91a0f5ab73e76a-cc_ft_576.webp",
-            "images/a1e046d47d52d310dfc0348dba7cfc8-cc_ft_960.webp"
+            "images/a1e046c4f7d52d310dfc0348dba7cfc8-cc_ft_960.webp"
         ],
         "galleryAlt": [
             "Exterior view of double wide manufactured home",
@@ -105,13 +105,13 @@ const properties = [
         "price": "$79,900",
         "location": "1960 SE Summer Park Dr, Ankeny, IA 50021",
         "shortDescription": "A 3 bedroom, 2 bathroom mobile/manufactured home located in Ankeny, IA. Features include one parking space and is situated in a car-dependent neighborhood with minimal flood risk.",
-        "fullDescription": "This is a 3 bedroom, 2.0 bathroom, mobile / manufactured home located at 1960 SE Summer Park Dr, Ankeny, IA 50021. The property has been on the market for 34 days and offers an estimated monthly payment of $519. The home sits on a -- sqft lot with an annual tax amount of $102 and a tax assessed value of $8,200. This property does not have a basement and includes one parking space. The neighborhood has a Walk Score® of 33/100 (Car-Dependent) and a Bike Score® of 34/100 (Somewhat Bikeable). The property is located in FEMA Zone X (unshaded), a minimal-risk flood area.",
+        "fullDescription": "This is a 3 bedroom, 2.0 bathroom, mobile / manufactured home located at 1960 SE Summer Park Dr, Ankeny, IA 50021. The property has been on the market for 34 days and offers an estimated monthly payment of $519. The home sits on a -- sqft lot with an annual tax amount of $102 and a tax assessed value of $8,200. This property does not have a basement and includes one parking space.",
         "image": "images/b4bd31eb3eae362f6bcdc445191a9d77-cc_ft_576.webp",
         "alt": "Mobile/manufactured home at 1960 SE Summer Park Dr, Ankeny, IA",
         "gallery": [
             "images/b4bd31eb3eae362f6bcdc445191a9d77-cc_ft_576.webp",
             "images/c3d99b6bf71b7b4019fff28fa78b65d3-cc_ft_960.webp",
-            "images/bd115bd17a475df6700dd509068f9547-cc_ft_576.webp",
+            "images/bdf15bdf7a475d670f0dd509068f9547-cc_ft_576.webp",
             "images/a6b3fdebbb758a7b9456d14646d968ee-cc_ft_960.webp",
             "images/1ccd4457bf25041a67a86d9a9680eb62-cc_ft_960.webp"
         ],

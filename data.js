@@ -2,7 +2,7 @@ const properties = [
     {
         "id": 1,
         "title": "Ontario Ranch Double Wide – 3 Bed 2 Bath Manufactured Home",
-        "price": "$149,999",
+        "price": "$119,999",
         "location": "1456 E Philadelphia St SPACE 372, Ontario, CA 91761",
         "shortDescription": "Spectacular 3-bedroom, 2-bath double-wide home located in the gated Rancho Ontario community, featuring modern fixtures, laminate flooring, an open-concept layout, and resort-style amenities.",
         "fullDescription": "Back on the market due to cancellation of previous escrow, this beautifully updated 3-bedroom, 2-bath double-wide manufactured home offers 1,600 sq. ft. of comfortable living space in the highly desirable, gated Rancho Ontario community. The home features fresh interior and exterior paint, modern fixtures throughout, and laminate flooring that enhances the light-filled, open-concept design. A welcoming floor plan includes a formal dining room with a built-in dining hutch, a separate family room, and a spacious living area ideal for entertaining. The enclosed patio provides additional versatile space for gatherings or relaxation. Residents enjoy resort-style amenities including a community pool, spa, gym, and clubhouse. Centrally located near major freeways, restaurants, hospitals, shopping centers, Victoria Gardens, Ontario Mills, and Ontario International Airport, this home offers both convenience and lifestyle appeal.",
@@ -42,15 +42,14 @@ const properties = [
             "Gated Senior Community"
         ],
         "agent": {
-            "name": "Marta Liceaga (DRE #01341156)",
-            "phone": "(626) 831-3181",
-            "agency": "Elevate Real Estate Agency"
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024",
         }
     },
     {
         "id": 2,
         "title": "Corner Lot Double Wide – 3 Bed 2 Bath Manufactured Home",
-        "price": "$195,000",
+        "price": "$134,000",
         "location": "1512 E 5th St SPACE 117, Ontario, CA 91764",
         "shortDescription": "One of the largest 3-bedroom homes in the park, offering a generous open layout, spacious master bedroom, fresh interior paint, and a prime corner lot with an inviting open porch.",
         "fullDescription": "This beautifully maintained 3-bedroom, 2-bath double-wide manufactured home spans 1,497 sq. ft. and is one of the largest homes in the community. Situated on a desirable corner lot, the property features fresh interior paint, updated light fixtures, new carpet and linoleum flooring, and a generous open-concept layout ideal for comfortable living and entertaining. The spacious master bedroom includes a walk-in closet, while the eat-in kitchen offers laminate countertops and ample cabinetry. Additional highlights include central air conditioning, gas forced-air heating, a large storage shed, an inviting open porch, carport parking for up to three vehicles, and a dedicated laundry room. Located within a well-maintained community offering a pool, clubhouse, recreation room, and laundry facilities, this home delivers space, comfort, and convenience—ready for you to move in and make it your own.",
@@ -94,9 +93,8 @@ const properties = [
             "Community Pool & Clubhouse"
         ],
         "agent": {
-            "name": "Ivan Rodriguez",
-            "phone": "(909) 986-2555",
-            "agency": "Action Mobile Homes"
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024",
         }
     },
     {
@@ -136,9 +134,8 @@ const properties = [
             "No Basement"
         ],
         "agent": {
-            "name": "Greg \"Radar\" Weinschenk",
-            "phone": "(515) 453-5857",
-            "agency": "Iowa Realty"
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024",
         }
     },
     {
@@ -190,7 +187,7 @@ const properties = [
     {
         "id": 5,
         "title": "New Moon 2856A – 3 Bed 2 Bath Double Wide Home",
-        "price": "$38,350",
+        "price": "$87,500",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
         "shortDescription": "This spacious 1,493 sq.ft. double-wide floorplan features expansive windows, a large kitchen/dining area, living room with built-in entertainment center, and a unique laundry/utility room.",
         "fullDescription": "<strong style=\"color: red;\">Furniture, appliances, and certain fixtures shown are excluded from the sale of the property. Select items may be available for purchase under a separate agreement subject to negotiation.</strong><br><br>This double-wide floorplan is 1,493 sq.ft. and has expansive windows that allow a vast amount of light, a spacious kitchen/dining area and a living room with a built-in entertainment center. The Master bathroom has a stand-in shower and a built-in vanity, the additional bedrooms are on the opposite side of the home next to the unique laundry/utility room. For more information or to schedule a showing call us today!",
@@ -233,7 +230,7 @@ const properties = [
     {
         "id": 6,
         "title": "New Moon 3252A – 3 Bed 2 Bath Double Wide Home",
-        "price": "$47,000",
+        "price": "$95,999",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
         "shortDescription": "This spacious 1,493 sq.ft. double-wide floorplan features expansive windows, a large kitchen/dining area, living room with built-in entertainment center, and a unique laundry/utility room.",
         "fullDescription": "<strong style=\"color: red;\">Furniture, appliances, and certain fixtures shown are excluded from the sale of the property. Select items may be available for purchase under a separate agreement subject to negotiation.</strong><br><br>This double-wide floorplan is 1,493 sq.ft. and has expansive windows that allow a vast amount of light, a spacious kitchen/dining area and a living room with a built-in entertainment center. The Master bathroom has a stand-in shower and a built-in vanity, the additional bedrooms are on the opposite side of the home next to the unique laundry/utility room. For more information or to schedule a showing call us today!",

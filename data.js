@@ -1,6 +1,148 @@
 const properties = [
     {
         "id": 1,
+        "title": "Ontario Ranch Double Wide – 3 Bed 2 Bath Manufactured Home",
+        "price": "$149,999",
+        "location": "1456 E Philadelphia St SPACE 372, Ontario, CA 91761",
+        "shortDescription": "Spectacular 3-bedroom, 2-bath double-wide home located in the gated Rancho Ontario community, featuring modern fixtures, laminate flooring, an open-concept layout, and resort-style amenities.",
+        "fullDescription": "Back on the market due to cancellation of previous escrow, this beautifully updated 3-bedroom, 2-bath double-wide manufactured home offers 1,600 sq. ft. of comfortable living space in the highly desirable, gated Rancho Ontario community. The home features fresh interior and exterior paint, modern fixtures throughout, and laminate flooring that enhances the light-filled, open-concept design. A welcoming floor plan includes a formal dining room with a built-in dining hutch, a separate family room, and a spacious living area ideal for entertaining. The enclosed patio provides additional versatile space for gatherings or relaxation. Residents enjoy resort-style amenities including a community pool, spa, gym, and clubhouse. Centrally located near major freeways, restaurants, hospitals, shopping centers, Victoria Gardens, Ontario Mills, and Ontario International Airport, this home offers both convenience and lifestyle appeal.",
+        "image": "images/8f562575bf05f5e2185823c61033a147-cc_ft_960.jpg",
+        "alt": "Ontario Ranch manufactured home exterior",
+        "gallery": [
+            "images/8a64258a41ce458d7a117731a6f4cd70-cc_ft_960.jpg",
+            "images/8f562575bf05f5e2185823c61033a147-cc_ft_960.jpg",
+            "images/54c7e0a77d0b9de3bc2a98e88a4793f1-cc_ft_576.jpg",
+            "images/46773bddfac7264c9f4630180f81e281-cc_ft_960.jpg"
+        ],
+        "galleryAlt": [
+            "Double wide manufactured home exterior in gated community",
+            "Light-filled living room with open-concept layout",
+            "Modern kitchen and dining area with laminate flooring",
+            "Spacious family room with modern fixtures"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1600,
+        "yearBuilt": 1980,
+        "propertyType": "Manufactured Home",
+        "features": [
+            "Double Wide Home",
+            "Open-Concept Floor Plan",
+            "Modern Fixtures",
+            "Laminate Flooring",
+            "Separate Family Room",
+            "Formal Dining Room with Built-In Hutch",
+            "Enclosed Patio",
+            "Central Heating",
+            "Central Air Conditioning",
+            "Laundry Room",
+            "Main-Level Primary Bedroom",
+            "Community Pool & Spa",
+            "Clubhouse & Gym",
+            "Gated Senior Community"
+        ],
+        "agent": {
+            "name": "Marta Liceaga (DRE #01341156)",
+            "phone": "(626) 831-3181",
+            "agency": "Elevate Real Estate Agency"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Corner Lot Double Wide – 3 Bed 2 Bath Manufactured Home",
+        "price": "$195,000",
+        "location": "1512 E 5th St SPACE 117, Ontario, CA 91764",
+        "shortDescription": "One of the largest 3-bedroom homes in the park, offering a generous open layout, spacious master bedroom, fresh interior paint, and a prime corner lot with an inviting open porch.",
+        "fullDescription": "<strong style=\"color: red;\">This home is located on leased land. Monthly space lease is $1,433. Financing terms and availability are subject to lender approval.</strong><br><br>This beautifully maintained 3-bedroom, 2-bath double-wide manufactured home spans 1,497 sq. ft. and is one of the largest homes in the community. Situated on a desirable corner lot, the property features fresh interior paint, updated light fixtures, new carpet and linoleum flooring, and a generous open-concept layout ideal for comfortable living and entertaining. The spacious master bedroom includes a walk-in closet, while the eat-in kitchen offers laminate countertops and ample cabinetry. Additional highlights include central air conditioning, gas forced-air heating, a large storage shed, an inviting open porch, carport parking for up to three vehicles, and a dedicated laundry room. Located within a well-maintained community offering a pool, clubhouse, recreation room, and laundry facilities, this home delivers space, comfort, and convenience—ready for you to move in and make it your own.",
+        "image": "images/a097180fa3269dfa562881c6617cefef-cc_ft_960.webp",
+        "alt": "Manufactured home exterior on corner lot in Ontario California",
+        "gallery": [
+            "images/a097180fa3269dfa562881c6617cefef-cc_ft_960.webp",
+            "images/61de8d9f6e11c3205b77989570b046ae-cc_ft_960.webp",
+            "images/2ed932da91cdd5fa0cf599f31d1582b-cc_ft_576.webp",
+            "images/78cef26143e0eb2c2d91a0f5ab73e76a-cc_ft_576.webp",
+            "images/a1e046d47d52d310dfc0348dba7cfc8-cc_ft_960.webp"
+        ],
+        "galleryAlt": [
+            "Exterior view of double wide manufactured home",
+            "Living room with open layout and fresh interior paint",
+            "Dining area with laminate flooring and natural light",
+            "Updated kitchen with laminate counters and modern fixtures",
+            "Spacious living area showcasing open floor plan"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1497,
+        "yearBuilt": 1999,
+        "propertyType": "Manufactured Home",
+        "features": [
+            "Double Wide Home",
+            "Prime Corner Lot",
+            "Open-Concept Layout",
+            "Spacious Master Bedroom",
+            "Walk-In Closet",
+            "Fresh Interior Paint",
+            "Updated Light Fixtures",
+            "New Carpet & Linoleum Flooring",
+            "Eat-In Kitchen",
+            "Central Air Conditioning",
+            "Gas Forced-Air Heating",
+            "Open Porch",
+            "Storage Shed",
+            "Carport Parking",
+            "Laundry Room",
+            "Community Pool & Clubhouse"
+        ],
+        "agent": {
+            "name": "Ivan Rodriguez",
+            "phone": "(909) 986-2555",
+            "agency": "Action Mobile Homes"
+        }
+    },
+    {
+        "id": 3,
+        "title": "3 Bed 2 Bath Mobile / Manufactured Home in Ankeny",
+        "price": "$79,900",
+        "location": "1960 SE Summer Park Dr, Ankeny, IA 50021",
+        "shortDescription": "A 3 bedroom, 2 bathroom mobile/manufactured home located in Ankeny, IA. Features include one parking space and is situated in a car-dependent neighborhood with minimal flood risk.",
+        "fullDescription": "This is a 3 bedroom, 2.0 bathroom, mobile / manufactured home located at 1960 SE Summer Park Dr, Ankeny, IA 50021. The property has been on the market for 34 days and offers an estimated monthly payment of $519. The home sits on a -- sqft lot with an annual tax amount of $102 and a tax assessed value of $8,200. This property does not have a basement and includes one parking space. The neighborhood has a Walk Score® of 33/100 (Car-Dependent) and a Bike Score® of 34/100 (Somewhat Bikeable). The property is located in FEMA Zone X (unshaded), a minimal-risk flood area.",
+        "image": "images/b4bd31eb3eae362f6bcdc445191a9d77-cc_ft_576.webp",
+        "alt": "Mobile/manufactured home at 1960 SE Summer Park Dr, Ankeny, IA",
+        "gallery": [
+            "images/b4bd31eb3eae362f6bcdc445191a9d77-cc_ft_576.webp",
+            "images/c3d99b6bf71b7b4019fff28fa78b65d3-cc_ft_960.webp",
+            "images/bd115bd17a475df6700dd509068f9547-cc_ft_576.webp",
+            "images/a6b3fdebbb758a7b9456d14646d968ee-cc_ft_960.webp",
+            "images/1ccd4457bf25041a67a86d9a9680eb62-cc_ft_960.webp"
+        ],
+        "galleryAlt": [
+            "Exterior view of manufactured home",
+            "Front angle of mobile home",
+            "Side view of property",
+            "Backyard or additional exterior view",
+            "Street view or wider property shot"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": "--",
+        "yearBuilt": "----",
+        "propertyType": "Manufactured Home",
+        "features": [
+            "Mobile/Manufactured Home",
+            "3 Bedrooms",
+            "2 Bathrooms",
+            "1 Parking Space",
+            "Minimal Flood Risk Zone",
+            "No Basement"
+        ],
+        "agent": {
+            "name": "Greg \"Radar\" Weinschenk",
+            "phone": "(515) 453-5857",
+            "agency": "Iowa Realty"
+        }
+    },
+    {
+        "id": 4,
         "title": "Sazerac Model – 3 Bed 2 Bath Modern Home",
         "price": "$39,800",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -46,7 +188,7 @@ const properties = [
         }
     },
     {
-        "id": 2,
+        "id": 5,
         "title": "New Moon 2856A – 3 Bed 2 Bath Double Wide Home",
         "price": "$38,350",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -89,7 +231,7 @@ const properties = [
         }
     },
     {
-        "id": 3,
+        "id": 6,
         "title": "New Moon 3252A – 3 Bed 2 Bath Double Wide Home",
         "price": "$47,000",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -132,7 +274,7 @@ const properties = [
         }
     },
     {
-        "id": 4,
+        "id": 7,
         "title": "Spanish Hacienda Equestrian Estate",
         "price": "$3,107,000",
         "location": "1533 Rancho Ave, Glendale, CA 91201",
@@ -176,7 +318,7 @@ const properties = [
         }
     },
     {
-        "id": 6,
+        "id": 8,
         "title": "Rancho San Rafael Hillside Residence",
         "price": "$1,898,000",
         "location": "925 Calle Del Pacifico, Glendale, CA 91208",
@@ -198,7 +340,7 @@ const properties = [
         }
     },
     {
-        "id": 7,
+        "id": 9,
         "title": "Prestigious Chevy Chase Canyon Home",
         "price": "$1,563,000",
         "location": "3275 Buckingham Rd, Glendale, CA 91206",
@@ -220,7 +362,7 @@ const properties = [
         }
     },
     {
-        "id": 8,
+        "id": 10,
         "title": "Bay Park Tri-Level Residence",
         "price": "$2,117,000",
         "location": "4542 Milton St, San Diego, CA 92110",
@@ -242,7 +384,7 @@ const properties = [
         }
     },
     {
-        "id": 9,
+        "id": 11,
         "title": "Panoramic View Home on Country Hills Drive",
         "price": "$2,786,000",
         "location": "761 W Country Hills Dr, La Habra, CA 90631",
@@ -264,7 +406,7 @@ const properties = [
         }
     },
     {
-        "id": 10,
+        "id": 12,
         "title": "Historic Spanish Colonial in Encanto/Palmcroft",
         "price": "$1,650,000",
         "location": "1615 Palmcroft Way SE, Phoenix, AZ 85007",
@@ -286,7 +428,7 @@ const properties = [
         }
     },
     {
-        "id": 11,
+        "id": 13,
         "title": "Updated City Terrace Home with Views",
         "price": "$835,000",
         "location": "1416 Helen Dr, Los Angeles, CA 90063",
@@ -308,7 +450,7 @@ const properties = [
         }
     },
     {
-        "id": 12,
+        "id": 14,
         "title": "Brand-New Construction Birmingham School District",
         "price": "$1,999,999",
         "location": "2840 Bolingbroke Dr, Troy, MI 48084",
@@ -330,7 +472,7 @@ const properties = [
         }
     },
     {
-        "id": 13,
+        "id": 15,
         "title": "New Construction Glendale Home",
         "price": "$1,595,000",
         "location": "4208 New York Ave, Glendale, CA 91214",
@@ -352,7 +494,7 @@ const properties = [
         }
     },
     {
-        "id": 14,
+        "id": 16,
         "title": "Stunningly Remodeled Corner-Lot Home",
         "price": "$2,978,000",
         "location": "430 W Kenneth Rd, Glendale, CA 91202",
@@ -374,7 +516,7 @@ const properties = [
         }
     },
     {
-        id: 15,
+        id: 17,
         title: "Modern Farmhouse",
         price: "$1,675,000",
         location: "3500 Fairchild St, Glendale, CA 91214",
@@ -397,7 +539,7 @@ const properties = [
         }
     },
     {
-        "id": 16,
+        "id": 18,
         "title": "Lakewood Model – 3 Bed 2 Bath Single Wide Home",
         "price": "$99,675",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -442,7 +584,7 @@ const properties = [
         }
     },
     {
-        "id": 17,
+        "id": 19,
         "title": "Peterson Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$110,100",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -487,7 +629,7 @@ const properties = [
         }
     },
     {
-        "id": 18,
+        "id": 20,
         "title": "Greenwood Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$103,900",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -532,7 +674,7 @@ const properties = [
         }
     },
     {
-        "id": 19,
+        "id": 21,
         "title": "Capron Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$96,500",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -577,7 +719,7 @@ const properties = [
         }
     },
     {
-        "id": 20,
+        "id": 22,
         "title": "Georgetown Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$100,390",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",
@@ -622,7 +764,7 @@ const properties = [
         }
     },
     {
-        "id": 21,
+        "id": 23,
         "title": "Lapton Model – 3 Bed 2 Bath Double Wide Home",
         "price": "$105,000",
         "location": "Available for delivery in WV, DE, KY, PA, OH, TN, NC, MD & Washington DC",

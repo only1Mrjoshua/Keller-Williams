@@ -1684,3 +1684,151 @@ html {
         width: 80px;
     }
 }
+
+/* ===== SEARCH FILTERS MOBILE FIXES ===== */
+.search-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.search-filters select {
+    padding: 12px 15px;
+    border: 1px solid var(--light-grey);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--dark-grey);
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1 1 200px;
+    min-width: 180px;
+    height: 48px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .search-header {
+        padding: 20px 0;
+    }
+    
+    .search-header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .search-header p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .search-container {
+        padding: 0 15px;
+    }
+    
+    .search-box {
+        margin-bottom: 15px;
+    }
+    
+    .search-box input {
+        padding: 12px 15px 12px 45px;
+        font-size: 1rem;
+        height: 48px;
+    }
+    
+    .search-icon {
+        left: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .search-filters {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .search-filters select {
+        width: 100%;
+        min-width: 100%;
+        flex: 1 1 auto;
+        margin: 0;
+        font-size: 1rem;
+        height: 48px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+    
+    .search-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    
+    .search-stats div {
+        font-size: 0.95rem;
+    }
+    
+    .clear-search {
+        padding: 10px 0;
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .search-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .search-header p {
+        font-size: 0.9rem;
+    }
+    
+    .search-filters select {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+        padding-right: 35px;
+        height: 44px;
+    }
+    
+    .search-box input {
+        font-size: 0.95rem;
+        height: 44px;
+        padding: 10px 12px 10px 40px;
+    }
+    
+    .search-icon {
+        font-size: 1rem;
+        left: 12px;
+    }
+}
+
+/* Fix for the search filters container on mobile */
+@media (max-width: 768px) {
+    .search-filters select#categoryFilter,
+    .search-filters select#priceFilter,
+    .search-filters select#propertyTypeFilter,
+    .search-filters select#bedroomsFilter {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    /* Make sure the last select doesn't have extra margin */
+    .search-filters select:last-child {
+        margin-bottom: 0;
+    }
+}

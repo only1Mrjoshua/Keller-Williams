@@ -307,10 +307,38 @@ function loadAllListings() {
         // Skip empty categories
         if (categoryProperties.length === 0) continue;
         
-        // Add category header
+        // Add category header with proper formatting
+        let categoryDisplayName = '';
+
+        // Format each category name properly
+        switch(categoryName) {
+            case 'Double Wide':
+                categoryDisplayName = 'DOUBLE WIDE HOMES';
+                break;
+            case 'Single Wide':
+                categoryDisplayName = 'SINGLE WIDE HOMES';
+                break;
+            case 'Manufactured Home':
+                categoryDisplayName = 'MANUFACTURED HOMES';
+                break;
+            case 'Single Family':
+                categoryDisplayName = 'SINGLE FAMILY HOMES';
+                break;
+            case 'Farmhouse':
+                categoryDisplayName = 'FARMHOUSES';
+                break;
+            default:
+                // For any other categories, just add 'HOMES' but remove 'Home' if present
+                let baseName = categoryName;
+                if (baseName.includes('Home')) {
+                    baseName = baseName.replace('Home', '').trim();
+                }
+                categoryDisplayName = `${baseName.toUpperCase()} HOMES`;
+        }
+
         html += `
             <div class="category-section">
-                <h2 class="category-title">${categoryName.toUpperCase()} HOMES</h2>
+                <h2 class="category-title">${categoryDisplayName}</h2>
                 <div class="category-divider"></div>
             </div>
         `;

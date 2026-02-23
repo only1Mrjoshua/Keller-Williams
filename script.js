@@ -119,8 +119,8 @@ function initSearch() {
         });
     }
     
-    // Filter change listeners
-    ['priceFilter', 'propertyTypeFilter', 'bedroomsFilter'].forEach(filterId => {
+    // Filter change listeners - INCLUDING THE NEW CATEGORY FILTER
+    ['categoryFilter', 'priceFilter', 'propertyTypeFilter', 'bedroomsFilter'].forEach(filterId => {
         const filter = document.getElementById(filterId);
         if (filter) {
             filter.addEventListener('change', performListingsSearch);
@@ -152,6 +152,7 @@ function handleHomeSearch() {
 // ===== LISTINGS SEARCH =====
 function performListingsSearch() {
     const searchTerm = document.getElementById('listingsSearch')?.value.trim().toLowerCase() || '';
+    const categoryFilter = document.getElementById('categoryFilter')?.value || ''; // NEW CATEGORY FILTER
     const priceFilter = document.getElementById('priceFilter')?.value || '';
     const typeFilter = document.getElementById('propertyTypeFilter')?.value || '';
     const bedroomsFilter = document.getElementById('bedroomsFilter')?.value || '';
@@ -162,6 +163,7 @@ function performListingsSearch() {
     propertyCards.forEach(card => {
         const title = card.getAttribute('data-title') || '';
         const location = card.getAttribute('data-location') || '';
+        const category = card.getAttribute('data-category') || ''; // NEW CATEGORY ATTRIBUTE
         const priceNumber = parseFloat(card.getAttribute('data-price') || 0);
         const propertyType = card.getAttribute('data-type') || '';
         const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
@@ -170,6 +172,9 @@ function performListingsSearch() {
         const textMatch = !searchTerm || 
                          title.includes(searchTerm) || 
                          location.includes(searchTerm);
+        
+        // Category filter (NEW)
+        const categoryMatch = !categoryFilter || category === categoryFilter;
         
         // Price filter
         let priceMatch = true;
@@ -188,8 +193,8 @@ function performListingsSearch() {
         // Bedrooms filter
         const bedroomsMatch = !bedroomsFilter || bedrooms >= parseInt(bedroomsFilter);
         
-        // Show/hide based on all filters
-        if (textMatch && priceMatch && typeMatch && bedroomsMatch) {
+        // Show/hide based on all filters (including categoryMatch)
+        if (textMatch && categoryMatch && priceMatch && typeMatch && bedroomsMatch) {
             card.style.display = 'block';
             card.style.animation = 'fadeIn 0.3s ease';
             visibleCount++;
@@ -212,6 +217,7 @@ function updateSearchResults(count) {
     const noResultsMessage = document.getElementById('noResultsMessage');
     if (noResultsMessage) {
         const hasActiveFilters = document.querySelector('#listingsSearch:not([value=""])') ||
+                               document.querySelector('#categoryFilter:not([value=""])') || // NEW
                                document.querySelector('#priceFilter:not([value=""])') ||
                                document.querySelector('#propertyTypeFilter:not([value=""])') ||
                                document.querySelector('#bedroomsFilter:not([value=""])');
@@ -227,6 +233,7 @@ function updateSearchResults(count) {
 // ===== CLEAR ALL FILTERS =====
 function clearAllFilters() {
     document.getElementById('listingsSearch').value = '';
+    document.getElementById('categoryFilter').value = ''; // NEW
     document.getElementById('priceFilter').value = '';
     document.getElementById('propertyTypeFilter').value = '';
     document.getElementById('bedroomsFilter').value = '';
@@ -244,7 +251,7 @@ function loadFeaturedProperties() {
     
     featured.forEach(property => {
         // Check if this is property ID 15 for under contract badge
-        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+        const badge = property.status === 'under-contract' ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         html += `
             <div class="property-card" data-id="${property.id}">
@@ -273,36 +280,71 @@ function loadAllListings() {
     const listingsContainer = document.getElementById('listingsContainer');
     if (!listingsContainer) return;
     
-    let html = '';
+    // Group properties by category
+    const categories = {
+        'Double Wide': [],
+        'Single Wide': [],
+        'Manufactured Home': [],
+        'Single Family': [],
+        'Farmhouse': []
+    };
+    
+    // Sort properties into categories
     properties.forEach(property => {
-        const priceNumber = extractPriceNumber(property.price);
-
-        // Check if this is property ID 15 for under contract badge
-        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+        const category = property.category || 'Manufactured Home';
+        if (categories[category]) {
+            categories[category].push(property);
+        } else {
+            // If category doesn't exist in our map, add to Manufactured Home
+            categories['Manufactured Home'].push(property);
+        }
+    });
+    
+    let html = '';
+    
+    // Loop through each category and create a section
+    for (const [categoryName, categoryProperties] of Object.entries(categories)) {
+        // Skip empty categories
+        if (categoryProperties.length === 0) continue;
         
+        // Add category header
         html += `
-            <div class="property-card" 
-                 data-id="${property.id}" 
-                 data-type="${property.propertyType.toLowerCase()}" 
-                 data-bedrooms="${property.bedrooms}"
-                 data-price="${priceNumber}"
-                 data-location="${property.location.toLowerCase()}"
-                 data-title="${property.title.toLowerCase()}">
-                <div class="property-img" style="background-image: url('${property.image}');">
-                    ${badge}
-                </div>
-                <div class="property-info">
-                    <div class="property-price">${property.price}</div>
-                    <h3>${property.title}</h3>
-                    <div class="property-location">
-                        <span>📍</span> ${property.location}
-                    </div>
-                    <p>${property.shortDescription}</p>
-                    <button class="btn view-details" data-id="${property.id}">View Details</button>
-                </div>
+            <div class="category-section">
+                <h2 class="category-title">${categoryName.toUpperCase()} HOMES</h2>
+                <div class="category-divider"></div>
             </div>
         `;
-    });
+        
+        // Add properties in this category
+        categoryProperties.forEach(property => {
+            const priceNumber = extractPriceNumber(property.price);
+            const badge = property.status === 'under-contract' ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+            
+            html += `
+                <div class="property-card" 
+                     data-id="${property.id}" 
+                     data-category="${property.category || 'Manufactured Home'}"
+                     data-type="${property.propertyType.toLowerCase()}" 
+                     data-bedrooms="${property.bedrooms}"
+                     data-price="${priceNumber}"
+                     data-location="${property.location.toLowerCase()}"
+                     data-title="${property.title.toLowerCase()}">
+                    <div class="property-img" style="background-image: url('${property.image}');">
+                        ${badge}
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">${property.price}</div>
+                        <h3>${property.title}</h3>
+                        <div class="property-location">
+                            <span>📍</span> ${property.location}
+                        </div>
+                        <p>${property.shortDescription}</p>
+                        <button class="btn view-details" data-id="${property.id}">View Details</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
     
     listingsContainer.innerHTML = html;
     
@@ -315,7 +357,7 @@ function loadAllListings() {
     attachPropertyCardListeners();
     applyURLFilters();
     createNoResultsMessage();
-    performListingsSearch(); // Initial search to apply URL filters
+    performListingsSearch();
 }
 
 // ===== ATTACH PROPERTY CARD LISTENERS =====
@@ -417,13 +459,13 @@ function updatePropertyPage(property) {
     const gallery = document.querySelector('.property-gallery');
     if (gallery) {
         let galleryHtml = '';
-        // Add badge to first/main gallery image if property is ID 3
-        const badge = property.id === 15 ? '<div class="property-badge under-contract">Under Contract</div>' : '';
+        // Add badge to first/main gallery image if property is under contract
+        const badge = property.status === 'under-contract' ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         property.gallery.forEach((img, index) => {
             const className = index === 0 ? 'gallery-main' : 'gallery-item';
             // Only add badge to main image
-            if (index === 0 && property.id === 15) {
+            if (index === 0 && property.status === 'under-contract') {
                 galleryHtml += `<div class="${className}" style="background-image: url('${img}'); position: relative;">${badge}</div>`;
             } else {
                 galleryHtml += `<div class="${className}" style="background-image: url('${img}');"></div>`;

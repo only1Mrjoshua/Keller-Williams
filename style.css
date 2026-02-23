@@ -1832,3 +1832,63 @@ html {
         margin-bottom: 0;
     }
 }
+
+/* ===== SEARCH CONTACT NOTE ===== */
+.search-contact-note {
+    margin-top: 20px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    text-align: center;
+    width: 100%;
+    border: 1px solid rgba(211, 47, 47, 0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.search-contact-note i {
+    color: var(--primary-red);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.search-contact-note a {
+    color: var(--primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.search-contact-note a:hover {
+    color: var(--dark-red);
+    text-decoration: underline;
+}
+
+/* Mobile styles for the contact note */
+@media (max-width: 768px) {
+    .search-contact-note {
+        margin-top: 15px;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-contact-note {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        gap: 8px;
+        flex-direction: column;
+    }
+    
+    .search-contact-note i {
+        font-size: 1.1rem;
+    }
+}

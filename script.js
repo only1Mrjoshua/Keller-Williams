@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== MOBILE NAVIGATION =====
 function initMobileNavigation() {
+    // Check if already initialized
+    if (window.mobileNavInitialized) return;
+    window.mobileNavInitialized = true;
+    
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -62,33 +66,32 @@ function initMobileNavigation() {
     hamburger.appendChild(span2);
     hamburger.appendChild(span3);
     
-    // Create overlay element (only if it doesn't exist)
-    if (!document.querySelector('.nav-overlay')) {
-        const overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
+    // Remove any existing close button if it exists
+    const existingClose = document.querySelector('.menu-close');
+    if (existingClose) {
+        existingClose.remove();
     }
     
-    // Create close button (only if it doesn't exist)
-    if (!document.querySelector('.menu-close')) {
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'menu-close';
-        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-        navLinks.prepend(closeBtn);
+    // Remove any existing overlay
+    const existingOverlay = document.querySelector('.nav-overlay');
+    if (existingOverlay) {
+        existingOverlay.remove();
     }
+    
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
     
     // Set active page based on current URL
     setActivePage();
-    
-    const overlay = document.querySelector('.nav-overlay');
-    const closeBtn = document.querySelector('.menu-close');
     
     // Toggle mobile menu
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
-        if (overlay) overlay.classList.toggle('active');
+        overlay.classList.toggle('active');
         
         // Prevent body scroll when menu is open
         if (navLinks.classList.contains('active')) {
@@ -98,33 +101,21 @@ function initMobileNavigation() {
         }
     });
     
-    // Close menu when clicking close button
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-    
     // Close menu when clicking overlay
-    if (overlay) {
-        overlay.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
+    overlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
     
     // Close menu when clicking links
-    const navItems = document.querySelectorAll('.nav-links a');
+    const navItems = navLinks.querySelectorAll('a');
     navItems.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
+            overlay.classList.remove('active');
             document.body.style.overflow = '';
         });
     });

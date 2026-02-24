@@ -1358,6 +1358,486 @@ const properties = [
             "phone": "(818) 278 0024"
         }
     },
+    {
+        "id": 36,
+        "title": "2930 SW 11th St – 5 Bed 4 Bath Investment Duplex",
+        "price": "$995,000",
+        "location": "2930 SW 11th St, Miami, FL 33135",
+        "category": "Duplex",
+        "shortDescription": "Calling all investors! Centrally located duplex in the heart of Miami with many new upgrades including HVAC (2021), stainless steel appliances, and fresh paint. Currently leased until August 2026 generating $5,000/month total rent.",
+        "fullDescription": "Calling all investors! Centrally located duplex in the heart of Miami and near Downtown. The front unit has 2 bedrooms, 1.5 bathrooms with lots of natural light. The back unit has 3 bedrooms, 2 bathrooms with spacious backyard. Built in 2010 and with many new upgrades that include new HVAC units installed in 2021, freshly painted both inside and out, new stainless-steel appliances, new bathroom vanities, shower heads and fixtures, new door handles and locks, new ac closet doors, new ac registers, new kitchen sink faucets and cabinet hardware, and much more. Ample parking in the front giving each unit two parking spaces. Currently leased until August 2026 for $2,200 and $2,800 respectively. Great tenants for 15+ years.",
+        "image": "images/83508ecc679fff885db70ae2f1031c97-cc_ft_960.webp",
+        "alt": "Exterior of a duplex at 2930 SW 11th St, Miami",
+        "gallery": [
+            "images/83508ecc679fff885db70ae2f1031c97-cc_ft_960.webp",
+            "images/416304271078603599493d245fddbe63-cc_ft_576.webp",
+            "images/bbbd6b2b50bb4c1f7246319771bd3272-cc_ft_576.webp",
+            "images/c3597ed209dec2a62da170941bf6b87e-cc_ft_576.webp",
+            "images/80febf77b1f82c456461c97e8eb8c34a-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the centrally located duplex",
+            "Front unit with lots of natural light",
+            "Back unit kitchen with new appliances",
+            "Spacious backyard for the back unit",
+            "Ample parking with four total spaces"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "sqft": 1986,
+        "yearBuilt": 2010,
+        "propertyType": "Duplex",
+        "features": [
+            "2-Unit Duplex",
+            "Front Unit: 2 Bed, 1.5 Bath",
+            "Back Unit: 3 Bed, 2 Bath",
+            "New HVAC Units (2021)",
+            "Fresh Paint Inside & Out",
+            "New Stainless Steel Appliances",
+            "New Bathroom Vanities & Fixtures",
+            "Impact Windows & Doors",
+            "Spacious Backyard",
+            "4 Parking Spaces (2 per unit)",
+            "Leased until August 2026",
+            "Total Monthly Rent: $5,000"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 37,
+        "title": "10321 SW 116th Ave – 3 Bed 3 Bath Glen Cove Entertainer's Home",
+        "price": "$1,150,000",
+        "location": "10321 SW 116th Ave, Miami, FL 33176",
+        "category": "Single Family",
+        "shortDescription": "Welcome to Glen Cove! This stunning entertainer's home features a brand-new metal roof, impact windows, a huge enclosed sunroom, and a generous corner lot in sought-after Miami-Dade.",
+        "fullDescription": "Welcome to Glen Cove: Your Dream Entertainer's Home that you can make your own! Nestled in the Highly sought-after Subdivision of Miami-Dade County, this stunning residence features a brand-new metal roof and impact windows, ensuring both style and safety. Conveniently located just minutes from the Florida Turnpike, and colleges institutions. Impressive curb appeal on a generous corner lot. Please look at the 360 tour attached. Huge enclosed sunroom that goes through the back of the house connecting The master bedroom to living areas and kitchen. Don't miss your chance to view this gem. Schedule your appointment today. Estate sale by the personal Rep. Disclosures were filled out to the best of their knowledge.",
+        "image": "images/9ed9f5b0fb8b0851f4217ce922390f71-cc_ft_960.webp",
+        "alt": "Exterior of a home at 10321 SW 116th Ave, Miami",
+        "gallery": [
+            "images/9ed9f5b0fb8b0851f4217ce922390f71-cc_ft_960.webp",
+            "images/ee6ffb561daa68c65fbe372f91f26e4b-cc_ft_960.webp",
+            "images/5250d032cd38cc3d6c23483094859627-cc_ft_960.webp",
+            "images/1b076a43f4c69de74d02fc6aee04cb46-cc_ft_576.webp",
+            "images/231939e78e54a0f1f45271746df45f7c-cc_ft_960.webp"
+        ],
+        "galleryAlt": [
+            "Exterior with impressive curb appeal on corner lot",
+            "Huge enclosed sunroom connecting living areas",
+            "Concrete pool with auto cleaner",
+            "Generous corner lot with circular driveway",
+            "Kitchen open to living spaces"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "sqft": 2581,
+        "yearBuilt": 1981,
+        "propertyType": "Single Family",
+        "features": [
+            "Brand-New Metal Roof",
+            "Impact Windows",
+            "Huge Enclosed Sunroom",
+            "Generous Corner Lot",
+            "In-Ground Concrete Pool",
+            "Circular Driveway",
+            "2-Car Garage",
+            "First Floor Entry",
+            "Ground Level Bedroom",
+            "Impact Doors",
+            "Minutes to Florida Turnpike",
+            "Estate Sale"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 38,
+        "title": "3522 William Ave – 2 Bed 3 Bath Coconut Grove Contemporary",
+        "price": "$1,998,000",
+        "location": "3522 William Ave, Miami, FL 33133",
+        "category": "Single Family",
+        "shortDescription": "Striking contemporary residence in the heart of Coconut Grove with Italian-crafted kitchen, Turkish travertine floors, and private outdoor oasis featuring built-in Italian jacuzzi and firepit lounge.",
+        "fullDescription": "Striking contemporary residence ideally situated in the heart of Coconut Grove, thoughtfully redesigned with an emphasis on quality, design, and privacy. This residence showcases an Italian-crafted kitchen with professional-grade Fulgor Milano appliances, custom MisuraEmme closets, and high-end Effepi R. fixtures throughout. Elegant materials define the interiors, including Turkish Veincut travertine floors, limewashed walls, and sleek VivaPorte architectural doors, creating a refined, cohesive modern aesthetic. Offered with the option to purchase fully furnished for authentic turn-key living. The outdoor environment is equally compelling, featuring multiple curated spaces for entertaining and relaxation. Highlights include Talenti outdoor furnishings, a private firepit lounge, lush new tropical landscaping, and a built-in Italian jacuzzi. Wellness and technology are seamlessly integrated with a Gruppo Tresse spa system, upgraded Buster + Punch lighting, and Sony systems installed in every room. Fully gated and exceptionally private, the property offers a tranquil retreat while remaining moments from the best of Coconut Grove. With room to add a pool and expand, this is a rare opportunity to own a design-forward home created for elevated modern living.",
+        "image": "images/332004794496d11c9acb8e2d05fb231f-cc_ft_960.webp",
+        "alt": "Exterior of a contemporary home at 3522 William Ave, Miami",
+        "gallery": [
+            "images/332004794496d11c9acb8e2d05fb231f-cc_ft_960.webp",
+            "images/1b5809d131d41872c47e70cfa92564e3-cc_ft_960.webp",
+            "images/6e49753698e9ddc1f5907968669797c4-cc_ft_576.webp",
+            "images/eb54c17820f9c84f03c63a72c0dbf03c-cc_ft_576.webp",
+            "images/0331497b8941703641f53551d1cfeb0b-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Fully gated contemporary residence in Coconut Grove",
+            "Italian-crafted kitchen with Fulgor Milano appliances",
+            "Turkish Veincut travertine floors and limewashed walls",
+            "Built-in Italian jacuzzi with tropical landscaping",
+            "Private firepit lounge with Talenti furnishings"
+        ],
+        "bedrooms": 2,
+        "bathrooms": 3,
+        "sqft": 1285,
+        "yearBuilt": 1952,
+        "propertyType": "Single Family",
+        "features": [
+            "Italian-Crafted Kitchen",
+            "Fulgor Milano Appliances",
+            "Turkish Veincut Travertine Floors",
+            "Limewashed Walls",
+            "VivaPorte Architectural Doors",
+            "Built-In Italian Jacuzzi",
+            "Private Firepit Lounge",
+            "Talenti Outdoor Furnishings",
+            "Custom MisuraEmme Closets",
+            "Buster + Punch Lighting",
+            "Fully Gated Property",
+            "Room to Add Pool"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 39,
+        "title": "5016 Colton Run – 5 Bed 5 Bath Champions Park New Construction",
+        "price": "$960,000",
+        "location": "5016 Colton Run, Atlanta, GA 30349",
+        "category": "Single Family",
+        "shortDescription": "Discover the epitome of upscale living in this stunning modern transitional residence by Samkins Construction, nearing completion April 2026. Features 5,046 sq ft, 4-sided brick, and Calacatta quartz waterfall island.",
+        "fullDescription": "Discover the epitome of upscale living in this stunning modern transitional residence, soon to be completed in April 2026 and perfectly situated in the highly desirable Champions Park Subdivision in South Fulton, GA. Ideally located just minutes from Hartsfield-Jackson Atlanta International Airport, Downtown Atlanta, premier shopping, and dining, this impressive 4-sided brick home offers 5,046 heated square feet of luxury crafted by Atlanta's esteemed custom builder, Samkins Construction Inc. Designed for both elegance and functionality, the home features 5 bedrooms, 4.5 baths, and a full unfinished walkout basement with opportunities for future customization with a three car side entrance garage.<br><br>Step inside to an awe-inspiring open-concept layout highlighted by soaring 20-foot ceilings in the entry foyer and great room, complemented by expansive 15-foot slider doors that blur the line between indoor and outdoor living. The floor plan includes two primary suites, a guest bedroom, and a versatile study/home office, offering flexibility for modern lifestyles. The gourmet kitchen is a chef's dream, showcasing custom cabinetry, a Calacatta Quartz waterfall island, a walk-in pantry, and a separate breakfast area ideal for hosting and entertaining. Retreat to the luxurious primary suite featuring panoramic views, a spacious walk-in closet, and a spa-inspired bath with sleek, modern finishes. Additional bedrooms each include their own ensuite bath, providing privacy and comfort for family or guests, while a well-appointed laundry room with cabinets and a wash sink adds everyday convenience.<br><br>Built with longevity and sophistication in mind, this home boasts 10-foot first-floor ceilings, tempered energy-efficient aluminum windows and exterior doors, aluminum glass garage doors, high-end stainless appliances, tile-appointed baths, wide-planked hardwood flooring in bedrooms, frameless glass showers, walk-in closets, and a generous patio. Optional upgrades, such as polished porcelain flooring on the main level, floating vanities, accent walls, and a future pool, are available at additional cost. Renderings may display some upgraded features. The unfinished basement provides added potential for expanded living space tailored to the buyer's preference.<br><br>This exceptional home is currently under construction, secure your opportunity to personalize selections and make this extraordinary residence your own.",
+        "image": "images/e1d4c4e5a489038dfe88087ae4e05359-cc_ft_960.webp",
+        "alt": "Exterior of a new construction home at 5016 Colton Run, Atlanta",
+        "gallery": [
+            "images/e1d4c4e5a489038dfe88087ae4e05359-cc_ft_960.webp",
+            "images/d828957a8c7ae2aa72e9f9bd804214f4-cc_ft_576.webp",
+            "images/4691198b3886e580dd9f9aa9737efc43-cc_ft_576.webp",
+            "images/e376804ab1396bf41f46e24044dad0e7-cc_ft_576.webp",
+            "images/f62d2221edfaec355f9d8bda9554866a-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "4-sided brick exterior with modern transitional design",
+            "Great room with 20-foot ceilings and slider doors",
+            "Gourmet kitchen with Calacatta Quartz waterfall island",
+            "Luxurious primary suite with spa-inspired bath",
+            "Full unfinished walkout basement for future customization"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "sqft": 5046,
+        "yearBuilt": 2026,
+        "propertyType": "Single Family",
+        "features": [
+            "New Construction (April 2026 Completion)",
+            "4-Sided Brick Exterior",
+            "5,046 Heated Square Feet",
+            "20-Foot Ceilings in Foyer & Great Room",
+            "15-Foot Slider Doors",
+            "Two Primary Suites",
+            "Calacatta Quartz Waterfall Island",
+            "Walk-In Pantry",
+            "Three-Car Side Entry Garage",
+            "Full Unfinished Walkout Basement",
+            "Aluminum Glass Garage Doors",
+            "Wide-Planked Hardwood Flooring"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 40,
+        "title": "174 Walthall St SE – 5 Bed 5 Bath Reynoldstown Compound with ADU",
+        "price": "$999,850",
+        "location": "174 Walthall St SE, Atlanta, GA 30316",
+        "category": "Single Family",
+        "shortDescription": "Rare intown compound in Reynoldstown featuring a spacious 4-bedroom main home plus a detached 1-bedroom ADU with proven rental history grossing $36,000+ annually. Steps from the Atlanta BeltLine.",
+        "fullDescription": "Located in Reynoldstown, this rare intown compound offers a four bedroom three bath main home plus a fully independent one bedroom carriage house with proven rental income of over $36,000 annually<br>Live in one and rent the other or lease both for dual income just steps from the Atlanta BeltLine<br>Features include two primary suites, open concept living, hardwood floors, sauna, expansive deck, and private fenced yard<br>Walkable to Krog Street Market and Ponce City Market in one of Atlanta’s most desirable neighborhoods",
+        "image": "images/69245d5638ada2ff65dcd99e48deb0df-cc_ft_960.webp",
+        "alt": "Exterior of a Reynoldstown compound at 174 Walthall St SE, Atlanta",
+        "gallery": [
+            "images/69245d5638ada2ff65dcd99e48deb0df-cc_ft_960.webp",
+            "images/12f009032337eb91d4844f8f263f0a1a-cc_ft_576.webp",
+            "images/805d6c7183ff4c9c09ab654104bb4fcd-cc_ft_576.webp",
+            "images/1aad862420263c0b80406f4d10baff18-cc_ft_576.webp",
+            "images/9191f5b1a0bf8ea4833942bbc2d57bc8-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Main residence with beautifully cultivated grounds",
+            "Detached carriage house ADU with private yard",
+            "In-town vineyard with Scuppernong and Muscadine grapes",
+            "Private sauna and wellness room",
+            "Massive partially covered deck for entertaining"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "sqft": 3238,
+        "yearBuilt": 2005,
+        "propertyType": "Single Family",
+        "features": [
+            "Detached 1-Bedroom ADU",
+            "Proven ADU Rental History: $36K+/Year",
+            "Two Primary Suites (Main & Upper)",
+            "Private Sauna & Wellness Room",
+            "In-Town Vineyard & Garden",
+            "Screened Porch & Expansive Deck",
+            "Firepit & Outdoor Living Space",
+            "Dedicated Professional Office",
+            "12-Foot Recessed Ceilings",
+            "Steps from Atlanta BeltLine",
+            "Carriage House with Private Fenced Yard",
+            "Walk Score 88 (Very Walkable)"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 41,
+        "title": "648 Liella Park SE – 3 Bed 4 Bath Grant Park New Construction",
+        "price": "$749,999",
+        "location": "648 Liella Park SE, Atlanta, GA 30312",
+        "category": "Single Family",
+        "shortDescription": "Beautifully maintained 2023 new construction in Grant Park featuring 3 ensuite bedrooms, an open-concept main level with fireplace, and modern kitchen with stainless appliances and granite countertops.",
+        "fullDescription": "Seller offering up to $10,000 towards closing costs with acceptable offer. Welcome home! This beautifully maintained 3-bedroom, 3.5-bath single-family residence offers the perfect blend of comfort, style, and functionality. Nestled in a quiet, friendly neighborhood, this spacious home is ideal for anyone seeking modern living with plenty of room to spread out. Each bedroom features its own en-suite bathroom, providing ultimate privacy and convenience for family members or guests. The open-concept main level serves as the heart of the home, with a bright and airy layout that seamlessly connects the kitchen and living area—perfect for entertaining or staying connected while preparing meals. The modern kitchen is well-appointed with stainless steel appliances, granite countertops, ample cabinetry, and a large center island with bar seating. Just off the kitchen, the spacious living room invites you to unwind and enjoy cozy evenings by the beautiful fireplace, adding warmth and charm to the space. This home truly offers a thoughtful layout, quality finishes, and a welcoming atmosphere you'll love coming home to. Some images have been virtually staged to illustrate the home's potential. Furnishings and decor are for visualization only.",
+        "image": "images/807d33dfccd2e2523c29e7dff92d6c17-cc_ft_960.webp",
+        "alt": "Exterior of a new construction home at 648 Liella Park SE, Atlanta",
+        "gallery": [
+            "images/807d33dfccd2e2523c29e7dff92d6c17-cc_ft_960.webp",
+            "images/9c0c705eb2f21937f77c820e3ee374cd-cc_ft_576.webp",
+            "images/14b7b20aeaa3e3e9a77436f5b3cc1eef-cc_ft_576.webp",
+            "images/cd95ec6a6939b543ff7562b12bb6c4a8-cc_ft_576.webp",
+            "images/ed4cd909f30334b78a01a7d33c74848d-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the 2023 new construction home",
+            "Bright and airy open-concept main level",
+            "Modern kitchen with center island and stainless appliances",
+            "Living room with beautiful fireplace",
+            "Ensuite bathroom with quality finishes"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 4,
+        "sqft": 2077,
+        "yearBuilt": 2023,
+        "propertyType": "Single Family",
+        "features": [
+            "2023 New Construction",
+            "3 Ensuite Bedrooms",
+            "3.5 Bathrooms",
+            "Open-Concept Main Level",
+            "Modern Kitchen with Center Island",
+            "Granite Countertops",
+            "Stainless Steel Appliances",
+            "Gas Starter Fireplace",
+            "Hardwood Flooring",
+            "Upper Level Laundry",
+            "Walk-In Closet(s)",
+            "Garage Parking"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 42,
+        "title": "166 Windrift Dr – 6 Bed 5 Bath North Paulding Executive Estate",
+        "price": "$950,000",
+        "location": "166 Windrift Dr, Dallas, GA 30132",
+        "category": "Single Family",
+        "shortDescription": "Absolutely stunning executive style home on 2.33 private acres in North Paulding. Features four-sided brick, 3-car garage, finished terrace level with in-law suite potential, and no HOA!",
+        "fullDescription": "Absolutely stunning executive style four sided brick home on 2.33 private acres in the desirable North Paulding school district with no HOA and a three car garage<br>Expanded floor plan offers four bedrooms with potential for six including a fully finished terrace level ideal for an in law or teen suite<br>Main level features a two story foyer, formal living and dining rooms, spacious family room with marble fireplace, gourmet kitchen with granite countertops and stainless steel appliances, Butler pantry, hardwood floors, and large deck overlooking a wooded backyard<br>Upstairs includes a luxurious owner suite with sitting area, double sided fireplace, spa bath, tray ceiling, plus three secondary bedrooms and convenient upper level laundry<br>Finished basement offers multiple flex spaces, full bath, potential kitchen area, built in bookcases, patio access, extra driveway parking, and backyard shed",
+        "image": "images/fc4cf04d3e467a620c7e5072f3ef503b-cc_ft_960.webp",
+        "alt": "Exterior of an executive home at 166 Windrift Dr, Dallas, GA",
+        "gallery": [
+            "images/fc4cf04d3e467a620c7e5072f3ef503b-cc_ft_960.webp",
+            "images/b7fd87c4884d692b4ac9f1d8b2554428-cc_ft_576.webp",
+            "images/902e4cf46356453ce72bb90d1d21b0d4-cc_ft_576.webp",
+            "images/61466fbc6870a8f811853628ba6d07e3-cc_ft_960.webp",
+            "images/a4cbae83b87b4fe1f8413a5f57065cda-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Four-sided brick home on 2.33 private acres",
+            "Family room with marble fireplace and abundant windows",
+            "Gourmet kitchen with island cooktop and griddle",
+            "Owner suite with double-sided fireplace to bath",
+            "Finished basement with in-law suite potential"
+        ],
+        "bedrooms": 6,
+        "bathrooms": 5,
+        "sqft": 5160,
+        "yearBuilt": 2000,
+        "propertyType": "Single Family",
+        "features": [
+            "Four-Sided Brick",
+            "2.33 Private Acres",
+            "No HOA",
+            "Three-Car Garage",
+            "Finished Terrace Level (1,500 sq ft)",
+            "In-Law Suite Potential",
+            "Gourmet Kitchen with Island Griddle",
+            "Butler's Pantry with Wine Rack",
+            "Double-Sided Fireplace in Owner Suite",
+            "Marble Fireplace in Family Room",
+            "Hardwood and Tile Flooring",
+            "North Paulding School District"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 43,
+        "title": "652 McCready Dr – 4 Bed 4 Bath Farmhouse on 17.46 Acres",
+        "price": "$975,000",
+        "location": "652 McCready Dr, Dallas, GA 30157",
+        "category": "Single Family",
+        "shortDescription": "True farmhouse living with complete privacy on 17.46 breathtaking acres. Features four-sided brick, newer metal roof, saltwater pool, barn for horses, and a peaceful creek running through the property.",
+        "fullDescription": "Welcome to true farmhouse living with complete privacy on 17.46 breathtaking acres. This four-sided brick home offers timeless charm, modern upgrades, and serene country living, yet remains conveniently close to shopping. Features include a barn and fenced areas ideal for horses, new fencing around the saltwater pool, and a peaceful creek running through the property. Enjoy year-round outdoor living from the fully covered front and back porches with newer metal roof. Inside: hardwood floors throughout, spacious kitchen with upgraded appliances and brick stove accent, main-level owner's suite with tray ceiling and large walk-in closet, finished basement with bonus room, and gigabit fiber with ethernet throughout.",
+        "image": "images/bacf96f7e5fbe10ef56a2abecab3dc17-cc_ft_960.webp",
+        "alt": "Exterior of a farmhouse at 652 McCready Dr, Dallas, GA",
+        "gallery": [
+            "images/bacf96f7e5fbe10ef56a2abecab3dc17-cc_ft_960.webp",
+            "images/940f3a51950bff12aff0d17f153ec66b-cc_ft_576.webp",
+            "images/4e4973fa425e28c49846a5b061440949-cc_ft_960.webp",
+            "images/810f8e937ce81f9bdbfde29dd113c102-cc_ft_576.webp",
+            "images/60d4429a616f5b28a00639d087bca7f9-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Four-sided brick farmhouse on 17.46 acres",
+            "Barn and fenced areas ideal for horses",
+            "Saltwater pool with new fencing",
+            "Kitchen with brick stove accent and upgraded appliances",
+            "Fully covered front porch with metal roof"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 4167,
+        "yearBuilt": 1983,
+        "propertyType": "Single Family",
+        "features": [
+            "17.46 Private Acres",
+            "Four-Sided Brick",
+            "Newer Metal Roof",
+            "Barn & Fenced Pastures for Horses",
+            "Saltwater Pool",
+            "Peaceful Creek on Property",
+            "Covered Front & Back Porches",
+            "Main-Level Owner's Suite",
+            "Finished Basement",
+            "Hardwood Floors Throughout",
+            "Gigabit Fiber Internet",
+            "No HOA"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 44,
+        "title": "115 Brookside Ct – 3 Bed 2 Bath Cul-de-Sac Retreat",
+        "price": "$225,000",
+        "location": "115 Brookside Ct, Dallas, GA 30132",
+        "category": "Single Family",
+        "shortDescription": "Tucked away in a quiet cul-de-sac, this home offers privacy, space, and a peaceful setting on 1.59 acres. Features a wooded backyard with creek view, rear deck, and mostly finished basement with bonus space.",
+        "fullDescription": "Tucked away in a quiet cul-de-sac in Dallas, Georgia, this home offers the kind of opportunity buyers wait for. Positioned at the end of the street, you immediately feel the difference, less traffic, more privacy, and a peaceful setting overlooking a wooded backdrop with a quiet creek in the distance. Inside, the layout is comfortable and move-in ready with natural light filling the main living spaces. The rear deck invites outdoor relaxation, while the mostly finished basement adds valuable bonus space for a playroom, media room, home office, or fitness area. With 1.59 acres, a welcoming atmosphere, and convenient access to parks, shopping, and schools, this is the kind of property that rarely stays available for long.",
+        "image": "images/a2b389faa69bc3e90a9974d844ff0bd4-cc_ft_960.webp",
+        "alt": "Exterior of a home at 115 Brookside Ct, Dallas, GA",
+        "gallery": [
+            "images/a2b389faa69bc3e90a9974d844ff0bd4-cc_ft_960.webp",
+            "images/b44fd327337d57365526afcb36a6c768-cc_ft_576.webp",
+            "images/7b1eaadb7f05850763475bb23a62b257-cc_ft_576.webp",
+            "images/1f36482b96c76e6c1384e9bd149b0b5b-cc_ft_960.webp",
+            "images/236fb4a811f7da491544c22b22580953-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Home in quiet cul-de-sac setting",
+            "Peaceful location at end of street",
+            "Rear deck overlooking wooded backyard",
+            "Mostly finished basement with bonus space",
+            "Wooded backdrop with creek in distance"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 1800,
+        "yearBuilt": 1994,
+        "propertyType": "Single Family",
+        "features": [
+            "Quiet Cul-de-Sac Location",
+            "1.59 Private Acres",
+            "Wooded Backdrop with Creek View",
+            "Rear Deck",
+            "Mostly Finished Basement",
+            "Main-Level Living",
+            "Walk-In Closets",
+            "Gas Starter Fireplace",
+            "No HOA",
+            "Hardwood Flooring",
+            "2-Car Garage",
+            "Near Parks & Shopping"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 45,
+        "title": "5303 Colonial Ave – 4 Bed 4 Bath Duplex Near Fairgrounds",
+        "price": "$310,000",
+        "location": "5303 Colonial Ave, Dallas, TX 75215",
+        "category": "Duplex",
+        "shortDescription": "Rare investment opportunity just down the street from the Texas State Fairgrounds, where billions in redevelopment is underway. Price is per side—duplex can be purchased separately or together.",
+        "fullDescription": "A Rare Investment Gem with Elegant Living in the Heart of Dallas (Price is per side, Duplex can be purchased separate or together). This duplex is more than just a property, it's a strategic investment. Located just down the street from the Texas State Fairgrounds, where billions of dollars are being poured into a massive redevelopment project set for completion in 2027, this opportunity positions you right in the path of growth. With the area poised to become a premier entertainment and cultural hub, values are projected to rise significantly. Each unit features generously sized interiors, expansive balconies at both front and rear, and thoughtful architecture with ample natural light. Live in one sophisticated unit and lease the other, or capitalize on the dual-income potential in one of Dallas's most dynamic and rapidly appreciating neighborhoods.",
+        "image": "images/c16731136dd278e96ae2fadaff61a9e8-cc_ft_960.webp",
+        "alt": "Exterior of a duplex at 5303 Colonial Ave, Dallas",
+        "gallery": [
+            "images/c16731136dd278e96ae2fadaff61a9e8-cc_ft_960.webp",
+            "images/f814de2d1b02ff884f9e688aec1bc19a-cc_ft_576.webp",
+            "images/bb9a309175e72d709907034c0cc8f3d1-cc_ft_576.webp",
+            "images/ab68f6f9a972ee7211532a8b13e6c2b3-cc_ft_576.webp",
+            "images/f7195db00648bbfa7a129ffc7175982e-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Modern duplex exterior with timeless design",
+            "Generously sized interior with open floorplan",
+            "Expansive balcony perfect for entertaining",
+            "Near Texas State Fairgrounds redevelopment",
+            "Dual units with separate entrances"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 2122,
+        "yearBuilt": 2025,
+        "propertyType": "Duplex",
+        "features": [
+            "New Construction 2025",
+            "Price Per Side",
+            "Purchase Separately or Together",
+            "Near Texas State Fairgrounds",
+            "Billions in Area Redevelopment",
+            "Expansive Front & Rear Balconies",
+            "Open Floorplan",
+            "Kitchen Island",
+            "Electric Fireplace",
+            "2-Car Carport + Driveway",
+            "Dual-Income Potential",
+            "Path of Growth Investment"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    }
 ];
 
 // Export for use in other files

@@ -53,11 +53,42 @@ function initMobileNavigation() {
     
     if (!hamburger || !navLinks) return;
     
+    // Clear existing hamburger content and create spans
+    hamburger.innerHTML = '';
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+    const span3 = document.createElement('span');
+    hamburger.appendChild(span1);
+    hamburger.appendChild(span2);
+    hamburger.appendChild(span3);
+    
+    // Create overlay element (only if it doesn't exist)
+    if (!document.querySelector('.nav-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+    }
+    
+    // Create close button (only if it doesn't exist)
+    if (!document.querySelector('.menu-close')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'menu-close';
+        closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+        navLinks.prepend(closeBtn);
+    }
+    
+    // Set active page based on current URL
+    setActivePage();
+    
+    const overlay = document.querySelector('.nav-overlay');
+    const closeBtn = document.querySelector('.menu-close');
+    
     // Toggle mobile menu
     hamburger.addEventListener('click', function(e) {
         e.stopPropagation();
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
         
         // Prevent body scroll when menu is open
         if (navLinks.classList.contains('active')) {
@@ -67,31 +98,49 @@ function initMobileNavigation() {
         }
     });
     
+    // Close menu when clicking close button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
+    // Close menu when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
     // Close menu when clicking links
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
 }
 
-// ===== CLOSE MENU WHEN CLICKING OUTSIDE =====
-function initOutsideClickHandler() {
-    document.addEventListener('click', function(e) {
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        if (!navLinks || !hamburger) return;
-        
-        const isClickInsideMenu = navLinks.contains(e.target) || hamburger.contains(e.target);
-        
-        if (!isClickInsideMenu && navLinks.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.style.overflow = '';
+// ===== SET ACTIVE PAGE =====
+function setActivePage() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 }
@@ -319,23 +368,16 @@ function loadAllListings() {
     const listingsContainer = document.getElementById('listingsContainer');
     if (!listingsContainer) return;
     
-    // Group properties by category
-    const categories = {
-        'Double Wide': [],
-        'Single Wide': [],
-        'Manufactured Home': [],
-        'Single Family': [],
-        'Farmhouse': []
-    };
+    // Get all unique categories from properties
+    const categories = {};
     
-    // Sort properties into categories
+    // Group properties by category (works with ANY category)
     properties.forEach(property => {
-        const category = property.category || 'Manufactured Home';
-        if (categories[category]) {
-            categories[category].push(property);
-        } else {
-            categories['Manufactured Home'].push(property);
+        const category = property.category || 'Other';
+        if (!categories[category]) {
+            categories[category] = [];
         }
+        categories[category].push(property);
     });
     
     let html = '';
@@ -345,33 +387,10 @@ function loadAllListings() {
         // Skip empty categories
         if (categoryProperties.length === 0) continue;
         
-        // Format category name properly
-        let categoryDisplayName = '';
-        switch(categoryName) {
-            case 'Double Wide':
-                categoryDisplayName = 'DOUBLE WIDE HOMES';
-                break;
-            case 'Single Wide':
-                categoryDisplayName = 'SINGLE WIDE HOMES';
-                break;
-            case 'Manufactured Home':
-                categoryDisplayName = 'MANUFACTURED HOMES';
-                break;
-            case 'Single Family':
-                categoryDisplayName = 'SINGLE FAMILY HOMES';
-                break;
-            case 'Farmhouse':
-                categoryDisplayName = 'FARMHOUSES';
-                break;
-            default:
-                let baseName = categoryName;
-                if (baseName.includes('Home')) {
-                    baseName = baseName.replace('Home', '').trim();
-                }
-                categoryDisplayName = `${baseName.toUpperCase()} HOMES`;
-        }
-
-        // Add category header with a unique ID for filtering
+        // Format category name properly (capitalize, handle plurals)
+        let categoryDisplayName = formatCategoryName(categoryName);
+        
+        // Add category header with data attribute for filtering
         html += `
             <div class="category-section" data-category="${categoryName}">
                 <h2 class="category-title">${categoryDisplayName}</h2>
@@ -387,8 +406,8 @@ function loadAllListings() {
             html += `
                 <div class="property-card" 
                      data-id="${property.id}" 
-                     data-category="${property.category || 'Manufactured Home'}"
-                     data-type="${property.propertyType.toLowerCase()}" 
+                     data-category="${property.category || 'Other'}"
+                     data-type="${property.propertyType ? property.propertyType.toLowerCase() : ''}" 
                      data-bedrooms="${property.bedrooms}"
                      data-price="${priceNumber}"
                      data-location="${property.location.toLowerCase()}"
@@ -422,6 +441,37 @@ function loadAllListings() {
     applyURLFilters();
     createNoResultsMessage();
     performListingsSearch();
+}
+
+// ===== FORMAT CATEGORY NAME =====
+function formatCategoryName(category) {
+    // Handle special cases
+    const specialCases = {
+        'Double Wide': 'DOUBLE WIDE HOMES',
+        'Single Wide': 'SINGLE WIDE HOMES',
+        'Manufactured Home': 'MANUFACTURED HOMES',
+        'Single Family': 'SINGLE FAMILY HOMES',
+        'Farmhouse': 'FARMHOUSES',
+        'Multi Family': 'MULTI-FAMILY HOMES',
+        'Condominium': 'CONDOMINIUMS'
+    };
+    
+    // Return special case if exists
+    if (specialCases[category]) {
+        return specialCases[category];
+    }
+    
+    // Otherwise, format automatically
+    // Add space before capital letters and convert to uppercase
+    let formatted = category.replace(/([A-Z])/g, ' $1').trim();
+    formatted = formatted.toUpperCase();
+    
+    // Add "HOMES" at the end if not already there
+    if (!formatted.includes('HOMES') && !formatted.includes('CONDO')) {
+        formatted = formatted + ' HOMES';
+    }
+    
+    return formatted;
 }
 
 // ===== ATTACH PROPERTY CARD LISTENERS =====

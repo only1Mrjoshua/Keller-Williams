@@ -829,7 +829,535 @@ const properties = [
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"
         }
-    }
+    },
+    {
+        "id": 25,
+        "title": "43 Cranford St – 6 Bed 4 Bath Multi-Family Home",
+        "price": "$950,000",
+        "location": "43 Cranford St, Staten Island, NY 10308",
+        "category": "Multi Family",
+        "shortDescription": "Rare-find fully detached corner 2-family home in Bay Terrace on a 46' × 106' lot. Features two private driveways (parking for 4), two full residential levels, and a finished basement with separate entrances.",
+        "fullDescription": "Rare-find fully detached corner 2-family home situated on an oversized 46' × 106' lot in the highly desirable neighborhood of Bay Terrace, featuring 2 private driveways with parking for up to 4 cars and exceptional space, privacy, and flexibility. With an approximate building size of 27' × 46', this high-ranch style property offers two full residential levels plus a fully finished basement with separate entrances. The top floor features 3 generously sized bedrooms, including a primary bedroom with a private half bath, an additional full bathroom, a bright and spacious living room, and an eat-in kitchen filled with natural light. The first floor offers 2 comfortable bedrooms, a full bathroom, a living room (easy to convert as another bedroom) a built-in garage, and direct access to a huge rear deck, perfect for outdoor entertaining. The finished basement includes additional space with a separate entrance, providing great potential for flexible use. The home is equipped with 3 separate entrances, 2 separate water heaters and gas boilers, and annual property taxes of approximately $7,991. Conveniently located near the Staten Island Railway, public transportation, shopping centers, supermarkets, and schools, this is an outstanding opportunity for both end-users and investors.",
+        "image": "images/8db956f66aacf4b659dc9f153409295d-cc_ft_960.webp",
+        "alt": "Exterior of a multi-family home at 43 Cranford St, Staten Island",
+        "gallery": [
+            "images/8db956f66aacf4b659dc9f153409295d-cc_ft_960.webp",
+            "images/ea87630215159d89771331f11f4a9539-cc_ft_576.webp",
+            "images/542bdde660a9416bb7ba3fde4d6456b8-cc_ft_576.webp",
+            "images/a3a72aa1b54f24419e19896a04a03d7f-cc_ft_576.webp",
+            "images/508d84105efe10dfe8ec7da2d3260cf6-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the high-ranch style multi-family home",
+            "Spacious living room on the top floor",
+            "Eat-in kitchen with natural light",
+            "Primary bedroom with private half bath",
+            "Huge rear deck accessible from the first floor"
+        ],
+        "bedrooms": 6,
+        "bathrooms": 4,
+        "sqft": 2125,
+        "yearBuilt": 1975,
+        "propertyType": "Multi Family",
+        "features": [
+            "Detached 2-Family Home",
+            "Corner Lot (46' x 106')",
+            "2 Private Driveways (4 Cars)",
+            "Built-In Garage",
+            "Finished Basement w/ Separate Entrance",
+            "3 Separate Entrances",
+            "Huge Rear Deck",
+            "2 Water Heaters & Gas Boilers",
+            "Hardwood & Laminate Flooring",
+            "Window Unit Cooling",
+            "Baseboard & Hot Water Heating",
+            "Handicap Access"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 26,
+        "title": "224 Hamilton Ave – 4 Bed 3 Bath Historic Victorian",
+        "price": "$663,000",
+        "location": "224 Hamilton Ave, Staten Island, NY 10301",
+        "category": "Single Family",
+        "shortDescription": "Step into timeless elegance with this beautifully restored Victorian in Historic St. George. Features exquisite woodwork, stained-glass windows, original staircase, and a sun-filled primary suite with private sunroom.",
+        "fullDescription": "Step into timeless elegance with this beautifully restored Victorian in the heart of Historic St. George, just a few minutes away from the Staten Island Ferry. A rare offering for historic-home enthusiasts, this residence is rich in original architectural detail, including exquisite woodwork, intricate moldings, stained-glass windows, wood parquet floors with inlay, nine-foot ceilings and a beautiful original staircase that serves as a true centerpiece of the home.<br><br>The main level features a classic formal living room, formal dining room, and an enclosed sunroom which is ideal for reading or unwinding. The eat-in kitchen offers direct access to a deck overlooking the garden, creating a seamless indoor-outdoor flow.<br><br>On the second level, the primary bedroom opens through French doors to an oversized sunroom, perfect as a private sitting room or home office. On the same floor, a second sun-filled bedroom provides generous space and flexibility rarely found in homes of this era.<br><br>The full walk-up attic adds exceptional versatility, featuring two spacious bedrooms and a half bath in a space that offers a unique and custom feature all while preserving the home's historic integrity. Below, an oversized unfinished basement offers endless possibilities with rear yard access and 1/2 bath. Four-zone baseboard heating ensures comfort throughout the home.<br><br>Here is your opportunity to own a grand Victorian home rich in timeless craftsmanship, space, functionality along with unbeatable access to Manhattan, schools, parks, public transportation and endless dining options in vibrant St George!",
+        "image": "images/2020273d5fe9fb3c906aa90dd6d0d751-cc_ft_960.png",
+        "alt": "Exterior of a historic Victorian home at 224 Hamilton Ave, Staten Island",
+        "gallery": [
+            "images/2020273d5fe9fb3c906aa90dd6d0d751-cc_ft_960.png",
+            "images/d9da1dca05cb336e5b3a1f4214ae8e7a-cc_ft_576.png",
+            "images/8c4b024a64bd97f0095f639aa9915672-cc_ft_576.png",
+            "images/8963e8b2a886296ae1af6989e1fa1956-cc_ft_576.png",
+            "images/798954b3f545a99f8822f3a158c0202a-cc_ft_576.png"
+        ],
+        "galleryAlt": [
+            "Exterior of the restored Victorian home",
+            "Formal living room with original woodwork",
+            "Beautiful original staircase with intricate details",
+            "Enclosed sunroom ideal for reading",
+            "Deck overlooking the garden"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "sqft": 2180,
+        "yearBuilt": 1920,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Historic Victorian Architecture",
+            "Exquisite Woodwork & Moldings",
+            "Stained-Glass Windows",
+            "Wood Parquet Floors with Inlay",
+            "Original Staircase",
+            "Formal Living & Dining Rooms",
+            "Enclosed Sunroom",
+            "Primary Suite with Oversized Sunroom",
+            "Full Walk-Up Attic (2 Bedrooms + 1/2 Bath)",
+            "Deck Overlooking Garden",
+            "Four-Zone Baseboard Heating",
+            "Unfinished Basement with Yard Access"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 27,
+        "title": "569 Jefferson Blvd – 5 Bed 3 Bath Multi-Family with Pool",
+        "price": "$1,098,000",
+        "location": "569 Jefferson Blvd, Staten Island, NY 10312",
+        "category": "Multi Family",
+        "shortDescription": "Exceptional and spacious two-family home featuring a main unit with primary suite deck overlooking an in-ground pool, plus a separate 2-bedroom apartment—perfect for income or extended family.",
+        "fullDescription": "Welcome to 569 Jefferson Boulevard! This exceptional and spacious two-family home offers the perfect blend of comfort, income potential and privacy.<br><br>The main unit features a sun-drenched livingroom and dining room enhanced by oversized windows creating a warm and inviting space. The kitchen is beautifully appointed with granite countertops and stainless steel appliances along with ample cabinetry and workspace. The primary bedroom is a true retreat, complete with a private oversized deck overlooking the beautifully maintained yard and in-ground pool. A spiral staircase provides direct access from the deck to the yard and pool area, making it the ideal and private space for relaxing or entertaining. Two additional large bedrooms with ample closet space and an updated full size bath are also offered in this level.<br><br>Below, a large and bright finished basement with an additional full bath, wetbar and direct yard access. The flexible layout offers endless possibilities as well as extended living space.<br><br>The second unit features a private side entrance offering a spacious two-bedroom apartment--perfect for rental income or extended family.<br><br>Parking is a breeze with 2 separate carports and a garage.<br><br>Here is your opportunity to own a beautiful Two Family home with a generous layout, excellent income potential in a prime South Shore location.",
+        "image": "images/aec3a216bbfd753474b827bed22e6f9b-cc_ft_576.png",
+        "alt": "Exterior of a two-family home at 569 Jefferson Blvd, Staten Island",
+        "gallery": [
+            "images/aec3a216bbfd753474b827bed22e6f9b-cc_ft_576.png",
+            "images/5ca74144b979c010a56901a28f9fe371-cc_ft_960.png",
+            "images/2d6514f6c7b42105a555fe4e88e5137f-cc_ft_576.png",
+            "images/768db429ffb17092e54de1f5429ca4c8-cc_ft_576.png",
+            "images/a7cb30a59430b113df6a85f19915e4d3-cc_ft_576.png"
+        ],
+        "galleryAlt": [
+            "Exterior of the two-family home",
+            "Sun-drenched living room with oversized windows",
+            "Kitchen with granite countertops and stainless steel appliances",
+            "Primary suite deck overlooking the in-ground pool",
+            "Finished basement with wetbar"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 3,
+        "sqft": 2812,
+        "yearBuilt": 1970,
+        "propertyType": "Multi Family",
+        "features": [
+            "Two-Family Home",
+            "In-Ground Pool",
+            "Primary Suite with Private Deck",
+            "Spiral Staircase to Pool Area",
+            "Granite Countertops",
+            "Stainless Steel Appliances",
+            "Finished Basement with Wetbar",
+            "Separate 2-Bedroom Apartment",
+            "Central Air Conditioning",
+            "2 Carports + Garage",
+            "Oversized Windows",
+            "Septic System"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 28,
+        "title": "1468 W Foster Ave – 6 Bed 2 Bath Andersonville Greystone",
+        "price": "$950,000",
+        "location": "1468 W Foster Ave, Chicago, IL 60640",
+        "category": "Multi Family",
+        "shortDescription": "Classic Chicago Greystone 2-flat in Andersonville featuring gorgeous woodwork, beautifully preserved built-in hutches, and timeless architectural detail throughout this spacious multi-family home.",
+        "fullDescription": "Classic Chicago Greystone 2-flat located in the heart of Andersonville, offering timeless architecture and incredible potential. This spacious multi-family home features gorgeous woodwork throughout, including beautifully preserved built-in hutches that add character and charm. The property includes 6 bedrooms and 2 full bathrooms, with a full, partially finished basement providing additional flexible space. Enjoy outdoor living on the patio or from the enclosed porch. With a detached 2-car garage and prime location near parks, shops, and dining, this is a rare opportunity to own a piece of Chicago history in one of the city's most walkable neighborhoods (Walker's Paradise - Walk Score 95).",
+        "image": "images/736fde7d3f630c047452a9cf8bdf09fb-cc_ft_960.webp",
+        "alt": "Exterior of a classic Chicago Greystone at 1468 W Foster Ave",
+        "gallery": [
+            "images/736fde7d3f630c047452a9cf8bdf09fb-cc_ft_960.webp",
+            "images/bb805eac766a6cb6071b315b46d2b100-cc_ft_576.webp",
+            "images/1e79582004ad3bd69c728b2805afd25c-cc_ft_576.webp",
+            "images/081ee877affe92ba4b7cf044b8ed8f7b-cc_ft_576.webp",
+            "images/b1553f6b2417525c300ad733807c1c2a-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Classic Greystone exterior with brick and stone details",
+            "Interior featuring gorgeous original woodwork",
+            "Beautifully preserved built-in hutch",
+            "Enclosed porch with natural light",
+            "Patio outdoor living space"
+        ],
+        "bedrooms": 6,
+        "bathrooms": 2,
+        "sqft": null,
+        "yearBuilt": 1908,
+        "propertyType": "Multi Family",
+        "features": [
+            "Classic Chicago Greystone",
+            "2-Flat Configuration",
+            "Gorgeous Original Woodwork",
+            "Built-In Hutches",
+            "Enclosed Porch",
+            "Partially Finished Full Basement",
+            "Detached 2-Car Garage",
+            "Patio",
+            "Radiator Heating",
+            "Soaking Tub",
+            "Walker's Paradise Location",
+            "Ceiling Fans"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 29,
+        "title": "4201 N Paulina St – 4 Bed 3 Bath Ravenswood Multi-Family",
+        "price": "$950,000",
+        "location": "4201 N Paulina St, Chicago, IL 60613",
+        "category": "Multi Family",
+        "shortDescription": "Beautifully updated 2-flat on a tree-lined quiet street in Ravenswood. Features refinished hardwood floors, fresh paint, radiant heat, and a large fenced front yard—perfect for extended family or investment.",
+        "fullDescription": "Beautiful 2-Flat or use as large single-family. Fantastic location on tree lined, quiet street. Easy Walk to Irving Park or Montrose Brown Line or Metra. Fantastic, trendy restaurants, shopping & entertainment nearby. Walk to Wrigley or the Montrose Beach! Under 2 blocks to Ravenswood Elementary, Lakeview High school, German School of Chicago. Dog friendly Challenger park is near by with walking paths, trees & wildflowers. Large, fenced front yard with ample space for outdoor activities.<br><br>Updated throughout with brand new beautiful finishes, durable materials, and modern appliances. (See feature sheet in additional information!) Original half bath in 2nd unit extended into a full bath for your convenience. Additional den created in LL for extended living space in first floor unit, including radiant heat & new windows. Refinished hardwood floors, fresh paint throughout, in basement also. Property taxes reduced, see attached tax information.<br><br>Self managed, 8 unit community with $150 quarterly contribution for snow removal and lawn maintenance. Valuable 1 assigned parking space on side of building with plenty of additional free street parking. Both units are ready to move right in or rent out. Perfect for extended family, or live in one and rent out the other, or rent both for excellent cash flow in this high-demand area. Don't miss out on this great offering!",
+        "image": "images/2a05628549180abfabbf47839c156d70-cc_ft_960.webp",
+        "alt": "Exterior of a multi-family home at 4201 N Paulina St, Chicago",
+        "gallery": [
+            "images/2a05628549180abfabbf47839c156d70-cc_ft_960.webp",
+            "images/873543d3263d5d3fdb7011a4a597c9d3-cc_ft_576.webp",
+            "images/60c13dd64d3dba89f4c286bec210f5fa-cc_ft_576.webp",
+            "images/bb9df654aac41da2c2ea391523b2ab50-cc_ft_576.webp",
+            "images/a4f4fadc56c892cad10f1c74dc530079-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the brick row house on a tree-lined street",
+            "Refinished hardwood floors throughout",
+            "Modern kitchen with new appliances",
+            "Additional den with radiant heat",
+            "Large fenced front yard"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "sqft": null,
+        "yearBuilt": 1963,
+        "propertyType": "Multi Family",
+        "features": [
+            "2-Flat Configuration",
+            "Refinished Hardwood Floors",
+            "Fresh Paint Throughout",
+            "Radiant Heat",
+            "New Windows",
+            "Modern Appliances",
+            "Finished Basement with Den",
+            "Large Fenced Front Yard",
+            "Assigned Parking Space",
+            "Balcony",
+            "Walker's Paradise (Walk Score 91)",
+            "Near Brown Line & Metra"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 30,
+        "title": "847 N Hermitage Ave Unit C – 3 Bed 2 Bath Duplex Penthouse",
+        "price": "$774,999",
+        "location": "847 N Hermitage Ave Unit C, Chicago, IL 60622",
+        "category": "Condominium",
+        "shortDescription": "One-of-a-kind duplex penthouse in East Village with sweeping skyline views, dramatic two-story windows, and award-winning renovated baths. Includes garage parking and three private outdoor spaces.",
+        "fullDescription": "Experience elevated city living in this one-of-a-kind duplex penthouse in the heart of East Village, offering sweeping skyline views and exceptional natural light from three exposures. With dramatic two-story windows, this residence lives like a single-family home in the sky. Designed for both entertaining and everyday comfort, the open-concept main level features a beautifully reimagined kitchen with 42\" white cabinetry, quartz countertops, stainless steel appliances, a generous breakfast island, expanded pantry storage, and dedicated wine storage. The living area is anchored by a gas fireplace with a Carrara marble surround and opens to a west-facing balcony-perfect for sunset views. The primary suite is a true retreat, complete with its own private balcony overlooking the skyline, a custom walk-in closet, and a fully redesigned award winning spa like bath. The expansive second bedroom includes a walk-in closet, wood-burning fireplace, and access to a third outdoor space. Upstairs, a versatile third bedroom or office and a spacious bonus family room provide flexible living options. Both bathrooms were completely renovated in 2023 by Sarah Jacquelyn Interiors, with the lower-level bath earning the 2024 ASID Illinois Design Excellence Award. Extensive recent upgrades include new decks (2024), new double-panel sliding door with retractable screen in the living room (2024), new sliding door in the primary suite (2024), new casement windows (2024), rebuilt and expanded pantry (2024), and a fully redesigned primary suite (2023). Garage parking is included. Ideally located near the dining and shopping along Chicago and Division, convenient public transportation, neighborhood parks, and the upcoming United Center redevelopment-this home places you in the center of it all. Move right in and enjoy. Take the 3D virtual tour to explore every detail.",
+        "image": "images/d5666195f0fd6ff63ebcc07c497646f9-cc_ft_960.webp",
+        "alt": "Exterior of a duplex penthouse at 847 N Hermitage Ave, Chicago",
+        "gallery": [
+            "images/d5666195f0fd6ff63ebcc07c497646f9-cc_ft_960.webp",
+            "images/882a542e05700d584064a58925397c48-cc_ft_960.webp",
+            "images/7a1a691bade4e326477e8710287f14ed-cc_ft_960.webp",
+            "images/f71a1bf0b9fa74e11054f0e004d346e5-cc_ft_576.webp",
+            "images/be990c7f556c1993bf455be86ebcfbf3-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the building in East Village",
+            "Dramatic two-story windows with natural light",
+            "Kitchen with breakfast island and quartz countertops",
+            "Primary suite with custom walk-in closet",
+            "Sweeping skyline views from private balcony"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 2300,
+        "yearBuilt": 2000,
+        "propertyType": "Condominium",
+        "features": [
+            "Duplex Penthouse",
+            "Sweeping Skyline Views",
+            "Dramatic Two-Story Windows",
+            "Award-Winning Bathrooms (2023 Renovation)",
+            "3 Private Decks/Balconies",
+            "Gas Fireplace with Carrara Marble",
+            "Wood-Burning Fireplace in Second Bedroom",
+            "Chef's Kitchen with Breakfast Island",
+            "Custom Walk-In Closet",
+            "Dedicated Wine Storage",
+            "In-Unit Laundry",
+            "Detached Garage Parking Included"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 31,
+        "title": "1805 Sul Ross St – 3 Bed 2 Bath Montrose Investment Duplex",
+        "price": "$950,000",
+        "location": "1805 Sul Ross St, Houston, TX 77098",
+        "category": "Multi Family",
+        "shortDescription": "Incredible income-producing duplex in the heart of Montrose featuring two 3-bedroom units plus a separate 2-bedroom bungalow—generating approximately $71K annual income. Prime location near H-E-B, Medical Center, and Downtown.",
+        "fullDescription": "An incredible income producing property in ever popular Montrose. A Duplex that has 2 Amazing three bedroom, one bathroom properties with a combined total square footage of 3,515. Which includes a third unit that is a completely separate building. A Bungalow which has 2 bedrooms, & 2 full bathrooms, with its own privately enclosed patio spanning the front of the whole building with a total of 840 sqft. Producing a combined monthly income of $5,905 or almost $71K a year. This is your chance to own a strong investment in the Prestigious Montrose area. A location near impossible to beat. Present & future land demand in this area will grow your investment. Location, location, location! Approximately 7-12 minutes from Medical Center, Rice, or Downtown. While being walking distance to dozens of restaurants, cafés, and bars, as well as being only 1/2 a block from H-E-B. The location will help ensure that your investment will continue to grow & produce more & more for decades into the future.",
+        "image": "images/fa8d9a5b2777a24c3db52c697f67871a-cc_ft_960.webp",
+        "alt": "Exterior of a multi-family property at 1805 Sul Ross St, Houston",
+        "gallery": [
+            "images/fa8d9a5b2777a24c3db52c697f67871a-cc_ft_960.webp",
+            "images/8b00cc14ffd93f29b49186ae191c44cf-uncropped_scaled_within_1536_1152.webp",
+            "images/d3ceab80bf01ca6ac7fef6ec570ae9ab-cc_ft_576.webp",
+            "images/40fccbf40b9bac1ef29b620ffab74fa4-cc_ft_576.webp",
+            "images/eb95827ae7a415467de5096afee720a7-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the Montrose duplex property",
+            "Separate bungalow unit with private patio",
+            "Privately enclosed patio spanning the front",
+            "Interior of one of the residential units",
+            "Prime Montrose location near restaurants and shops"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "sqft": 3515,
+        "yearBuilt": 1935,
+        "propertyType": "Multi Family",
+        "features": [
+            "Three-Unit Property",
+            "2 x 3-Bedroom Duplex Units",
+            "Separate 2-Bedroom Bungalow",
+            "Combined Monthly Income $5,905",
+            "Approx. $71K Annual Income Potential",
+            "Privately Enclosed Patio",
+            "Prime Montrose Location",
+            "1/2 Block from H-E-B",
+            "Walking Distance to Restaurants & Cafés",
+            "Minutes to Medical Center, Rice, Downtown",
+            "Electric Heating & Cooling",
+            "Strong Investment Potential"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 32,
+        "title": "1108 Hyde Park Blvd – 3 Bed 3 Bath Historic Montrose Residence",
+        "price": "$999,000",
+        "location": "1108 Hyde Park Blvd, Houston, TX 77006",
+        "category": "Single Family",
+        "shortDescription": "Impeccably remodeled 1910 home in Montrose blending original charm with modern sophistication. Features a resort-style backyard with sparkling pool, outdoor kitchen, and stunning resurfaced hardwood floors.",
+        "fullDescription": "Montrose's rich history is beautifully reflected in this impeccably remodeled home, blending original charm with modern sophistication. The first floor boasts stunning, resurfaced hardwood flooring and a thoughtfully updated kitchen featuring high-end appliances, a built-in beverage cooler, a spacious quartz island with a breakfast bar, custom shelving, and cabinetry. The kitchen sink offers a picturesque view of the resort-style backyard, with a sparkling pool, an outdoor kitchen and ample space for entertaining.<br><br>The open-concept living and dining area is warm and inviting, highlighted by a cozy window seat, a wood-burning fireplace, and built-in storage. Upstairs, original hardwoods lead to a newly renovated primary bedroom featuring an oversized closet with custom built-ins, private access to an outdoor terrace overlooking the pool, surround sound speakers, and a luxurious bathroom. A bright and light secondary bedroom and third bedroom includes a well-appointed closet with additional storage.",
+        "image": "images/dd46ed134c1dfd1932a72336b294aa2c-cc_ft_960.webp",
+        "alt": "Exterior of a historic home at 1108 Hyde Park Blvd, Houston",
+        "gallery": [
+            "images/dd46ed134c1dfd1932a72336b294aa2c-cc_ft_960.webp",
+            "images/ade6d4a80954bc229fa44d1cfb8d0811-cc_ft_576.webp",
+            "images/86476df766ec9834021117ebd88086b8-cc_ft_576.webp",
+            "images/eef6c1d2615a71bd1d86c472a706272a-cc_ft_576.webp",
+            "images/7852b590a4fb5c2a01578efa0b4e4fd3-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the beautifully remodeled 1910 home",
+            "Resort-style backyard with sparkling pool and outdoor kitchen",
+            "Kitchen with quartz island and high-end appliances",
+            "Living area with wood-burning fireplace and window seat",
+            "Primary bedroom terrace overlooking the pool"
+        ],
+        "bedrooms": 3,
+        "bathrooms": 3,
+        "sqft": 2122,
+        "yearBuilt": 1910,
+        "propertyType": "Single Family",
+        "features": [
+            "Historic Montrose Location",
+            "Resurfaced Hardwood Floors",
+            "Resort-Style Backyard",
+            "In-Ground Heated Pool",
+            "Spa/Hot Tub",
+            "Outdoor Kitchen",
+            "Wood-Burning Fireplace",
+            "Quartz Kitchen Island",
+            "Built-In Beverage Cooler",
+            "Primary Bedroom Terrace",
+            "Custom Built-Ins",
+            "Detached Garage + Extra Driveway"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 33,
+        "title": "6806 Russelfield Ln – 5 Bed 4 Bath Stunner with Pool",
+        "price": "$500,000",
+        "location": "6806 Russelfield Ln, Houston, TX 77049",
+        "category": "Single Family",
+        "shortDescription": "Incredibly improved stunner with whole house Generac generator, fully remodeled kitchen with waterfall quartz, and an oasis backyard featuring a sparkling heated pool with water feature.",
+        "fullDescription": "Welcome to this incredibly improved stunner, loaded with improvements and special features in ideal location perfect for any commute. Whole house standby Generac generator! Beautiful elevation with large covered front porch, plus welcoming foyer that boasts high ceilings, elegant lighting, and plank tile floors. Large living room offers cast stone fireplace, stylish TV wall, 20ft ceilings, drapes and breathtaking windows. Fully remodeled kitchen offers waterfall Quartz countertops, highend Zline 6 burner cook top, with stainless vent hood, timeless tile backsplash, large farmhouse sink, pendant lighting over breakfast bar, softclose cabinets and drawers, recessed lighting and beautiful hardware. Large primary bath fully remodeled with pedestal tub, seamless glass shower with dual shower heads, stunning tile, dual sinks, plus impressive lighting and mirrors. Say yes to the oasis of a backyard that offers covered patio, sparkling heated pool with water feature, double pane sliding glass door. See video walk-through.",
+        "image": "images/a17f88fa04dab7eb6a81a5398da90d53-cc_ft_960.webp",
+        "alt": "Exterior of a stunning home at 6806 Russelfield Ln, Houston",
+        "gallery": [
+            "images/a17f88fa04dab7eb6a81a5398da90d53-cc_ft_960.webp",
+            "images/6632b8acb2530fc71d07c66809fa39c8-cc_ft_576.webp",
+            "images/2caba1903e7e8f1672aa941d37f747d0-cc_ft_576.webp",
+            "images/c9cbef1d599ed9366d083eac3d52e99a-cc_ft_576.webp",
+            "images/be75772c1bb1cdfbaafa8f73f0a9b52c-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior with large covered front porch",
+            "Fully remodeled kitchen with waterfall quartz island",
+            "Living room with cast stone fireplace and 20ft ceilings",
+            "Luxurious primary bath with pedestal tub and dual shower",
+            "Oasis backyard with sparkling heated pool"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "sqft": 3530,
+        "yearBuilt": 2009,
+        "propertyType": "Single Family",
+        "features": [
+            "Whole House Generac Generator",
+            "Fully Remodeled Kitchen",
+            "Waterfall Quartz Countertops",
+            "Zline 6-Burner Cooktop",
+            "Cast Stone Fireplace",
+            "20ft Ceilings in Living Room",
+            "Remodeled Primary Bath",
+            "Seamless Glass Shower with Dual Heads",
+            "Heated In-Ground Pool",
+            "Pool Water Feature",
+            "Covered Patio",
+            "Plank Tile Floors"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 34,
+        "title": "3204 Ivy Falls Dr – 5 Bed 5 Bath Olde Oaks Estate",
+        "price": "$749,000",
+        "location": "3204 Ivy Falls Dr, Houston, TX 77068",
+        "category": "Single Family",
+        "shortDescription": "Stunning estate home in Olde Oaks on a private 0.84-acre lot with no rear neighbors. Features expansive backyard with enormous pool, spa, playground, 5-car garages, and Tesla charging station.",
+        "fullDescription": "This stunning estate home in Olde Oaks, located on a private, 3/4+ acre lot with no rear neighbors, offers exceptional space inside and out! The expansive backyard, anchored by a majestic oak, is a true retreat with an enormous pool, spa, playground and huge pad (drive-through access from garage) for basketball, barbecue or RV/boat storage. Inside you'll find high ceilings, oversized windows, a chef's kitchen with large island, gas cooktop, gorgeous granite and a large walk-in pantry. The primary suite features a fireplace, spa-like bath with a wall of windows overlooking the backyard and a pretty bonus area, perfect for exercise or a quiet relaxation space. Other highlights include 4 additional bedrooms, an enormous game room with wet bar, balcony and study area, formal dining with vaulted ceiling, a private study with built-ins, 2 staircases, 2 fireplaces and a fully decked attic. With 2 new a/c units (10/25), 2 separate garages (5 spots total) plus a Tesla charging station, it's the perfect place to call home!",
+        "image": "images/2ff964e0b150f638145379cf306022ce-cc_ft_960.webp",
+        "alt": "Exterior of an estate home at 3204 Ivy Falls Dr, Houston",
+        "gallery": [
+            "images/2ff964e0b150f638145379cf306022ce-cc_ft_960.webp",
+            "images/de006c57b11a6b0210d923fc86e49bd5-cc_ft_960.webp",
+            "images/9e67832cafa550bd2676efa6ea426eed-cc_ft_576.webp",
+            "images/b02e9f0a8d48450820cc468c2d9b0da3-cc_ft_576.webp",
+            "images/dc3d6cba34213eda3077a5d036e3eb40-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Exterior of the stunning estate home",
+            "Enormous pool and spa with waterfall feature",
+            "Chef's kitchen with large island and granite",
+            "Primary suite with fireplace and spa-like bath",
+            "Enormous game room with wet bar and balcony"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "sqft": 6309,
+        "yearBuilt": 1982,
+        "propertyType": "Single Family",
+        "features": [
+            "0.84-Acre Private Lot",
+            "No Rear Neighbors",
+            "Enormous In-Ground Pool & Spa",
+            "Playground & Huge Pad for RV/Boat",
+            "5-Car Garage with Drive-Through Access",
+            "Tesla Charging Station",
+            "Chef's Kitchen with Large Island",
+            "Walk-In Pantry",
+            "Primary Suite with Fireplace",
+            "Spa-Like Primary Bath",
+            "Game Room with Wet Bar",
+            "2 New AC Units (2025)"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
+    {
+        "id": 35,
+        "title": "2674 N Burling St – 6 Bed 5 Bath Lincoln Park New Build",
+        "price": "$2,875,000",
+        "location": "2674 N Burling St, Chicago, IL 60614",
+        "category": "Single Family",
+        "shortDescription": "Exceptional 2022 new build on tree-lined Burling Street featuring 4,500 sq ft of luxury living, chef's kitchen with Thermador appliances, multiple outdoor spaces with fireplaces, and radiant heated floors.",
+        "fullDescription": "Built in 2022 by Willow Design & Build LLC, this exceptional single-family home sits on picturesque, tree-lined Burling Street and offers the perfect blend of luxury, function, and modern design. With 6 bedrooms, 4.1 bathrooms, and approximately 4,500 square feet of beautifully curated living space, every detail has been thoughtfully considered and impeccably executed.<br><br>The main level is a showcase of elegance and light, featuring soaring 11-foot ceilings, a stunning custom staircase, and a formal living room anchored by a gas-starter wood-burning fireplace. Designed for both everyday living and elevated entertaining, the chef's kitchen is outfitted with premium Thermador appliances, column refrigeration, and custom cabinetry. A separate butler's pantry and an exceptionally organized mudroom add seamless functionality. The spacious family room opens directly to a landscaped raised paver terrace complete with a wood-burning fireplace, along with an elevated backyard built atop the garage—creating a private outdoor retreat ideal for gatherings.<br><br>Upstairs, the serene primary suite offers two generous walk-in closets and a spa-caliber bath featuring a rain and steam shower, freestanding soaking tub, and private water closet. The light-filled second level also includes a second ensuite bedroom, an additional bedroom, and a full-size laundry room conveniently located off the hallway.<br><br>The penthouse level provides remarkable flexibility with an additional bedroom, full bath, and expansive entertaining space that opens to a treetop paver terrace with its own gas-starter wood-burning fireplace—an ideal setting for indoor-outdoor living. The lower level is equally impressive, featuring radiant heated floors, a spacious recreation room with custom built-in wet bar, a guest or nanny suite, and a versatile flex room perfect for a gym, playroom, office, or wine room.<br><br>This home is fully loaded with premium upgrades, including three-level indoor/outdoor sound, security wiring, two HVAC zones, fire sprinklers, expansive storage throughout, and a drywalled two-car garage equipped with an EV charger. Experience this extraordinary home in full detail—explore the 3D tour and walk through every space virtually.",
+        "image": "images/a5c85a6d5bad5580bd8cc12a1c523659-cc_ft_960.webp",
+        "alt": "Exterior of a luxury new build at 2674 N Burling St, Chicago",
+        "gallery": [
+            "images/a5c85a6d5bad5580bd8cc12a1c523659-cc_ft_960.webp",
+            "images/d4094af583d8c172bbbdd67b11226a4f-cc_ft_960.webp",
+            "images/859da8d7638e2a63c7c5ed597f5d8a16-cc_ft_960.webp",
+            "images/23991b0675ecadcf740e4276693b25eb-cc_ft_576.webp",
+            "images/2a18eaa6b21878126017900cbcad5fee-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Picturesque exterior on tree-lined Burling Street",
+            "Stunning custom staircase with soaring ceilings",
+            "Chef's kitchen with Thermador appliances and column refrigeration",
+            "Spa-caliber primary bath with rain shower and soaking tub",
+            "Raised paver terrace with wood-burning fireplace"
+        ],
+        "bedrooms": 6,
+        "bathrooms": 5,
+        "sqft": 4500,
+        "yearBuilt": 2022,
+        "propertyType": "Single Family",
+        "features": [
+            "2022 New Construction",
+            "6 Bedrooms + 4.1 Baths",
+            "Chef's Kitchen with Thermador Appliances",
+            "Column Refrigeration",
+            "Custom Cabinetry & Butler's Pantry",
+            "3 Outdoor Spaces with Fireplaces",
+            "Primary Suite with Spa Bath",
+            "Radiant Heated Floors",
+            "Recreation Room with Wet Bar",
+            "Guest/Nanny Suite",
+            "2-Car Garage with EV Charger",
+            "3-Level Indoor/Outdoor Sound System"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    },
 ];
 
 // Export for use in other files

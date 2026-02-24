@@ -138,12 +138,12 @@ function initSearch() {
 function handleHomeSearch() {
     const location = document.getElementById('location')?.value || '';
     const price = document.getElementById('price')?.value || '';
-    const type = document.getElementById('type')?.value || '';
+    const category = document.getElementById('categoryFilter')?.value || ''; // Get category value
     
     const queryParams = new URLSearchParams();
     if (location) queryParams.set('location', location);
     if (price) queryParams.set('price', price);
-    if (type) queryParams.set('type', type);
+    if (category) queryParams.set('category', category); // Pass category to listings page
     
     const queryString = queryParams.toString();
     window.location.href = `listings.html${queryString ? '?' + queryString : ''}`;
@@ -470,15 +470,31 @@ function createNoResultsMessage() {
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
     
-    ['location', 'price', 'type'].forEach(param => {
-        const value = urlParams.get(param);
-        if (value) {
-            const element = document.getElementById(param === 'type' ? 'propertyTypeFilter' : param === 'price' ? 'priceFilter' : 'listingsSearch');
-            if (element) {
-                element.value = value;
-            }
+    // Handle location, price, and category filters
+    const location = urlParams.get('location');
+    const price = urlParams.get('price');
+    const category = urlParams.get('category');
+    
+    if (location) {
+        const searchInput = document.getElementById('listingsSearch');
+        if (searchInput) {
+            searchInput.value = location;
         }
-    });
+    }
+    
+    if (price) {
+        const priceFilter = document.getElementById('priceFilter');
+        if (priceFilter) {
+            priceFilter.value = price;
+        }
+    }
+    
+    if (category) {
+        const categoryFilter = document.getElementById('categoryFilter');
+        if (categoryFilter) {
+            categoryFilter.value = category;
+        }
+    }
 }
 
 // ===== PROPERTY DETAILS =====

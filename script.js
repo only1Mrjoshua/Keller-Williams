@@ -246,11 +246,19 @@ function loadFeaturedProperties() {
     const featuredContainer = document.getElementById('featuredProperties');
     if (!featuredContainer) return;
     
-    const featured = properties.slice(0, 3);
+    // Create a copy of properties array and sort by price (highest first)
+    const sortedProperties = [...properties].sort((a, b) => {
+        const priceA = extractPriceNumber(a.price);
+        const priceB = extractPriceNumber(b.price);
+        return priceB - priceA; // Descending order (highest first)
+    });
+    
+    // Take the top 3 most expensive
+    const featured = sortedProperties.slice(0, 3);
     let html = '';
     
     featured.forEach(property => {
-        // Check if this is property ID 15 for under contract badge
+        // Check for under contract badge using status property
         const badge = property.status === 'under-contract' ? '<div class="property-badge under-contract">Under Contract</div>' : '';
         
         html += `

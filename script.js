@@ -152,18 +152,23 @@ function handleHomeSearch() {
 // ===== LISTINGS SEARCH =====
 function performListingsSearch() {
     const searchTerm = document.getElementById('listingsSearch')?.value.trim().toLowerCase() || '';
-    const categoryFilter = document.getElementById('categoryFilter')?.value || ''; // NEW CATEGORY FILTER
+    const categoryFilter = document.getElementById('categoryFilter')?.value || '';
     const priceFilter = document.getElementById('priceFilter')?.value || '';
     const typeFilter = document.getElementById('propertyTypeFilter')?.value || '';
     const bedroomsFilter = document.getElementById('bedroomsFilter')?.value || '';
     
     const propertyCards = document.querySelectorAll('.property-card');
+    const categorySections = document.querySelectorAll('.category-section');
+    
+    // Track which categories have visible properties
+    const categoriesWithVisibleProps = new Set();
     let visibleCount = 0;
     
+    // First, check all property cards
     propertyCards.forEach(card => {
         const title = card.getAttribute('data-title') || '';
         const location = card.getAttribute('data-location') || '';
-        const category = card.getAttribute('data-category') || ''; // NEW CATEGORY ATTRIBUTE
+        const category = card.getAttribute('data-category') || '';
         const priceNumber = parseFloat(card.getAttribute('data-price') || 0);
         const propertyType = card.getAttribute('data-type') || '';
         const bedrooms = parseInt(card.getAttribute('data-bedrooms') || 0);
@@ -173,7 +178,7 @@ function performListingsSearch() {
                          title.includes(searchTerm) || 
                          location.includes(searchTerm);
         
-        // Category filter (NEW)
+        // Category filter
         const categoryMatch = !categoryFilter || category === categoryFilter;
         
         // Price filter
@@ -193,13 +198,26 @@ function performListingsSearch() {
         // Bedrooms filter
         const bedroomsMatch = !bedroomsFilter || bedrooms >= parseInt(bedroomsFilter);
         
-        // Show/hide based on all filters (including categoryMatch)
+        // Show/hide based on all filters
         if (textMatch && categoryMatch && priceMatch && typeMatch && bedroomsMatch) {
             card.style.display = 'block';
             card.style.animation = 'fadeIn 0.3s ease';
             visibleCount++;
+            
+            // Add this category to our set of visible categories
+            categoriesWithVisibleProps.add(category);
         } else {
             card.style.display = 'none';
+        }
+    });
+    
+    // Now show/hide category sections based on whether they have visible properties
+    categorySections.forEach(section => {
+        const sectionCategory = section.getAttribute('data-category');
+        if (categoriesWithVisibleProps.has(sectionCategory)) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
         }
     });
     
@@ -233,11 +251,24 @@ function updateSearchResults(count) {
 // ===== CLEAR ALL FILTERS =====
 function clearAllFilters() {
     document.getElementById('listingsSearch').value = '';
-    document.getElementById('categoryFilter').value = ''; // NEW
+    document.getElementById('categoryFilter').value = '';
     document.getElementById('priceFilter').value = '';
     document.getElementById('propertyTypeFilter').value = '';
     document.getElementById('bedroomsFilter').value = '';
-    performListingsSearch();
+    
+    // Show all category sections
+    const categorySections = document.querySelectorAll('.category-section');
+    categorySections.forEach(section => {
+        section.style.display = 'block';
+    });
+    
+    // Show all property cards
+    const propertyCards = document.querySelectorAll('.property-card');
+    propertyCards.forEach(card => {
+        card.style.display = 'block';
+    });
+    
+    updateSearchResults(propertyCards.length);
     document.getElementById('listingsSearch').focus();
 }
 
@@ -303,7 +334,6 @@ function loadAllListings() {
         if (categories[category]) {
             categories[category].push(property);
         } else {
-            // If category doesn't exist in our map, add to Manufactured Home
             categories['Manufactured Home'].push(property);
         }
     });
@@ -315,10 +345,8 @@ function loadAllListings() {
         // Skip empty categories
         if (categoryProperties.length === 0) continue;
         
-        // Add category header with proper formatting
+        // Format category name properly
         let categoryDisplayName = '';
-
-        // Format each category name properly
         switch(categoryName) {
             case 'Double Wide':
                 categoryDisplayName = 'DOUBLE WIDE HOMES';
@@ -336,7 +364,6 @@ function loadAllListings() {
                 categoryDisplayName = 'FARMHOUSES';
                 break;
             default:
-                // For any other categories, just add 'HOMES' but remove 'Home' if present
                 let baseName = categoryName;
                 if (baseName.includes('Home')) {
                     baseName = baseName.replace('Home', '').trim();
@@ -344,8 +371,9 @@ function loadAllListings() {
                 categoryDisplayName = `${baseName.toUpperCase()} HOMES`;
         }
 
+        // Add category header with a unique ID for filtering
         html += `
-            <div class="category-section">
+            <div class="category-section" data-category="${categoryName}">
                 <h2 class="category-title">${categoryDisplayName}</h2>
                 <div class="category-divider"></div>
             </div>

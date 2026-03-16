@@ -2317,6 +2317,60 @@ const properties = [
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"
         }
+    },
+    {
+        "id": 56,
+        "title": "12419 Nautilus Cir 4 Bed 3 Bath Waterfront Pool Home",
+        "price": "$1,105,000",
+        "location": "12419 Nautilus Cir, Palm Beach Gardens, FL 33412",
+        "category": "Single Family",
+        "shortDescription": "Fully upgraded two-story waterfront pool home in Avenir's exclusive Windgate community, featuring lake views, an expansive covered terrace with summer kitchen, a fully fenced yard, and a three-car garage.",
+        "fullDescription": "Waterfront living meets effortless luxury in this fully upgraded two-story pool home in the exclusive Windgate community of Avenir. Perfectly positioned on a private lakefront homesite, this residence offers stunning water views, exceptional outdoor living, and a flexible layout designed for today's lifestyle. Inside, bright open living spaces are complemented by two versatile flex rooms ideal for a home office, den, fitness studio, or media room. Thoughtfully designed for both everyday comfort and entertaining, the home blends style and functionality throughout. The outdoor setting is truly special, with an expansive covered terrace and fully equipped summer kitchen overlooking the sparkling pool and peaceful waterfront, creating the ultimate space for entertaining or relaxing year-round. Lush privacy landscaping and a fully fenced yard provide both beauty and seclusion. Additional highlights include generous bedroom suites, high-end upgrades throughout, impact doors and windows, tile and carpet flooring, central heating and cooling, a pantry, in-unit laundry appliances, and a three-car garage. Located in the heart of Avenir, residents enjoy resort-style amenities, scenic nature preserves, miles of trails, and convenient access to Palm Beach Gardens' premier shopping, dining, golf, and beaches.",
+        "image": "images/4f8b564eee9360b3d770b0f6cf5bf510-cc_ft_960.avif",
+        "alt": "Exterior of the waterfront pool home at 12419 Nautilus Cir, Palm Beach Gardens",
+        "gallery": [
+            "images/4f8b564eee9360b3d770b0f6cf5bf510-cc_ft_960.avif",
+            "images/3c3bbef0517b6671e4b03c2737679727-cc_ft_576.avif",
+            "images/326d9480f2b8d2cd2fe75e0d20194e4b-cc_ft_576.avif",
+            "images/16b21abf6e5ff1117a717fa715247ffd-cc_ft_576.avif",
+            "images/af1a6bb8e798d36434412e173b4143d2-cc_ft_576.avif"
+        ],
+        "galleryAlt": [
+            "Front exterior of the waterfront home in Avenir",
+            "Bright open-concept living area with flexible layout",
+            "Modern kitchen with pantry and high-end appliances",
+            "Covered terrace and sparkling private pool",
+            "Peaceful lakefront backyard view with fenced yard"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "sqft": 3095,
+        "yearBuilt": 2024,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Waterfront Lake Front Lot",
+            "Private Pool",
+            "Expansive Covered Terrace",
+            "Fully Equipped Summer Kitchen",
+            "Fully Fenced Yard",
+            "Three-Car Garage",
+            "Two Flex Rooms",
+            "Bright Open Living Spaces",
+            "Generous Bedroom Suites",
+            "Impact Doors",
+            "Impact Glass Full Windows",
+            "Pantry",
+            "Central Air",
+            "Central Heating",
+            "Tile and Carpet Flooring",
+            "Patio",
+            "Cable Available",
+            "Traditional Architectural Style"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
     }
 ];
 

@@ -1,4 +1,4 @@
-// contact.js - Updated for FastAPI backend
+// contact.js - Formspree + Toast Notification
 class ToastNotification {
   constructor() {
     this.container = null;
@@ -26,52 +26,150 @@ class ToastNotification {
         z-index: 9999;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        max-width: 350px;
+        gap: 12px;
+        max-width: 360px;
       }
-      
+
       .toast {
-        padding: 16px 20px;
-        border-radius: 8px;
-        color: white;
-        font-weight: 500;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        transform: translateX(120%);
-        transition: transform 0.3s ease;
-        animation: slideIn 0.3s ease forwards;
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 14px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        overflow: hidden;
+
+        /* 🔴 RED GLASS BASE */
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
+          rgba(217, 4, 41, 0.85);
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        color: #ffffff;
+
+        box-shadow:
+          0 12px 35px rgba(217, 4, 41, 0.35),
+          inset 0 1px 0 rgba(255,255,255,0.12);
+
+        transform: translateX(120%);
+        opacity: 0;
+        animation: slideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       }
-      
+
+      /* subtle shine */
+      .toast::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(
+          120deg,
+          rgba(255,255,255,0.25),
+          rgba(255,255,255,0.05) 40%,
+          rgba(255,255,255,0.00)
+        );
+        pointer-events: none;
+      }
+
+      /* accent line */
+      .toast::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 100%;
+        border-radius: 999px;
+        background: #ffffff;
+        opacity: 0.9;
+      }
+
+      /* SUCCESS (slightly lighter red / premium feel) */
       .toast.success {
-        background-color: #10b981;
-        border-left: 4px solid #059669;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05)),
+          rgba(220, 20, 60, 0.85);
       }
-      
+
+      /* ERROR (deeper red) */
       .toast.error {
-        background-color: #ef4444;
-        border-left: 4px solid #dc2626;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03)),
+          rgba(160, 0, 20, 0.9);
       }
-      
+
       .toast-icon {
-        font-size: 18px;
+        position: relative;
+        z-index: 1;
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 15px;
+        font-weight: 700;
+
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.2);
+
+        color: #ffffff;
+
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
       }
-      
+
       .toast-message {
+        position: relative;
+        z-index: 1;
         flex: 1;
+        font-size: 14px;
+        line-height: 1.45;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        color: rgba(255,255,255,0.95);
       }
-      
+
+      /* animations */
       @keyframes slideIn {
-        to {
+        0% {
+          transform: translateX(120%);
+          opacity: 0;
+        }
+        100% {
           transform: translateX(0);
+          opacity: 1;
         }
       }
-      
+
       @keyframes fadeOut {
-        to {
-          opacity: 0;
+        0% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        100% {
           transform: translateX(120%);
+          opacity: 0;
+        }
+      }
+
+      /* mobile */
+      @media (max-width: 640px) {
+        .toast-container {
+          top: 16px;
+          right: 12px;
+          left: 12px;
+          max-width: none;
+        }
+
+        .toast {
+          width: 100%;
         }
       }
     `;
@@ -115,71 +213,65 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Remove any existing event listeners to prevent conflicts
-  const newForm = contactForm.cloneNode(true);
-  contactForm.parentNode.replaceChild(newForm, contactForm);
-
-  const freshForm = document.getElementById("contactForm");
-
-  freshForm.addEventListener("submit", async function (event) {
+  contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    // Disable submit button
-    const submitButton = freshForm.querySelector('button[type="submit"]');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
+
     submitButton.textContent = "Sending...";
     submitButton.disabled = true;
 
-    // Collect form data
-    const formData = {
-      name: document.getElementById("fullName").value.trim(), // Note: Change from fullName to name
-      email: document.getElementById("email").value.trim(),
-      phone: document.getElementById("phone").value.trim() || null,
-      subject: document.getElementById("subject").value || "General Inquiry",
-      message: document.getElementById("message").value.trim(),
-    };
-
-  try {
-  // Determine base URL (Localhost → local, Production → Render)
-  const BASE_URL =
-    window.location.hostname === "localhost"
-      ? "http://localhost:8000"
-      : "https://keller-williams-backend.onrender.com";
-
-  // Make the fetch request
-  const response = await fetch(`${BASE_URL}/contact/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    console.log("Success:", data);
-    toast.show("Message sent successfully!", "success");
-    freshForm.reset();
-  } else {
-    // Try to get error details
-    let errorMessage = "Failed to send message";
     try {
-      const errorData = await response.json();
-      errorMessage = errorData.detail || errorMessage;
-    } catch (e) {
-      errorMessage = `Server responded with status: ${response.status}`;
+      // simple validation
+      const fullName = document.getElementById("fullName")?.value.trim();
+      const email = document.getElementById("email")?.value.trim();
+      const phone = document.getElementById("phone")?.value.trim();
+      const subject = document.getElementById("subject")?.value || "General Inquiry";
+      const message = document.getElementById("message")?.value.trim();
+
+      if (!fullName || !email || !message) {
+        throw new Error("Please fill in all required fields.");
+      }
+
+      // Formspree endpoint
+      const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzvpbaq";
+
+      const formData = new FormData();
+      formData.append("fullName", fullName);
+      formData.append("email", email);
+      formData.append("phone", phone || "");
+      formData.append("subject", subject);
+      formData.append("message", message);
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok) {
+        toast.show("Message sent successfully!", "success");
+        contactForm.reset();
+      } else {
+        let errorMessage = "Failed to send message";
+
+        if (data && data.errors && data.errors.length > 0) {
+          errorMessage = data.errors[0].message || errorMessage;
+        }
+
+        throw new Error(errorMessage);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.show(error.message || "Failed to send message", "error");
+    } finally {
+      submitButton.textContent = originalButtonText;
+      submitButton.disabled = false;
     }
-    throw new Error(errorMessage);
-  }
-
-} catch (error) {
-  console.error("Error sending message:", error);
-  toast.show(`Failed to send message: ${error.message}`, "error");
-
-} finally {
-  submitButton.textContent = originalButtonText;
-  submitButton.disabled = false;
-}
-
   });
 });

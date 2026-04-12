@@ -2436,6 +2436,80 @@ const properties = [
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"
         }
+    },
+    {
+        "id": 58,
+        "title": "141 Enclave Boulevard 5 Bed 5 Bath Lagoon View Estate Home",
+        "price": "$1,270,000",
+        "location": "141 Enclave Boulevard, Savannah, GA 31419",
+        "category": "Single Family",
+        "shortDescription": "Spacious lagoon-view estate in the gated Enclave at Berwick Plantation featuring a sunroom, gourmet kitchen, custom built-ins, gas fireplace, office, and three-car garage.",
+        "fullDescription": "Set within the gated Enclave at Berwick Plantation, this beautifully designed five-bedroom residence offers over 4,700 square feet of thoughtfully planned living space with peaceful lagoon views and a flexible layout suited for both everyday comfort and entertaining. The split-bedroom floor plan creates privacy while keeping the main living areas warm, open, and connected.\n\nThe kitchen is designed to serve as the heart of the home, featuring granite countertops, stainless appliances, a breakfast bar, and a walk-in pantry. It opens seamlessly into the main living space, where custom built-ins and a gas fireplace create an inviting atmosphere. Natural light fills the all-glass sunroom, offering a relaxing retreat with front-row lagoon views.\n\nAdditional main-level spaces include a formal dining room and a dedicated office or flex room, allowing for a variety of lifestyle needs. The primary suite is privately positioned and includes double vanities, a whirlpool tub, separate shower, and an oversized walk-in closet. Upstairs, an additional bedroom and full bath provide flexibility for guests or a more secluded private suite.\n\nSituated on a professionally landscaped 0.38-acre lot, the property also includes a sprinkler system, balcony, and attached three-car garage. Community amenities in The Enclave include a pool, fitness center, tennis courts, and clubhouse, all conveniently located near shopping, dining, and downtown Savannah.",
+        "image": "images/57b3974584152332ee0eb2dac4ffa82f-cc_ft_960.webp",
+        "alt": "Exterior view of 141 Enclave Boulevard lagoon-view home in Savannah",
+        "gallery": [
+            "images/57b3974584152332ee0eb2dac4ffa82f-cc_ft_960.webp",
+            "images/db80e7e9b62bce1d360e368ce10f5e4a-cc_ft_576.webp",
+            "images/0ce74ecdc81bf9fa155479749c3be5de-cc_ft_576.webp",
+            "images/43c765f34246805e38ccf8a93aae7ad9-cc_ft_576.webp",
+            "images/6cd0ff00a704732c8d349d9e00d611dc-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Front exterior of the lagoon-view home in The Enclave at Berwick Plantation",
+            "Main living area with fireplace and custom built-ins",
+            "Kitchen with breakfast bar, granite countertops, and stainless appliances",
+            "Bright sunroom overlooking the lagoon",
+            "Primary suite or interior living space with upscale finishes"
+        ],
+        "bedrooms": 5,
+        "bathrooms": 5,
+        "sqft": 4749,
+        "yearBuilt": 2007,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Lagoon View",
+            "Lagoon Waterfront",
+            "Split-Bedroom Floor Plan",
+            "All-Glass Sunroom",
+            "Formal Dining Room",
+            "Dedicated Office or Flex Space",
+            "Granite Countertops",
+            "Stainless Appliances",
+            "Breakfast Bar",
+            "Walk-In Pantry",
+            "Custom Built-Ins",
+            "Gas Fireplace",
+            "Oversized Walk-In Closet",
+            "Double Vanities",
+            "Whirlpool Tub",
+            "Separate Shower",
+            "Walk-In Attic",
+            "High Ceilings",
+            "Recessed Lighting",
+            "Gourmet Kitchen",
+            "Main Level Primary Suite",
+            "Laundry Room",
+            "Balcony",
+            "Professionally Landscaped Lot",
+            "Sprinkler System",
+            "Three-Car Garage",
+            "Attached Garage",
+            "Central Air",
+            "Central Electric Heating",
+            "Brick and Stucco Exterior",
+            "Community Pool",
+            "Fitness Center",
+            "Tennis Courts",
+            "Clubhouse",
+            "Gated Community",
+            "Cable Available",
+            "Underground Utilities",
+            "Traditional Architectural Style"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
     }
 ];
 

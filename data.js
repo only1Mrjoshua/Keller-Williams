@@ -2675,7 +2675,85 @@ const properties = [
             "phone": "(818) 278 0024"
         }
     },
-
+    {
+        "id": 61,
+        "title": "24 China Cockle Ln 4 Bed 4 Bath Waterfront Ocean View Home",
+        "price": "$2,249,999",
+        "location": "24 China Cockle Ln, Hilton Head Island, SC 29926",
+        "category": "Single Family",
+        "shortDescription": "Exceptional waterfront home with panoramic Port Royal Sound views, open-concept design, chef’s kitchen, wine cellar, and outstanding indoor-outdoor living.",
+        "fullDescription": "Welcome to 24 China Cockle Lane, a spacious four-bedroom, three-and-a-half-bath waterfront residence perfectly positioned to capture unobstructed panoramic views of Port Royal Sound stretching out to the Atlantic Ocean. Located within the prestigious Hilton Head Plantation community, this property offers a rare opportunity to own in one of the East Coast’s most remarkable waterfront settings.\n\nSet on a private 0.35-acre homesite, the home is designed for seamless indoor-outdoor living with plenty of space for future expansion. Inside, the open floor plan creates a bright and inviting atmosphere, enhanced by sweeping water views and a gas-burning fireplace that anchors the living space.\n\nThe chef’s kitchen is both stylish and functional, featuring a large island, double sinks, quartz countertops, a walk-in pantry, and a custom wine cellar. Whether hosting or enjoying everyday living, the layout flows effortlessly between spaces.\n\nUpstairs and downstairs living areas offer flexibility and comfort, with high ceilings, spacious bedrooms, and thoughtful details throughout. The home’s positioning and design maximize natural light and breathtaking scenery from multiple vantage points.\n\nWith its combination of location, views, and potential, this is an extraordinary offering for buyers seeking a luxury coastal lifestyle in Hilton Head Island.",
+        "image": "images/2ad1bf41c0f89c0ceb874b93f4450ea6-cc_ft_960.webp",
+        "alt": "Exterior view of waterfront home at 24 China Cockle Ln with ocean views",
+        "gallery": [
+            "images/2ad1bf41c0f89c0ceb874b93f4450ea6-cc_ft_960.webp",
+            "images/905722b061895994b323699fc113f857-cc_ft_960.webp",
+            "images/7f3d5f29682a383701761acfff917932-cc_ft_960.webp",
+            "images/fe7ff270c9746d439772b63db096bd71-cc_ft_576.webp",
+            "images/1ab382a3e2367edc7fc75fe4152b0903-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Front exterior of waterfront home in Hilton Head Plantation",
+            "Sweeping ocean and sound views from the property",
+            "Outdoor living space with water views",
+            "Open-concept living area with fireplace",
+            "Kitchen with quartz countertops and island"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 3040,
+        "yearBuilt": 1986,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Waterfront Property",
+            "Panoramic Ocean Views",
+            "Port Royal Sound Views",
+            "Gas-Burning Fireplace",
+            "Open-Concept Floor Plan",
+            "Chef’s Kitchen",
+            "Quartz Countertops",
+            "Large Kitchen Island",
+            "Double Sinks",
+            "Walk-In Pantry",
+            "Custom Wine Cellar",
+            "High Ceilings",
+            "Vaulted Ceilings",
+            "Main Level Primary Suite",
+            "Multiple Closets",
+            "Loft Space",
+            "Entrance Foyer",
+            "Attic",
+            "Bookcases",
+            "Built-in Features",
+            "Smart Thermostat",
+            "Central Air",
+            "Heat Pump",
+            "Tile Flooring",
+            "Engineered Hardwood Floors",
+            "Carpet Flooring",
+            "Front Porch",
+            "Patio",
+            "Courtyard",
+            "Paved Driveway",
+            "Rain Gutters",
+            "Two-Car Garage",
+            "Garage Door Opener",
+            "Community Pool",
+            "Beach Access",
+            "Marina",
+            "Boat Ramp",
+            "Clubhouse",
+            "Playground",
+            "Picnic Area",
+            "Basketball Court",
+            "Walking Trails",
+            "Gated Community"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
+    }
 ];
 
 // Export for use in other files

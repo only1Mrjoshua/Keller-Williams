@@ -2371,6 +2371,71 @@ const properties = [
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"
         }
+    },
+    {
+        "id": 57,
+        "title": "106 Sunset Ct 4 Bed 3 Bath Tidal Creek Waterfront Luxury Home",
+        "price": "$1,799,000",
+        "location": "106 Sunset Ct, Beaufort, SC 29902",
+        "category": "Single Family",
+        "shortDescription": "Newly built Lowcountry waterfront home on Cotton Island featuring tidal creek views, expansive porches, outdoor kitchen, elevator, and premium coastal finishes in The Islands of Beaufort.",
+        "fullDescription": "Refined Lowcountry living meets modern luxury at this newly constructed waterfront residence on Cotton Island within The Islands of Beaufort. Overlooking the tranquil tidal waters of Battery Creek, this four-bedroom home blends timeless coastal architecture with energy-efficient design and upscale finishes.\n\nInside, the open-concept floor plan showcases rich Wicker Hickory hardwood floors, custom Shiloh cabinetry, and polished Viatera quartz countertops with striking blue veining. A five-zone SONOS sound system enhances the ambiance throughout the home. The gourmet kitchen, equipped with GE Monogram appliances, flows seamlessly into the expansive great room, where coffered ceilings and a remote-controlled gas fireplace create a warm and inviting space.\n\nThe main-level owner's suite offers a private retreat with direct access to the expansive porch and breathtaking tidal creek views. The spa-inspired bathroom features a walk-in shower, oversized soaking tub, and a custom walk-in closet. Upstairs, additional bedrooms provide serene water views and privacy for guests and family.\n\nBuilt for durability and coastal resilience, the home includes hurricane-rated materials, an aluminum and stainless-steel roof with a 50-year warranty, and Trex decking across all outdoor spaces. Outdoor living is elevated with a covered porch, fully equipped outdoor kitchen, fire pit, and outdoor fireplace—perfect for entertaining under the Carolina sky.\n\nAdditional highlights include a private elevator, wet bar, two fireplaces, central heating and cooling with heat pump, thermo-pane windows, in-unit laundry, and a spacious two-car garage. Residents enjoy access to resort-style amenities including a clubhouse, pool, tennis courts, fitness center, dock, and walking trails, all within a gated waterfront community.",
+        "image": "images/98327f32d12475aaaf7e3161a279d2e6-cc_ft_960.webp",
+        "alt": "Exterior view of luxury tidal creek waterfront home at 106 Sunset Ct, Beaufort",
+        "gallery": [
+            "images/98327f32d12475aaaf7e3161a279d2e6-cc_ft_960.webp",
+            "images/b868ce081ed6f0c9b8554fb3ae05e102-cc_ft_960.webp",
+            "images/88fcee8af5b2bf3c86655f44fb73f621-cc_ft_960.webp",
+            "images/5b1b3d650dc8b66e89ce0681e5f78563-cc_ft_576.webp",
+            "images/fbce5b45f09cacf8d2b9f47bb503b49d-cc_ft_576.webp"
+        ],
+        "galleryAlt": [
+            "Front exterior of Lowcountry coastal home on Cotton Island",
+            "Open-concept living area with coffered ceilings and fireplace",
+            "Gourmet kitchen with quartz countertops and custom cabinetry",
+            "Expansive porch with outdoor kitchen and seating area",
+            "Peaceful tidal creek waterfront view"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "sqft": 2965,
+        "yearBuilt": 2025,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Tidal Creek Waterfront",
+            "Expansive Porch",
+            "Outdoor Kitchen",
+            "Fire Pit and Outdoor Fireplace",
+            "Private Elevator",
+            "Open-Concept Floor Plan",
+            "Expansive Great Room",
+            "Remote-Controlled Gas Fireplace",
+            "GE Monogram Appliances",
+            "Custom Shiloh Cabinetry",
+            "Quartz Countertops",
+            "Wicker Hickory Hardwood Floors",
+            "Five-Zone SONOS Sound System",
+            "Wet Bar",
+            "Two Fireplaces",
+            "Hurricane-Rated Materials",
+            "Metal Roof with 50-Year Warranty",
+            "Trex Decking",
+            "Thermo-Pane Windows",
+            "Central Air",
+            "Heat Pump Heating",
+            "Two-Car Garage",
+            "Community Pool",
+            "Tennis Court",
+            "Fitness Center",
+            "Clubhouse",
+            "Dock Access",
+            "Walking Trails",
+            "Gated Community"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
     }
 ];
 

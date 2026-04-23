@@ -3038,14 +3038,14 @@ const properties = [
         "category": "Single Family",
         "shortDescription": "Acadian charm on 1.05-acre corner lot with pool, workshop, guest apartment, and a 400-year-old registered oak tree.",
         "fullDescription": "Discover Acadian charm at 504 Landview Dr, a picturesque property set on a 1.05-acre corner lot in a serene country setting in New Iberia, Louisiana. An expansive front porch with a classic porch swing invites you to relax and enjoy the peaceful surroundings.\n\nEnter from the side into a well-appointed kitchen featuring abundant cabinetry, a pantry, and a generous island. Just off the kitchen, a spacious sunroom offers backyard access and is ideal for morning coffee or afternoon unwinding. The laundry room features a sunken washer and dryer space for added peace of mind. The thoughtful floor plan includes a separate dining room and a warm, inviting living room with vaulted ceilings, built-ins, and a cozy wood-burning fireplace.\n\nThe primary suite features a newly remodeled bathroom and private patio access—an outdoor retreat that can also be reached from the living room. A convenient half bath off the foyer welcomes guests. Beautiful railings line the staircase and upstairs hallway, overlooking the living room and creating the perfect backdrop for holiday decor. Upstairs you will find two bedrooms, a remodeled full bathroom, and a versatile flex room ideal for an office, game room, or potential fourth bedroom.\n\nThe wide double-car garage includes an attached, handicap-accessible apartment with open living, dining, and a full kitchen. The bedroom features a walk-in closet and half bath with a walk-in shower and dedicated vanity area. A hallway closet, washer/dryer space, and an additional half bath add convenience. Above both the garage and apartment, a full-length walk-in attic provides exceptional storage.\n\nEnjoy summer fun in the inviting in-ground gunite pool, work on projects in the double-bay workshop with its own driveway, and relax under the breathtaking 400-year-old registered oak tree that offers shade and timeless beauty. This remarkable property has it all, space, comfort, character, and endless possibilities!",
-        "image": "images/a64222219e013c150ea04a5058969640-cc_ft_576.webp",
+        "image": "images/26ea2e484343cf4356b08471059fcae2-cc_ft_960.webp",
         "alt": "Exterior view of 504 Landview Dr Acadian home with front porch",
         "gallery": [
-            "images/a64222219e013c150ea04a5058969640-cc_ft_576.webp",
+            "images/26ea2e484343cf4356b08471059fcae2-cc_ft_960.webp",
             "images/38af6002aa99ae82cc79768e56682c35-cc_ft_576.webp",
             "images/fb25f64766649bd0630e61fe3fc410bf-cc_ft_576.webp",
             "images/ed7b0d584f9764ae9be31dde13e10680-cc_ft_576.webp",
-            "images/26ea2e484343cf4356b08471059fcae2-cc_ft_960.webp"
+            "images/ae7882dbb35ecf0eebe86f0cc0cded2e-cc_ft_960.webp"
         ],
         "galleryAlt": [
             "Front exterior with porch swing and oak tree",

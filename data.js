@@ -4055,6 +4055,75 @@ const properties = [
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"
         }
+    },
+    {
+        "id": 77,
+        "title": "3060 Hollywell Pl 4 Bed 4 Bath Modern Home in Chevy Chase",
+        "price": "$1,515,000",
+        "location": "3060 Hollywell Pl, Glendale, CA 91206",
+        "category": "Single Family",
+        "shortDescription": "Custom-built modern home on 0.93 acres with panoramic city and mountain views. Features rooftop deck, chef's kitchen, and private gazebo in Chevy Chase.",
+        "fullDescription": "Exceptional value! Located within the prestigious Glendale Unified School District, including highly-regarded Glenoaks Elementary. Step into a canvas of tranquility and privacy, where modern artistry meets hillside architecture in perfect harmony. Nestled on a quiet cul-de-sac at the pinnacle of the hill, this 2,575 sq. ft. custom-built home (completed in 2022) sits on a sprawling 0.93-acre lot, offering a rare top-of-the-world living experience.\n\nThe main level features soaring ceilings and massive double-pane windows that flood the home with natural light, framing unobstructed views of the picturesque mountains and city lights. The chef's kitchen boasts stainless steel appliances, crisp white cabinetry, a walk-in pantry, and a sleek glass breakfast bar. The upper-level primary suite is a true retreat with a jetted tub, dual vanities, and his-and-hers closets.\n\nEnjoy morning coffee or sunset cocktails from glass-enclosed private balconies. The expansive rooftop deck is designed for al fresco dining, while the tiered backyard leads to a private gazebo at the highest point of the property, offering the most breathtaking vantage point in the canyon. Turnkey and sophisticated, this residence offers an unparalleled blend of privacy and luxury just minutes from the Chevy Chase Country Club and the best of Glendale.",
+        "image": "images/771.webp",
+        "alt": "Exterior view of 3060 Hollywell Pl modern home in Chevy Chase",
+        "gallery": [
+            "images/771.webp",
+            "images/772.webp",
+            "images/773.webp",
+            "images/774.webp",
+            "images/775.webp"
+        ],
+        "galleryAlt": [
+            "Front exterior of custom-built modern home on cul-de-sac",
+            "Open-concept living area with soaring ceilings and mountain views",
+            "Chef's kitchen with glass breakfast bar and white cabinetry",
+            "Primary suite with private balcony and canyon views",
+            "Rooftop deck and tiered backyard with private gazebo"
+        ],
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "sqft": 2575,
+        "yearBuilt": 2022,
+        "propertyType": "Single Family Residence",
+        "features": [
+            "Custom-Built 2022",
+            "Modern Architecture",
+            "Quiet Cul-de-Sac",
+            "0.93 Acre Lot",
+            "Panoramic Mountain Views",
+            "City Lights View",
+            "Canyon View",
+            "Soaring Ceilings",
+            "Open-Concept Living",
+            "Chef's Kitchen",
+            "Stainless Steel Appliances",
+            "Walk-In Pantry",
+            "Glass Breakfast Bar",
+            "Primary Suite",
+            "Jetted Tub",
+            "Dual Vanities",
+            "His-and-Hers Closets",
+            "Glass-Enclosed Balconies",
+            "Expansive Rooftop Deck",
+            "Tiered Backyard",
+            "Private Gazebo",
+            "Double-Pane Windows",
+            "Natural Light",
+            "Direct Access Garage",
+            "Attached Two-Car Garage",
+            "Laundry Room",
+            "Central Air",
+            "High Efficiency Heating",
+            "ENERGY STAR Equipment",
+            "Tile Flooring",
+            "Turnkey Condition",
+            "Glenoaks Elementary School",
+            "Near Chevy Chase Country Club"
+        ],
+        "agent": {
+            "name": "Emil Akopian",
+            "phone": "(818) 278 0024"
+        }
     }
 ];
 

@@ -3086,6 +3086,7 @@ const properties = [
             "Composition Roof",
             "Resale Property"
         ],
+        "status": "under-contract",
         "agent": {
             "name": "Emil Akopian",
             "phone": "(818) 278 0024"

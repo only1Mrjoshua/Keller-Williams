@@ -637,18 +637,10 @@ function updatePropertyPage(property) {
 
       <div class="property-sidebar">
         <div class="agent-card">
-          <h3>Contact Agent</h3>
           <div class="agent-info">
-            <div class="agent-avatar">
-              <span>${property.agent.name.charAt(0)}</span>
-            </div>
-            <div>
-              <h4>${property.agent.name}</h4>
-              <p>Licensed Real Estate Agent</p>
-            </div>
-          </div>
-          <div class="agent-contact">
-            <p><strong>Phone:</strong> ${property.agent.phone}</p>
+            <p style="margin: 20px 0; text-align: left; font-size: 16px; line-height: 1.5;">
+              Contact <span style="color: #d90429;">(512) 325-5688</span> or <span style="color: #d90429;">info@kwelitehomes.com</span> for more information on this property and the assigned agent will be in touch with you shortly
+            </p>
           </div>
 
           <form class="contact-form" id="propertyContactForm" novalidate>

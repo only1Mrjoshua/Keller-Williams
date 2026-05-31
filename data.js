@@ -163,7 +163,7 @@ const properties = [
     {
         "id": 14,
         "title": "5316 Lennox Ave 5 Bed 5 Bath Contemporary Luxury in Sherman Oaks",
-        "price": "$1,574,950",
+        "price": "$1,548,950",
         "location": "5316 Lennox Ave, Sherman Oaks, Los Angeles, CA 91401",
         "category": "Single Family",
         "shortDescription": "Luxurious contemporary masterpiece in Chandler Estates. Features seamless glass walls, pool with waterfall, spa, guest house, and designer finishes throughout.",
@@ -2672,7 +2672,7 @@ const properties = [
     {
         "id": 67,
         "title": "20254 Leadwell St 3 Bed 2 Bath Fully Remodeled",
-        "price": "$1,379,900",
+        "price": "$1,534,000",
         "location": "20254 Leadwell St, Winnetka, Los Angeles, CA 91306",
         "category": "Single Family",
         "shortDescription": "Stunning fully remodeled contemporary home with open-concept layout, designer kitchen with waterfall island, and private backyard pool oasis.",

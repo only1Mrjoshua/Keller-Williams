@@ -606,6 +606,14 @@ function updatePropertyPage(property) {
 
   const propertyContent = document.querySelector(".property-content");
   if (propertyContent) {
+    // Build the purchase structure section if it exists
+    const purchaseStructureHTML = property.purchaseStructure ? `
+      <div class="purchase-structure">
+        <h3>All-Inclusive Purchase Structure</h3>
+        <p>${property.purchaseStructure}</p>
+      </div>
+    ` : '';
+
     propertyContent.innerHTML = `
       <div class="property-description">
         <h3>Property Description</h3>
@@ -633,6 +641,8 @@ function updatePropertyPage(property) {
           <p><strong>Square Feet:</strong> ${property.sqft}</p>
           <p><strong>Year Built:</strong> ${property.yearBuilt}</p>
         </div>
+
+        ${purchaseStructureHTML}
       </div>
 
       <div class="property-sidebar">

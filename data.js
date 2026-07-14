@@ -2,7 +2,7 @@ const properties = [
     {
         "id": 7,
         "title": "Spanish Hacienda Equestrian Estate",
-        "price": "$3,107,000",
+        "price": "$2,500,000",
         "location": "1533 Rancho Ave, Glendale, CA 91201",
         "category": "Single Family",
         "shortDescription": "Exceptional Spanish Hacienda Equestrian Estate custom built in 2009, offering a resort-style retreat with equestrian amenities.",
@@ -25,7 +25,7 @@ const properties = [
     {
         "id": 8,
         "title": "Colonial-Style Estate on Royal Blvd",
-        "price": "$1,874,000",
+        "price": "$2,620,900",
         "location": "1535 Royal Blvd, Glendale, CA 91207",
         "category": "Single Family",
         "shortDescription": "Exceptional Colonial-style residence in Glendale's prestigious Royal Boulevard neighborhood on a private, gated 0.51 acre lot.",
@@ -48,7 +48,7 @@ const properties = [
     {
         "id": 9,
         "title": "Rancho San Rafael Hillside Residence",
-        "price": "$1,898,000",
+        "price": "$1,845,000",
         "location": "925 Calle Del Pacifico, Glendale, CA 91208",
         "category": "Single Family",
         "shortDescription": "Set high in the Rancho San Rafael community, this residence offers 2,618 sq. ft. with sweeping views and exclusive amenities.",
@@ -71,7 +71,7 @@ const properties = [
     {
         "id": 10,
         "title": "Prestigious Chevy Chase Canyon Home",
-        "price": "$1,563,000",
+        "price": "$2,075,000",
         "location": "3275 Buckingham Rd, Glendale, CA 91206",
         "category": "Single Family",
         "shortDescription": "Located in the prestigious Chevy Chase Canyon, this bright home with high ceilings offers mountain and golf course views.",
@@ -94,7 +94,7 @@ const properties = [
     {
         "id": 11,
         "title": "Bay Park Tri-Level Residence",
-        "price": "$2,117,000",
+        "price": "$1,640,000",
         "location": "4542 Milton St, San Diego, CA 92110",
         "category": "Single Family",
         "shortDescription": "Beautifully upgraded tri-level residence on a spacious corner lot in highly desirable Bay Park with peek-a-boo views of Mission Bay.",
@@ -117,7 +117,7 @@ const properties = [
     {
         "id": 12,
         "title": "Panoramic View Home on Country Hills Drive",
-        "price": "$2,786,000",
+        "price": "$1,524,000",
         "location": "761 W Country Hills Dr, La Habra, CA 90631",
         "category": "Single Family",
         "shortDescription": "Stunning panoramic view home on Country Hills Drive with breathtaking, unobstructed views of mountains and city skyline.",
@@ -140,7 +140,7 @@ const properties = [
     {
         "id": 13,
         "title": "Historic Spanish Colonial in Encanto/Palmcroft",
-        "price": "$1,650,000",
+        "price": "$1,580,000",
         "location": "1615 Palmcroft Way SE, Phoenix, AZ 85007",
         "category": "Single Family",
         "shortDescription": "Stunning 1928 Spanish Colonial located in the historic Encanto/Palmcroft district with classic architectural details.",
@@ -163,7 +163,7 @@ const properties = [
     {
         "id": 14,
         "title": "5316 Lennox Ave 5 Bed 5 Bath Contemporary Luxury in Sherman Oaks",
-        "price": "$1,548,950",
+        "price": "$2,785,000",
         "location": "5316 Lennox Ave, Sherman Oaks, Los Angeles, CA 91401",
         "category": "Single Family",
         "shortDescription": "Luxurious contemporary masterpiece in Chandler Estates. Features seamless glass walls, pool with waterfall, spa, guest house, and designer finishes throughout.",
@@ -247,7 +247,7 @@ const properties = [
     {
         "id": 15,
         "title": "Brand-New Construction Birmingham School District",
-        "price": "$1,999,999",
+        "price": "$1,800,000",
         "location": "2840 Bolingbroke Dr, Troy, MI 48084",
         "category": "Single Family",
         "shortDescription": "Brand-new construction with immediate occupancy in the highly sought-after Birmingham School District, blending timeless sophistication with modern comfort.",
@@ -270,7 +270,7 @@ const properties = [
     {
         "id": 16,
         "title": "New Construction Glendale Home",
-        "price": "$1,595,000",
+        "price": "$1,425,000",
         "location": "4208 New York Ave, Glendale, CA 91214",
         "category": "Single Family",
         "shortDescription": "Beautifully crafted new construction home offering the perfect blend of modern style and functional living.",
@@ -294,7 +294,7 @@ const properties = [
     {
         "id": 17,
         "title": "Stunningly Remodeled Corner-Lot Home",
-        "price": "$2,978,000",
+        "price": "$2,950,000",
         "location": "430 W Kenneth Rd, Glendale, CA 91202",
         "category": "Single Family",
         "shortDescription": "Stunningly remodeled corner-lot home with downtown view, remodeled pool, and luxury finishes throughout.",
@@ -317,7 +317,7 @@ const properties = [
     {
         "id": 18,
         "title": "Modern Farmhouse",
-        "price": "$1,675,000",
+        "price": "$1,710,000",
         "location": "3500 Fairchild St, Glendale, CA 91214",
         "category": "Single Family",
         "shortDescription": "A fully renovated 4-bedroom, 3-bath Single Family Residence, Updated with all new systems (roof, HVAC, electric, copper plumbing).",
@@ -340,8 +340,8 @@ const properties = [
     },
     {
         "id": 25,
-        "title": "43 Cranford St – 6 Bed 4 Bath Multi-Family Home",
-        "price": "$950,000",
+        "title": "43 Cranford St, 6 Bed 4 Bath Multi-Family Home",
+        "price": "$935,000",
         "location": "43 Cranford St, Staten Island, NY 10308",
         "category": "Multi Family",
         "shortDescription": "Rare-find fully detached corner 2-family home in Bay Terrace on a 46' × 106' lot. Features two private driveways (parking for 4), two full residential levels, and a finished basement with separate entrances.",
@@ -389,7 +389,7 @@ const properties = [
     {
         "id": 26,
         "title": "224 Hamilton Ave – 4 Bed 3 Bath Historic Victorian",
-        "price": "$663,000",
+        "price": "$700,000",
         "location": "224 Hamilton Ave, Staten Island, NY 10301",
         "category": "Single Family",
         "shortDescription": "Step into timeless elegance with this beautifully restored Victorian in Historic St. George. Features exquisite woodwork, stained-glass windows, original staircase, and a sun-filled primary suite with private sunroom.",
@@ -436,8 +436,8 @@ const properties = [
     },
     {
         "id": 27,
-        "title": "569 Jefferson Blvd – 5 Bed 3 Bath Multi-Family with Pool",
-        "price": "$1,098,000",
+        "title": "569 Jefferson Blvd, 5 Bed 3 Bath Multi-Family with Pool",
+        "price": "$1,128,400",
         "location": "569 Jefferson Blvd, Staten Island, NY 10312",
         "category": "Multi Family",
         "shortDescription": "Exceptional and spacious two-family home featuring a main unit with primary suite deck overlooking an in-ground pool, plus a separate 2-bedroom apartment—perfect for income or extended family.",
@@ -484,8 +484,8 @@ const properties = [
     },
     {
         "id": 28,
-        "title": "1468 W Foster Ave – 6 Bed 2 Bath Andersonville Greystone",
-        "price": "$950,000",
+        "title": "1468 W Foster Ave, 6 Bed 2 Bath Andersonville Greystone",
+        "price": "$1,100,000",
         "location": "1468 W Foster Ave, Chicago, IL 60640",
         "category": "Multi Family",
         "shortDescription": "Classic Chicago Greystone 2-flat in Andersonville featuring gorgeous woodwork, beautifully preserved built-in hutches, and timeless architectural detail throughout this spacious multi-family home.",
@@ -532,8 +532,8 @@ const properties = [
     },
     {
         "id": 29,
-        "title": "4201 N Paulina St – 4 Bed 3 Bath Ravenswood Multi-Family",
-        "price": "$950,000",
+        "title": "4201 N Paulina St, 4 Bed 3 Bath Ravenswood Multi-Family",
+        "price": "$723,300",
         "location": "4201 N Paulina St, Chicago, IL 60613",
         "category": "Multi Family",
         "shortDescription": "Beautifully updated 2-flat on a tree-lined quiet street in Ravenswood. Features refinished hardwood floors, fresh paint, radiant heat, and a large fenced front yard—perfect for extended family or investment.",
@@ -581,7 +581,7 @@ const properties = [
     {
         "id": 30,
         "title": "847 N Hermitage Ave Unit C – 3 Bed 2 Bath Duplex Penthouse",
-        "price": "$774,999",
+        "price": "$882,800",
         "location": "847 N Hermitage Ave Unit C, Chicago, IL 60622",
         "category": "Condominium",
         "shortDescription": "One-of-a-kind duplex penthouse in East Village with sweeping skyline views, dramatic two-story windows, and award-winning renovated baths. Includes garage parking and three private outdoor spaces.",
@@ -628,7 +628,7 @@ const properties = [
     },
     {
         "id": 31,
-        "title": "1805 Sul Ross St – 3 Bed 2 Bath Montrose Investment Duplex",
+        "title": "1805 Sul Ross St, 3 Bed 2 Bath Montrose Investment Duplex",
         "price": "$950,000",
         "location": "1805 Sul Ross St, Houston, TX 77098",
         "category": "Multi Family",
@@ -676,8 +676,8 @@ const properties = [
     },
     {
         "id": 32,
-        "title": "1108 Hyde Park Blvd – 3 Bed 3 Bath Historic Montrose Residence",
-        "price": "$999,000",
+        "title": "1108 Hyde Park Blvd, 3 Bed 3 Bath Historic Montrose Residence",
+        "price": "$844,900",
         "location": "1108 Hyde Park Blvd, Houston, TX 77006",
         "category": "Single Family",
         "shortDescription": "Impeccably remodeled 1910 home in Montrose blending original charm with modern sophistication. Features a resort-style backyard with sparkling pool, outdoor kitchen, and stunning resurfaced hardwood floors.",
@@ -724,8 +724,8 @@ const properties = [
     },
     {
         "id": 33,
-        "title": "6806 Russelfield Ln – 5 Bed 4 Bath Stunner with Pool",
-        "price": "$500,000",
+        "title": "6806 Russelfield Ln, 5 Bed 4 Bath Stunner with Pool",
+        "price": "$447,500",
         "location": "6806 Russelfield Ln, Houston, TX 77049",
         "category": "Single Family",
         "shortDescription": "Incredibly improved stunner with whole house Generac generator, fully remodeled kitchen with waterfall quartz, and an oasis backyard featuring a sparkling heated pool with water feature.",
@@ -772,8 +772,8 @@ const properties = [
     },
     {
         "id": 34,
-        "title": "3204 Ivy Falls Dr – 5 Bed 5 Bath Olde Oaks Estate",
-        "price": "$749,000",
+        "title": "3204 Ivy Falls Dr, 5 Bed 5 Bath Olde Oaks Estate",
+        "price": "$767,551",
         "location": "3204 Ivy Falls Dr, Houston, TX 77068",
         "category": "Single Family",
         "shortDescription": "Stunning estate home in Olde Oaks on a private 0.84-acre lot with no rear neighbors. Features expansive backyard with enormous pool, spa, playground, 5-car garages, and Tesla charging station.",
@@ -820,8 +820,8 @@ const properties = [
     },
     {
         "id": 35,
-        "title": "2674 N Burling St – 6 Bed 5 Bath Lincoln Park New Build",
-        "price": "$2,875,000",
+        "title": "2674 N Burling St, 6 Bed 5 Bath Lincoln Park New Build",
+        "price": "$2,700,000",
         "location": "2674 N Burling St, Chicago, IL 60614",
         "category": "Single Family",
         "shortDescription": "Exceptional 2022 new build on tree-lined Burling Street featuring 4,500 sq ft of luxury living, chef's kitchen with Thermador appliances, multiple outdoor spaces with fireplaces, and radiant heated floors.",
@@ -868,8 +868,8 @@ const properties = [
     },
     {
         "id": 36,
-        "title": "2930 SW 11th St – 5 Bed 4 Bath Investment Duplex",
-        "price": "$995,000",
+        "title": "2930 SW 11th St, 5 Bed 4 Bath Investment Duplex",
+        "price": "$882,000",
         "location": "2930 SW 11th St, Miami, FL 33135",
         "category": "Duplex",
         "shortDescription": "Calling all investors! Centrally located duplex in the heart of Miami with many new upgrades including HVAC (2021), stainless steel appliances, and fresh paint. Currently leased until August 2026 generating $5,000/month total rent.",
@@ -916,8 +916,8 @@ const properties = [
     },
     {
         "id": 37,
-        "title": "10321 SW 116th Ave – 3 Bed 3 Bath Glen Cove Entertainer's Home",
-        "price": "$1,150,000",
+        "title": "10321 SW 116th Ave, 3 Bed 3 Bath Glen Cove Entertainer's Home",
+        "price": "$1,000,000",
         "location": "10321 SW 116th Ave, Miami, FL 33176",
         "category": "Single Family",
         "shortDescription": "Welcome to Glen Cove! This stunning entertainer's home features a brand-new metal roof, impact windows, a huge enclosed sunroom, and a generous corner lot in sought-after Miami-Dade.",
@@ -964,8 +964,8 @@ const properties = [
     },
     {
         "id": 38,
-        "title": "3522 William Ave – 2 Bed 3 Bath Coconut Grove Contemporary",
-        "price": "$1,998,000",
+        "title": "3522 William Ave, 2 Bed 3 Bath Coconut Grove Contemporary",
+        "price": "$1,695,000",
         "location": "3522 William Ave, Miami, FL 33133",
         "category": "Single Family",
         "shortDescription": "Striking contemporary residence in the heart of Coconut Grove with Italian-crafted kitchen, Turkish travertine floors, and private outdoor oasis featuring built-in Italian jacuzzi and firepit lounge.",
@@ -1012,7 +1012,7 @@ const properties = [
     },
     {
         "id": 39,
-        "title": "5016 Colton Run – 5 Bed 5 Bath Champions Park New Construction",
+        "title": "5016 Colton Run, 5 Bed 5 Bath Champions Park New Construction",
         "price": "$960,000",
         "location": "5016 Colton Run, Atlanta, GA 30349",
         "category": "Single Family",
@@ -1060,8 +1060,8 @@ const properties = [
     },
     {
         "id": 40,
-        "title": "174 Walthall St SE – 5 Bed 5 Bath Reynoldstown Compound with ADU",
-        "price": "$999,850",
+        "title": "174 Walthall St SE, 5 Bed 5 Bath Reynoldstown Compound with ADU",
+        "price": "$969,850",
         "location": "174 Walthall St SE, Atlanta, GA 30316",
         "category": "Single Family",
         "shortDescription": "Rare intown compound in Reynoldstown featuring a spacious 4-bedroom main home plus a detached 1-bedroom ADU with proven rental history grossing $36,000+ annually. Steps from the Atlanta BeltLine.",
@@ -1108,7 +1108,7 @@ const properties = [
     },
     {
         "id": 41,
-        "title": "648 Liella Park SE – 3 Bed 4 Bath Grant Park New Construction",
+        "title": "648 Liella Park SE, 3 Bed 4 Bath Grant Park New Construction",
         "price": "$749,999",
         "location": "648 Liella Park SE, Atlanta, GA 30312",
         "category": "Single Family",
@@ -1156,8 +1156,8 @@ const properties = [
     },
     {
         "id": 42,
-        "title": "166 Windrift Dr – 6 Bed 5 Bath North Paulding Executive Estate",
-        "price": "$950,000",
+        "title": "166 Windrift Dr, 6 Bed 5 Bath North Paulding Executive Estate",
+        "price": "$790,000",
         "location": "166 Windrift Dr, Dallas, GA 30132",
         "category": "Single Family",
         "shortDescription": "Absolutely stunning executive style home on 2.33 private acres in North Paulding. Features four-sided brick, 3-car garage, finished terrace level with in-law suite potential, and no HOA!",
@@ -1204,8 +1204,8 @@ const properties = [
     },
     {
         "id": 43,
-        "title": "652 McCready Dr – 4 Bed 4 Bath Farmhouse on 17.46 Acres",
-        "price": "$975,000",
+        "title": "652 McCready Dr, 4 Bed 4 Bath Farmhouse on 17.46 Acres",
+        "price": "$825,000",
         "location": "652 McCready Dr, Dallas, GA 30157",
         "category": "Single Family",
         "shortDescription": "True farmhouse living with complete privacy on 17.46 breathtaking acres. Features four-sided brick, newer metal roof, saltwater pool, barn for horses, and a peaceful creek running through the property.",
@@ -1252,7 +1252,7 @@ const properties = [
     },
     {
         "id": 44,
-        "title": "115 Brookside Ct – 3 Bed 2 Bath Cul-de-Sac Retreat",
+        "title": "115 Brookside Ct, 3 Bed 2 Bath Cul-de-Sac Retreat",
         "price": "$225,000",
         "location": "115 Brookside Ct, Dallas, GA 30132",
         "category": "Single Family",
@@ -1300,8 +1300,8 @@ const properties = [
     },
     {
         "id": 45,
-        "title": "5303 Colonial Ave – 4 Bed 4 Bath Duplex Near Fairgrounds",
-        "price": "$310,000",
+        "title": "5303 Colonial Ave, 4 Bed 4 Bath Duplex Near Fairgrounds",
+        "price": "$313,100",
         "location": "5303 Colonial Ave, Dallas, TX 75215",
         "category": "Duplex",
         "shortDescription": "Rare investment opportunity just down the street from the Texas State Fairgrounds, where billions in redevelopment is underway. Price is per side—duplex can be purchased separately or together.",
@@ -1348,8 +1348,8 @@ const properties = [
     },
     {
         "id": 47,
-        "title": "201 Galer Street #305 – 2 Bed 1 Bath Queen Anne Historic Condo",
-        "price": "$749,000",
+        "title": "201 Galer Street #305, 2 Bed 1 Bath Queen Anne Historic Condo",
+        "price": "$740,000",
         "location": "201 Galer Street #305, Seattle, WA 98109",
         "category": "Condominium",
         "shortDescription": "Perched atop Queen Anne Hill in the iconic Queen Anne High School, this historic condo features soaring 13-foot ceilings, Space Needle and Puget Sound views, and a versatile loft—all just moments from Seattle Center.",
@@ -1397,7 +1397,7 @@ const properties = [
     {
         "id": 48,
         "title": "745 Bellevue Avenue E #402 3 Bed 2 Bath Capitol Hill Penthouse",
-        "price": "$1,650,000",
+        "price": "$1,495,000",
         "location": "745 Bellevue Avenue E #402, Seattle, WA 98102",
         "category": "Condominium",
         "shortDescription": "One of a kind dramatic west facing penthouse crafted by a celebrated interior designer as his personal residence. Features showstopping 180 degree views, private decks, and 3 garage spaces.",
@@ -1492,8 +1492,8 @@ const properties = [
     },
     {
         "id": 50,
-        "title": "19 S Crescent Circuit 3 Bed 2 Bath Brighton Colonial",
-        "price": "$799,000",
+        "title": "19 S Crescent Circuit, 3 Bed 2 Bath Brighton Colonial",
+        "price": "$765,000",
         "location": "19 S Crescent Circuit, Boston, MA 02135",
         "category": "Single Family",
         "shortDescription": "This charming single family colonial sits high on South Crescent Circuit with beautiful panoramic views of the neighboring golf course and Chandler Pond area. Features hardwood floors throughout and lovely gumwood trim.",
@@ -1637,7 +1637,7 @@ const properties = [
     {
         "id": 53,
         "title": "2050 Divisadero St #2 3 Bed 3 Bath Pacific Heights Condo",
-        "price": "$2,099,000",
+        "price": "$2,049,000",
         "location": "2050 Divisadero St #2, San Francisco, CA 94115",
         "category": "Condominium",
         "shortDescription": "Beautifully renovated 3BR 2.5BA Pacific Heights condo in a boutique three unit building built in 1997, just steps from Alta Plaza Park. Features new hardwood floors, two fully remodeled bathrooms, and a stylishly updated kitchen.",
@@ -1685,7 +1685,7 @@ const properties = [
     {
         "id": 54,
         "title": "690 Market St Unit 2404 2 Bed 3 Bath Ritz Carlton Penthouse",
-        "price": "$2,195,400",
+        "price": "$1,949,000",
         "location": "690 Market St Unit 2404, San Francisco, CA 94114",
         "category": "Condominium",
         "shortDescription": "Experience ultimate luxury in this highly customized two level penthouse at The Ritz Carlton Residences, featuring design by Stanford Hughes Design, sweeping city and water views, and premier building amenities.",
@@ -1780,8 +1780,8 @@ const properties = [
     },
     {
         "id": 56,
-        "title": "12419 Nautilus Cir 4 Bed 3 Bath Waterfront Pool Home",
-        "price": "$1,105,000",
+        "title": "12419 Nautilus Cir, 4 Bed 3 Bath Waterfront Pool Home",
+        "price": "$11,950,000",
         "location": "12419 Nautilus Cir, Palm Beach Gardens, FL 33412",
         "category": "Single Family",
         "shortDescription": "Fully upgraded two-story waterfront pool home in Avenir's exclusive Windgate community, featuring lake views, an expansive covered terrace with summer kitchen, a fully fenced yard, and a three-car garage.",
@@ -1835,7 +1835,7 @@ const properties = [
     {
         "id": 57,
         "title": "106 Sunset Ct 4 Bed 3 Bath Tidal Creek Waterfront Luxury Home",
-        "price": "$1,799,000",
+        "price": "$1,744,000",
         "location": "106 Sunset Ct, Beaufort, SC 29902",
         "category": "Single Family",
         "shortDescription": "Newly built Lowcountry waterfront home on Cotton Island featuring tidal creek views, expansive porches, outdoor kitchen, elevator, and premium coastal finishes in The Islands of Beaufort.",
@@ -1900,7 +1900,7 @@ const properties = [
     {
         "id": 58,
         "title": "141 Enclave Boulevard 5 Bed 5 Bath Lagoon View Estate Home",
-        "price": "$1,270,000",
+        "price": "$704,900",
         "location": "141 Enclave Boulevard, Savannah, GA 31419",
         "category": "Single Family",
         "shortDescription": "Spacious lagoon-view estate in the gated Enclave at Berwick Plantation featuring a sunroom, gourmet kitchen, custom built-ins, gas fireplace, office, and three-car garage.",
@@ -1974,7 +1974,7 @@ const properties = [
     {
         "id": 59,
         "title": "2238 Cohen Street 5 Bed 4 Bath Deep Water Waterfront Estate",
-        "price": "$2,750,000",
+        "price": "$2,250,000",
         "location": "2238 Cohen Street, Savannah, GA 31410",
         "category": "Single Family",
         "shortDescription": "Private deep-water waterfront estate on 2.78 acres featuring river views, wraparound porches, updated kitchen, fenced grounds, dock permit, and extensive modern upgrades.",
@@ -2059,7 +2059,7 @@ const properties = [
     {
         "id": 60,
         "title": "8 Long Brow Rd 4 Bed 4 Bath Renovated Lagoon & Golf View Estate",
-        "price": "$1,745,000",
+        "price": "$1,650,000",
         "location": "8 Long Brow Rd, Hilton Head Island, SC 29928",
         "category": "Single Family",
         "shortDescription": "Fully renovated Long Cove estate with lagoon and golf views, private courtyard pool and spa, modern upgrades, and elegant indoor-outdoor living.",
@@ -2138,7 +2138,7 @@ const properties = [
     {
         "id": 61,
         "title": "24 China Cockle Ln 4 Bed 4 Bath Waterfront Ocean View Home",
-        "price": "$2,249,999",
+        "price": "$1,999,999",
         "location": "24 China Cockle Ln, Hilton Head Island, SC 29926",
         "category": "Single Family",
         "shortDescription": "Exceptional waterfront home with panoramic Port Royal Sound views, open-concept design, chef’s kitchen, wine cellar, and outstanding indoor-outdoor living.",
@@ -2217,7 +2217,7 @@ const properties = [
     {
         "id": 62,
         "title": "1127 Camellia Blvd #H1 3 Bed 3 Bath Condo in River Ranch",
-        "price": "$998,000",
+        "price": "$335,000",
         "location": "1127 Camellia Blvd #H1, Lafayette, LA 70508",
         "category": "Condominium",
         "shortDescription": "Spacious River Ranch condo with single-level entry, vaulted ceilings, open layout, private patio, and access to premium community amenities.",
@@ -2296,7 +2296,7 @@ const properties = [
     {
         "id": 63,
         "title": "12 Steamboat Bend Blvd 3 Bed 3 Bath Custom Home in Shadows Bend",
-        "price": "$845,000",
+        "price": "$450,000",
         "location": "12 Steamboat Bend Blvd, New Iberia, LA 70563",
         "category": "Single Family",
         "shortDescription": "Gorgeous custom-built home in gated Shadows Bend community with 3 bedrooms, 3 baths, two offices, open-concept living, and a 0.5-acre lot.",
@@ -2405,7 +2405,7 @@ const properties = [
     {
         "id": 64,
         "title": "301 Harvest Ln 3 Bed 2 Bath Custom Home in Sugarland Estates",
-        "price": "$887,999",
+        "price": "$335,000",
         "location": "301 Harvest Ln, New Iberia, LA 70563",
         "category": "Single Family",
         "shortDescription": "Beautiful custom-built home in desirable Sugarland Estates with 3 bedrooms, 2 baths, small office, split floor plan, and above-ground pool.",
@@ -2495,7 +2495,7 @@ const properties = [
     {
         "id": 65,
         "title": "504 Landview Dr 3 Bed 3 Bath Acadian Home on 1.05 Acres",
-        "price": "$795,000",
+        "price": "$425,000",
         "location": "504 Landview Dr, New Iberia, LA 70563",
         "category": "Single Family",
         "shortDescription": "Acadian charm on 1.05-acre corner lot with pool, workshop, guest apartment, and a 400-year-old registered oak tree.",
@@ -2599,7 +2599,7 @@ const properties = [
     {
         "id": 66,
         "title": "5539 Buffalo Ave 3 Bed 3 Bath",
-        "price": "$1,407,000",
+        "price": "$1,075,000",
         "location": "5539 Buffalo Ave, Sherman Oaks, Los Angeles, CA 91401",
         "category": "Single Family",
         "shortDescription": "Cool California Contemporary in prime Sherman Oaks. Gated with detached guest studio, and open concept kitchen.",
@@ -2673,7 +2673,7 @@ const properties = [
     {
         "id": 67,
         "title": "20254 Leadwell St 3 Bed 2 Bath Fully Remodeled",
-        "price": "$1,534,000",
+        "price": "$1,050,000",
         "location": "20254 Leadwell St, Winnetka, Los Angeles, CA 91306",
         "category": "Single Family",
         "shortDescription": "Stunning fully remodeled contemporary home with open-concept layout, designer kitchen with waterfall island, and private backyard pool oasis.",
@@ -2753,7 +2753,7 @@ const properties = [
     {
         "id": 68,
         "title": "4140 Aleman Dr 4 Bed 4 Bath Modern Luxury Estate in Tarzana",
-        "price": "$1,527,999",
+        "price": "$3,175,000",
         "location": "4140 Aleman Dr, Tarzana, Los Angeles, CA 91356",
         "category": "Single Family",
         "shortDescription": "Newly remodeled modern estate with breathtaking city and canyon views. Features wine cellar, luxurious primary suite, pool, spa, and premium finishes throughout.",
@@ -2853,7 +2853,7 @@ const properties = [
     {
         "id": 69,
         "title": "924 E Glenoaks Blvd 4 Bed 4 Bath Tudor Home in Rossmoyne",
-        "price": "$1,477,000",
+        "price": "$1,795,000",
         "location": "924 E Glenoaks Blvd, Glendale, CA 91207",
         "category": "Single Family",
         "shortDescription": "Classic 1927 Tudor in historic Rossmoyne. Features arched ceilings, wood floors, updated kitchen, pool and spa, and detached garage on a private lot.",
@@ -2929,7 +2929,7 @@ const properties = [
     {
         "id": 70,
         "title": "2773 Valle Vista Dr 3 Bed 3 Bath View Home in Glenoaks Canyon",
-        "price": "$1,499,999",
+        "price": "$2,050,000",
         "location": "2773 Valle Vista Dr, Glendale, CA 91206",
         "category": "Single Family",
         "shortDescription": "Beautifully updated home with sweeping panoramic views. Features chef's kitchen, pool and spa, wet bar, and dramatic split-level layout in Glenoaks Canyon.",
@@ -2985,7 +2985,7 @@ const properties = [
     {
         "id": 71,
         "title": "1528 N Highland Ave NE 3 Bed 4 Bath Tudor Home in Morningside",
-        "price": "$1,450,000",
+        "price": "$1,350,000",
         "location": "1528 N Highland Ave NE, Atlanta, GA 30306",
         "category": "Single Family",
         "shortDescription": "Timeless 1930s Tudor in the heart of Morningside. Features a full primary suite level, updated kitchen, terrace level, and lush fenced yard with motor court.",
@@ -3056,7 +3056,7 @@ const properties = [
     {
         "id": 72,
         "title": "1431 Cornell Rd 5 Bed 3 Bath Brick Home in Druid Hills",
-        "price": "$949,900",
+        "price": "$944,900",
         "location": "1431 Cornell Rd, Atlanta, GA 30306",
         "category": "Single Family",
         "shortDescription": "Timeless 5-bedroom brick residence in sought-after Druid Hills. Steps from Emory and CDC with finished basement, new roof, and screened porch.",
@@ -3131,7 +3131,7 @@ const properties = [
     {
         "id": 73,
         "title": "39 Plantation Dr NE 5 Bed 5 Bath Luxury Home in Buckhead",
-        "price": "$1,100,000",
+        "price": "$1,049,000",
         "location": "39 Plantation Dr NE, Atlanta, GA 30324",
         "category": "Single Family",
         "shortDescription": "Masterclass in modern luxury within exclusive gated enclave. Features 22-ft ceilings, in-law suite, finished terrace level, and mountain-resort feel in Buckhead.",
@@ -3226,7 +3226,7 @@ const properties = [
     {
         "id": 74,
         "title": "2026 SW 73rd St 3 Bed 2 Bath Home in Pepper Mill",
-        "price": "$599,999",
+        "price": "$249,999",
         "location": "2026 SW 73rd St, Gainesville, FL 32607",
         "category": "Single Family",
         "shortDescription": "Move-in ready 3 bedroom home in convenient Pepper Mill neighborhood. Freshly painted with new roof, HVAC, windows, and fully fenced backyard.",
@@ -3297,7 +3297,7 @@ const properties = [
     {
         "id": 75,
         "title": "1027 NW 11th Ave 4 Bed 4 Bath Renovated Home with ADU in Oakview",
-        "price": "$676,000",
+        "price": "$710,000",
         "location": "1027 NW 11th Ave, Gainesville, FL 32601",
         "category": "Single Family",
         "shortDescription": "Fully renovated main house plus new two-story ADU near downtown and UF. Features heart pine floors, marble bathrooms, and heated floors.",
@@ -3373,7 +3373,7 @@ const properties = [
     {
         "id": 76,
         "title": "3550 NW 46th Ter 3 Bed 2 Bath Home in Hyde Park",
-        "price": "$605,000",
+        "price": "$324,000",
         "location": "3550 NW 46th Ter, Gainesville, FL 32606",
         "category": "Single Family",
         "shortDescription": "Beautifully maintained home on quiet cul-de-sac. Features brand-new roof, vaulted ceilings, gas fireplace, and large screened lanai with no deed restrictions.",
@@ -3460,7 +3460,7 @@ const properties = [
     {
         "id": 77,
         "title": "3060 Hollywell Pl 4 Bed 4 Bath Modern Home in Chevy Chase",
-        "price": "$1,515,000",
+        "price": "$2,395,000",
         "location": "3060 Hollywell Pl, Glendale, CA 91206",
         "category": "Single Family",
         "shortDescription": "Custom-built modern home on 0.93 acres with panoramic city and mountain views. Features rooftop deck, chef's kitchen, and private gazebo in Chevy Chase.",
@@ -3529,7 +3529,7 @@ const properties = [
     {
         "id": 78,
         "title": "10137 Hunters Chase Ct 4 Bed 5 Bath Custom Estate in Jacksonville Ranch Club",
-        "price": "$1,498,000",
+        "price": "$970,000",
         "location": "10137 HUNTERS CHASE Court, Jacksonville, FL 32219",
         "category": "Single Family",
         "shortDescription": "Extraordinary custom-built estate in prestigious equestrian community. Features chef's kitchen with two islands, theater room, outdoor kitchen, and 2-acre lot.",
@@ -3605,7 +3605,7 @@ const properties = [
     {
         "id": 79,
         "title": "2261 NW 24th Ave 5 Bed 6 Bath Luxury Estate in Gainesville",
-        "price": "$1,515,999",
+        "price": "$1,650,000",
         "location": "2261 NW 24th Ave, Gainesville, FL 32605",
         "category": "Single Family",
         "shortDescription": "Extraordinary estate on 1.1 acres with nearly $1M in upgrades. Features resort-style pool, guest house, outdoor kitchen, and fully fenced grounds.",
@@ -3691,7 +3691,7 @@ const properties = [
     {
         "id": 80,
         "title": "944 Elder Ln 4 Bed 5 Bath Historic Home in San Marco",
-        "price": "$1,534,800",
+        "price": "$2,600,000",
         "location": "944 ELDER Lane, Jacksonville, FL 32207",
         "category": "Single Family",
         "shortDescription": "Beautifully renovated 1939 home in historic San Marco. Features marble kitchen, smart home automation, pool, outdoor kitchen, and walkable to San Marco Square.",
@@ -3772,7 +3772,7 @@ const properties = [
     {
         "id": 81,
         "title": "14819 NW 21st Ave 3 Bed 4 Bath French Country Estate in Newberry",
-        "price": "$1,398,999",
+        "price": "$1,795,000",
         "location": "14819 NW 21st Ave, Newberry, FL 32669",
         "category": "Single Family",
         "shortDescription": "Stunning chateau-inspired estate on 1.38 secluded acres. Features chef's kitchen, two offices, gym, summer kitchen, and 3-car split garages with private gate.",
@@ -3878,11 +3878,11 @@ const properties = [
     {
         "id": 82,
         "title": "2604 Lucerne Dr 4 Bed 4 Bath Waterfront Mediterranean Estate in Tallahassee",
-        "price": "$1,433,000",
+        "price": "$1,099,000",
         "location": "2604 Lucerne Dr, Tallahassee, FL 32303",
         "category": "Single Family",
         "shortDescription": "Stunning Mediterranean Revival waterfront estate on Lake Jackson. Features 4.6 acres, gourmet kitchen, spa-like master suite, and private lake access.",
-        "fullDescription": "Stunning Waterfront Estate – Your Dream Home Awaits! This Mediterranean Revival architecture on Lake Jackson was designed by the first owner and David Coleman inspired by the famous architect Addison Mizner. The signature red clay tile roof provides both aesthetic appeal and practical heat resistance; the light colored stucco walls give the home a clean, sun-reflective surface; arched windows and doorways add elegance; the circular driveway hints at a courtyard-like approach to create a welcoming, enclosed feel; the palm trees and manicured greenery complement the style, evoking the Mediterranean region's coastal vibe.\n\nThis breathtaking waterfront estate offers the perfect blend of luxury, tranquility, and natural beauty. Located just steps from the shimmering waters of a peaceful lake, this property is an oasis for those seeking an upscale retreat with all the comforts of home. This expansive Mediterranean-style home boasts 3,947 sq. ft. of living space, featuring 4 bedrooms and 4 bathrooms. The open-concept layout is perfect for entertaining, with a gourmet kitchen, formal dining area, and a grand living room with soaring ceilings and abundant natural light.\n\nSet on 4.6 acres of meticulously landscaped grounds, the estate is surrounded by towering pines and majestic palm trees, creating a private paradise. The circular driveway adds a touch of grandeur, while the sprawling lawn offers endless possibilities for outdoor activities. Enjoy direct access to the lake, perfect for boating, fishing, or enjoying your morning coffee overlooking the calm water. Inside, you'll find a cozy fireplace, a master suite with a spa-like bathroom featuring jetted tub and stall shower, and plenty of space for a home office or guest quarters. Pictures include some AI staging to give Buyers different interior design ideas.",
+        "fullDescription": "Stunning Waterfront Estate, Your Dream Home Awaits! This Mediterranean Revival architecture on Lake Jackson was designed by the first owner and David Coleman inspired by the famous architect Addison Mizner. The signature red clay tile roof provides both aesthetic appeal and practical heat resistance; the light colored stucco walls give the home a clean, sun-reflective surface; arched windows and doorways add elegance; the circular driveway hints at a courtyard-like approach to create a welcoming, enclosed feel; the palm trees and manicured greenery complement the style, evoking the Mediterranean region's coastal vibe.\n\nThis breathtaking waterfront estate offers the perfect blend of luxury, tranquility, and natural beauty. Located just steps from the shimmering waters of a peaceful lake, this property is an oasis for those seeking an upscale retreat with all the comforts of home. This expansive Mediterranean-style home boasts 3,947 sq. ft. of living space, featuring 4 bedrooms and 4 bathrooms. The open-concept layout is perfect for entertaining, with a gourmet kitchen, formal dining area, and a grand living room with soaring ceilings and abundant natural light.\n\nSet on 4.6 acres of meticulously landscaped grounds, the estate is surrounded by towering pines and majestic palm trees, creating a private paradise. The circular driveway adds a touch of grandeur, while the sprawling lawn offers endless possibilities for outdoor activities. Enjoy direct access to the lake, perfect for boating, fishing, or enjoying your morning coffee overlooking the calm water. Inside, you'll find a cozy fireplace, a master suite with a spa-like bathroom featuring jetted tub and stall shower, and plenty of space for a home office or guest quarters. Pictures include some AI staging to give Buyers different interior design ideas.",
         "image": "images/821.webp",
         "alt": "Exterior view of 2604 Lucerne Dr waterfront Mediterranean estate in Tallahassee",
         "gallery": [
@@ -3967,7 +3967,7 @@ const properties = [
     {
         "id": 83,
         "title": "7047 Ox Bow Rd 5 Bed 5 Bath Split-Level Home in Tallahassee",
-        "price": "$1,374,000",
+        "price": "$1,075,000",
         "location": "7047 Ox Bow Rd, Tallahassee, FL 32312",
         "category": "Single Family",
         "shortDescription": "Thoughtfully designed split-level home on 1.5 acres. Features saltwater pool, two living spaces, kitchenette, grand primary suite, and multi-generational flexibility.",
@@ -4053,7 +4053,7 @@ const properties = [
     {
         "id": 84,
         "title": "2613 Wharton Cir 4 Bed 4 Bath Golf Course Home in Golden Eagle",
-        "price": "$1,399,999",
+        "price": "$1,039,000",
         "location": "2613 Wharton Cir, Tallahassee, FL 32312",
         "category": "Single Family",
         "shortDescription": "Luxurious custom-built home in gated Golden Eagle Plantation. Features screened pool with spa, golf course views, 3-car garage, and over $76K in improvements.",
@@ -4153,7 +4153,7 @@ const properties = [
     {
         "id": 85,
         "title": "606 Galer Pl 4 Bed 3 Bath Spanish Pool Home in Glendale",
-        "price": "$699,999",
+        "price": "$1,480,000",
         "location": "606 Galer Pl, Glendale, CA 91206",
         "category": "Single Family",
         "shortDescription": "Beautifully updated Spanish-style home on quiet cul-de-sac near downtown Glendale. Features pool, updated kitchen, solar panels, and 10,000 sq ft lot.",
@@ -4215,7 +4215,7 @@ const properties = [
     {
         "id": 86,
         "title": "4515 Frederick Ave 3 Bed 3 Bath Home in Crescenta Highlands",
-        "price": "$686,000",
+        "price": "$875,000",
         "location": "4515 Frederick Ave, Glendale, CA 91214",
         "category": "Single Family",
         "shortDescription": "Spacious home on quiet cul-de-sac in desirable La Crescenta area. Features open floor plan, high ceilings, fireplace, and large primary suite near top-rated schools.",
@@ -4275,7 +4275,7 @@ const properties = [
     {
         "id": 87,
         "title": "2770 Mira Vista Dr 3 Bed 2 Bath Mid-Century Retreat in Verdugo Woodlands",
-        "price": "$737,000",
+        "price": "$2,190,000",
         "location": "2770 Mira Vista Dr, Glendale, CA 91208",
         "category": "Single Family",
         "shortDescription": "Remarkable mid-century retreat with breathtaking views and ultimate privacy. Features walls of glass, updated kitchen, pool, and private gated driveway.",

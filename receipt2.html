@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>KWELITEHOMES · Holding Fee Receipt</title>
+  <!-- Font Awesome 6 for clean icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f9fa;
+      font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    /* Receipt card – clean, crisp, professional */
+    .receipt {
+      max-width: 880px;
+      width: 100%;
+      background: #ffffff;
+      margin: 0 auto;
+      border: 1px solid #e6e9ed;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.02);
+      border-radius: 0;  /* sharp, official look */
+      overflow: hidden;
+    }
+
+    /* Red brand accent stripe */
+    .red-accent {
+      height: 8px;
+      background: #c41e2f;
+      width: 100%;
+    }
+
+    /* header section */
+    .receipt-header {
+      padding: 2rem 2rem 1.2rem 2rem;
+      border-bottom: 2px solid #f0f2f5;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .kw-logo-box {
+      background: #111111;
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .kw-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title-text h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f0f0f;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
+    }
+
+    .title-text p {
+      color: #c41e2f;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: 0.4px;
+    }
+
+    .receipt-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      margin-top: 0.6rem;
+    }
+
+    .receipt-title-main h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #c41e2f;
+      letter-spacing: -0.2px;
+    }
+
+    .receipt-title-main p {
+      font-size: 13px;
+      color: #3a3a3a;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .receipt-ref {
+      text-align: right;
+    }
+
+    .ref-badge {
+      background: #f3f4f6;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #101010;
+      display: inline-block;
+      letter-spacing: 0.3px;
+    }
+
+    .receipt-date {
+      font-size: 12px;
+      color: #5e5e5e;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    /* body content */
+    .receipt-body {
+      padding: 1.8rem 2rem 2.2rem 2rem;
+    }
+
+    /* amount highlight card */
+    .amount-card {
+      background: #fef9f9;
+      border-left: 6px solid #c41e2f;
+      border-radius: 18px;
+      padding: 1.2rem 1.8rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .amount-label-text {
+      font-weight: 700;
+      font-size: 16px;
+      color: #2d2d2d;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .amount-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: #111;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .amount-number small {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    /* two-column grid */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .info-block h4 {
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #c41e2f;
+      margin-bottom: 18px;
+      border-left: 4px solid #c41e2f;
+      padding-left: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .info-row {
+      margin-bottom: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      font-size: 14px;
+    }
+
+    .info-row .label {
+      width: 130px;
+      font-weight: 700;
+      color: #1e1e1e;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+
+    .info-row .value {
+      flex: 1;
+      font-weight: 500;
+      color: #222;
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .property-highlight {
+      background: #f0f4ff;
+      padding: 12px 16px;
+      border-radius: 18px;
+      font-size: 13px;
+      color: #0b2b4a;
+      margin-top: 10px;
+      border-left: 4px solid #c41e2f;
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff6f5;
+    }
+
+    .property-highlight i {
+      color: #c41e2f;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    /* narrative box */
+    .narrative-card {
+      background: #fafafa;
+      border-radius: 20px;
+      padding: 1.2rem 1.6rem;
+      margin: 0.5rem 0 1.8rem 0;
+      border: 1px solid #eaeaea;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .narrative-icon {
+      color: #c41e2f;
+      font-size: 24px;
+      padding-top: 2px;
+    }
+
+    .narrative-text {
+      font-size: 13.8px;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .narrative-text strong {
+      color: #000;
+      font-weight: 700;
+    }
+
+    .signature-row {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 2px solid #eaeaea;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .agent-signature .agent-name {
+      font-weight: 800;
+      color: #c41e2f;
+      font-size: 16px;
+    }
+
+    .paid-stamp {
+      background: #111;
+      color: white;
+      padding: 6px 22px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* footer */
+    .receipt-footer {
+      background: #111111;
+      color: #dddddd;
+      padding: 1rem 2rem;
+      font-size: 10.5px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      letter-spacing: 0.2px;
+    }
+
+    /* responsive */
+    @media (max-width: 650px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .receipt-header {
+        padding: 1.5rem 1.2rem 1rem 1.2rem;
+      }
+      .receipt-body {
+        padding: 1.2rem 1.2rem 1.8rem 1.2rem;
+      }
+      .amount-number {
+        font-size: 36px;
+      }
+    }
+
+    /* print optimization - clean, no browser artifacts */
+    @media print {
+      @page {
+        size: auto;
+        margin: 0.4in 0.3in;
+      }
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .receipt {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+      .red-accent, .kw-logo-box, .paid-stamp, .receipt-footer, .amount-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      header, footer, nav, .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <!-- red top stripe -->
+    <div class="red-accent"></div>
+
+    <!-- header with logo & title -->
+    <div class="receipt-header">
+      <div class="logo-area">
+        <div class="kw-logo-box">
+          <!-- placeholder image: Keller Williams style icon (using the same reference but clear) -->
+          <img src="images/icon.jpg" alt="KWELITEHOMES logo" />
+        </div>
+        <div class="title-text">
+          <h1>KELLER WILLIAMS</h1>
+          <p>KWELITEHOMES · PREMIER REAL ESTATE</p>
+        </div>
+      </div>
+      <div class="receipt-title-row">
+        <div class="receipt-title-main">
+          <h2>HOLDING FEE RECEIPT</h2>
+          <p>
+            <i class="fas fa-check-circle" style="color: #c41e2f;"></i> Confirmed · Property Holding Deposit
+          </p>
+        </div>
+        <div class="receipt-ref">
+          <div class="ref-badge">RECEIPT #: KW-HOLD-5000-04515</div>
+          <div class="receipt-date">
+            <i class="far fa-calendar-alt"></i> Issue: July 21, 2026
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- receipt body with all details -->
+    <div class="receipt-body">
+      <!-- amount section -->
+      <div class="amount-card">
+        <span class="amount-label-text">
+          <i class="fas fa-hand-holding-usd"></i> HOLDING FEE RECEIVED (USD)
+        </span>
+        <span class="amount-number"><small>$</small>5,000.00</span>
+      </div>
+
+      <!-- two-column detail grid -->
+      <div class="details-grid">
+        <!-- LEFT COLUMN: Payer & property -->
+        <div class="info-block">
+          <h4><i class="fas fa-user-circle"></i> PAYOR & PROPERTY</h4>
+          <div class="info-row">
+            <div class="label">Paying Client:</div>
+            <div class="value"><strong>Caleigh Mackenzie</strong></div>
+          </div>
+          <div class="info-row">
+            <div class="label">Client Contact:</div>
+            <div class="value">818 278 0024</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Payment Method:</div>
+            <div class="value">Wire Transfer / Certified Funds</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Property Address:</div>
+            <div class="value"><strong>4515 Fredrick Ave</strong></div>
+          </div>
+          <div class="property-highlight">
+            <i class="fas fa-map-pin"></i>
+            <span><strong>Holding Fee For:</strong> 4515 Fredrick Ave – Reservation deposit to secure property for Caleigh Mackenzie.</span>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: recipient & agent -->
+        <div class="info-block">
+          <h4><i class="fas fa-building"></i> RECIPIENT & AGENT</h4>
+          <div class="info-row">
+            <div class="label">Beneficiary:</div>
+            <div class="value"><strong>KWELITEHOMES</strong> (Keller Williams Elite)</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Agent / Representative:</div>
+            <div class="value"><i class="fas fa-id-badge"></i> Emil Akopian</div>
+          </div>
+          <div class="info-row">
+            <div class="label">License ID:</div>
+            <div class="value">KW-CA-078221 · REALTOR®</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Receiving Account:</div>
+            <div class="value">KW Elite Trust / Escrow Account</div>
+          </div>
+          <div class="info-row">
+            <div class="label">Purpose:</div>
+            <div class="value"><strong>Holding Fee / Good Faith Deposit</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- narrative explanation -->
+      <div class="narrative-card">
+        <div class="narrative-icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <div class="narrative-text">
+          <strong>✓ Transaction & Authorization Summary</strong><br />
+          Caleigh Mackenzie has transferred a holding fee of <strong>$5,000.00 USD</strong> to Keller Williams Elite (KWELITEHOMES) 
+          in connection with the property located at <strong>4515 Fredrick Ave</strong>. This payment secures the property 
+          off the market and will be applied according to the terms of the purchase agreement or holding contract. 
+          Agent <strong>Emil Akopian</strong> acknowledges receipt on behalf of KWELITEHOMES. The funds have been 
+          deposited into the designated trust account. No further holding deposits are pending for this property 
+          at this time.
+        </div>
+      </div>
+
+      <!-- signature & confirmation row -->
+      <div class="signature-row">
+        <div class="agent-signature">
+          <div style="font-weight: 700; color: #222; font-size: 14px;">Acknowledged by:</div>
+          <div class="agent-name">Emil Akopian</div>
+          <div style="font-size: 12px; color: #4a4a4a;">KWELITEHOMES · Keller Williams Elite</div>
+        </div>
+        <div class="stamp-col">
+          <div class="paid-stamp">
+            <i class="fas fa-check-circle"></i> HOLDING FEE RECEIVED
+          </div>
+          <div style="font-size: 11px; color: #5f5f5f; margin-top: 6px; text-align: right;">
+            Receipt ID: KW-5000-MACKENZIE-4515
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer with transaction codes -->
+    <div class="receipt-footer">
+      <div>
+        <i class="far fa-clock"></i> Transaction Date: July 21, 2026 · Holding Fee Reference: C-MACKENZIE-4515F
+      </div>
+      <div>
+        <i class="fas fa-shield-alt"></i> Verification: KW-HOLD-5000-EMIL-4515
+      </div>
+    </div>
+  </div>
+</body>
+</html>
